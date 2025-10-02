@@ -575,7 +575,7 @@
       "type": "object",
       "description": "This schema describes the attributes of a course id. It is used to point at a specific course.",
       "properties": {
-        "name": {
+        "title": {
           "type": "string",
           "description": "The name of the course.",
           "example": "HPI Academy: Leading Digital Transformation and Innovation - Fall 2020"
@@ -595,7 +595,7 @@
         }
       },
       "required": [
-        "name",
+        "title",
         "url",
         "type"
       ]
