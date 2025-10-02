@@ -301,6 +301,29 @@
         "type"
       ]
     },
+    "MultilingualLabel": {
+      "type": "array",
+      "description": "List of names of an object. This array allows localized strings. A name and a language have to be given in the respective field.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "inLanguage": {
+            "type": "string",
+            "description": "The language the name is given in. Has to be a shortcode according to BCP 47.",
+            "example": "en"
+          },
+          "name": {
+            "type": "string",
+            "description": "The actual name of the object in the defined language.",
+            "example": "INTERMEDIATE"
+          }
+        },
+        "required": [
+          "inLanguage",
+          "name"
+        ]
+      }
+    },
     "EducationalLevel": {
       "title": "EducationalLevel",
       "type": "object",
