@@ -344,9 +344,7 @@
           "type": "string",
           "description": "The name of the educational framework that describes the educational level.",
           "enum": [
-            "ESCO",
-            "DigComp",
-            "GRETA"
+            "DigComp"
           ]
         },
         "educationalFrameworkVersion": {
