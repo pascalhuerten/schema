@@ -1208,6 +1208,22 @@
                   ]
                 }
               },
+              "funder": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 0,
+                "description": "A person or organization that supports or supported this course through some kind of financial contribution.",
+                "items": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/Organization"
+                    },
+                    {
+                      "$ref": "#/$defs/Person"
+                    }
+                  ]
+                }
+              },
               "keywords": {
                 "type": [
                   "array",
