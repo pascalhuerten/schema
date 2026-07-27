@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/moochub/draft/schemas/organization.json",
+  "title": "Organization",
+  "type": "object",
+  "description": "This schema describes the attributes of an organization.",
+  "properties": {
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri",
+      "description": "A URI identifying the organization in the supplied data graph.",
+      "example": "https://example.org/organizations/openhpi"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the object.",
+      "enum": [
+        "Organization"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the organization.",
+      "example": "openHPI"
+    },
+    "sameAs": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "URIs that are asserted to identify the same organization, such as its homepage, ROR, or Wikidata.",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true,
+      "example": [
+        "https://open.hpi.de/",
+        "https://ror.org/04xfq0f34"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A short description of the organization. Should be provided in HTML.",
+      "example": "openHPI is a digital educational platform situated at the HPI with a focus on topics regarding computational sciences, internet and world wide web and design thinking."
+    },
+    "image": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/image.json"
+    }
+  },
+  "required": [
+    "name",
+    "type"
+  ]
+}

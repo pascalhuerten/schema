@@ -1,0 +1,11 @@
+{
+  "@context": [
+    "https://w3id.org/moochub/draft/context.jsonld",
+    {
+      "@language": "de"
+    }
+  ],
+  "id": "https://futurelearnlab.de/detailpage.php?id=18",
+  "url": "c96a2376-bdf2-4307-a21f-19a4ff141b5f",
+  "name": "Digital Trainer (Gesamtkurs)"
+}

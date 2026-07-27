@@ -1,0 +1,20 @@
+{
+  "name": "@moochub/schema-draft",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Modular JSON-LD and JSON:API schemas for MOOChub v4",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "format": "prettier . --write",
+    "lint:prettier": "prettier .",
+    "test": "node scripts/test.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^2.1.1",
+    "prettier": "^2.8.8",
+    "prettier-plugin-sh": "^0.12.8"
+  }
+}

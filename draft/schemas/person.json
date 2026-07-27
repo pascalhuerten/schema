@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/moochub/draft/schemas/person.json",
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri",
+      "description": "A URI identifying the person in the supplied data graph.",
+      "example": "https://example.org/people/christoph-meinel"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the person. Honorific prefix and suffix have to be excluded.",
+      "example": "Christoph Meinel"
+    },
+    "honorificPrefix": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The honorific prefix of the person (e.g. Dr., Prof., ...).",
+      "example": "Prof. Dr. "
+    },
+    "honorificSuffix": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The honorific suffix of the person (e.g. PhD, MD, ...).",
+      "example": null
+    },
+    "sameAs": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "URIs that are asserted to identify the same person, such as verified social profiles, a homepage, ORCID, or Wikidata.",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true,
+      "example": [
+        "https://orcid.org/0000-0002-1234-5678",
+        "https://www.wikidata.org/entity/Q123456"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the object.",
+      "enum": [
+        "Person"
+      ]
+    },
+    "jobTitle": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The job title of the person.",
+      "example": null
+    },
+    "image": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/image.json"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A short description of the person. Can be a CV-like description. Should be provided in HTML",
+      "example": null
+    },
+    "affiliation": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/organization.json"
+    }
+  },
+  "required": [
+    "name",
+    "type"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+    "@context": {
+        "@import": "https://w3id.org/kim/amb/20231019/context.jsonld",
+        "courseCode": "https://schema.org/courseCode",
+        "sameAs": "https://schema.org/sameAs",
+        "identifier": "https://schema.org/identifier",
+        "instructor": "https://schema.org/instructor"
+    }
+}

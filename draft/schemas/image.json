@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/moochub/draft/schemas/image.json",
+  "title": "ImageObject",
+  "type": "object",
+  "description": "This schema describes the attributes of an image.",
+  "properties": {
+    "contentUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "The uri pointing at the actual image.",
+      "example": "https://imgproxy.services.openhpi.de/BTTB8dtdudOl-9rC9_BH3blZE8Y6lPOYCeDwOrM3MtA/rs:fill:314:195:0/g:ce/plain/https://openhpi-public.s3.openhpicloud.de/courses/4H0PlIvB5Pl3LVRzqcZF8x/6xCHlCi7Kj4QQCnoNlk3Hl/07_2x_green.png"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the object.",
+      "enum": ["ImageObject"]
+    },
+    "license": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
+    },
+    "description": {
+      "type": "string",
+      "description": "A short description of the image. Can be used as an alternative text, if the image cannot be displayed.",
+      "example": "This is an image. It shows ..."
+    }
+  },
+  "required": ["contentUrl", "license"]
+}

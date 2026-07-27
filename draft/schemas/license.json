@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/moochub/draft/schemas/license.json",
+  "title": "License",
+  "type": "object",
+  "description": "This schema describes the attributes of a license.",
+  "required": ["identifier", "url"],
+  "properties": {
+    "identifier": {
+      "description": "A license shortcode according to https://spdx.org/licenses/ or \"proprietary\".",
+      "example": "CC-BY-SA-4.0",
+      "type": "string"
+    },
+    "url": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "A license according to https://spdx.org/licenses/ or \"null\" if proprietary.",
+      "example": "https://spdx.org/licenses/CC-BY-SA-4.0.html"
+    },
+    "contentUrl": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "example": null,
+      "description": "A link to the specific license document (if any, otherwise set to \"null\" - the identifier pointing at the general license is to be considered the license document then). Has to be \"null\" if identifier is \"proprietary\"."
+    }
+  }
+}

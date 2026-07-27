@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/moochub/draft/schemas/trailer.json",
+  "title": "Trailer",
+  "description": "A trailer or video teaser of the learning resource.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/trailer.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "A short description of the content of the video. Can be used as an alternative text, if the video cannot be displayed."
+        },
+        "license": {
+          "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
+        }
+      },
+      "required": ["license"]
+    }
+  ]
+}

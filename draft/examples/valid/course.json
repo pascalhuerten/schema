@@ -1,0 +1,232 @@
+{
+  "@context": [
+    "https://w3id.org/moochub/draft/context.jsonld",
+    {
+      "@language": "de"
+    }
+  ],
+  "id": "c96a2376-bdf2-4307-a21f-19a4ff141b5f",
+  "url": "https://futurelearnlab.de/detailpage.php?id=18",
+  "name": "Digital Trainer (Gesamtkurs)",
+  "courseCode": "DIGITAL-TRAINER",
+  "description": "<div><p>Der Kurs verfolgt im Zuge der fortschreitenden Digitalisierung von Arbeits- und Geschäftsprozessen das Ziel, deine digitale Kompetenz und Methodik zu stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder zu entwickeln. Zugleich steht eine\r\n    Verbesserung der Selbstvermarktung und ein Erkennen neuer Handlungsoptionen im Vordergrund.</p>\r\n</div>",
+  "about": [
+    {
+      "id": "https://w3id.org/kim/hochschulfaechersystematik/n0",
+      "prefLabel": {
+        "de": "Fachübergreifend"
+      },
+      "type": "Concept"
+    }
+  ],
+  "dateCreated": "2019-07-03T13:13:13",
+  "datePublished": "2019-07-03T13:13:13",
+  "dateModified": "2022-03-26T08:35:37Z",
+  "duration": "PT14H",
+  "inLanguage": [
+    "de",
+    "en"
+  ],
+  "audience": [
+    {
+      "id": "http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole/student",
+      "prefLabel": {
+        "en": "student"
+      },
+      "type": "Concept"
+    }
+  ],
+  "keywords": [
+    "Digitale Kompetenzen",
+    "Digitalisierung"
+  ],
+  "conditionsOfAccess": {
+    "prefLabel": {
+      "de": "Anmeldung erforderlich"
+    },
+    "id": "http://w3id.org/kim/conditionsOfAccess/login",
+    "type": "Concept"
+  },
+  "assesses": [
+    {
+      "id": "https://example.org/competencies/1",
+      "prefLabel": {
+        "de": "Awesomeness"
+      }
+    }
+  ],
+  "competencyRequired": [
+    {
+      "id": "https://example.org/competencies/2",
+      "prefLabel": {
+        "de": "Humor"
+      }
+    }
+  ],
+  "teaches": [
+    {
+      "id": "https://example.org/competencies/3",
+      "prefLabel": {
+        "de": "Resilience"
+      }
+    }
+  ],
+  "isPartOf": [
+    {
+      "id": "https://oer.gitlab.io/OS",
+      "type": [
+        "LearningResource",
+        "Course"
+      ],
+      "name": "Computer Structures and Operating Systems"
+    }
+  ],
+  "hasPart": [
+    {
+      "id": "https://oer.gitlab.io/OS/figures/OS/hail_f0613_with_embedded_frame_nos.png",
+      "type": [
+        "LearningResource",
+        "ImageObject"
+      ],
+      "name": "A-32 two-level page table"
+    }
+  ],
+  "isBasedOn": [
+    {
+      "type": [
+        "LearningResource",
+        "PresentationDigitalDocument"
+      ],
+      "name": "Digital Trainer Kurskonzept",
+      "creator": [
+        {
+          "type": "Person",
+          "name": "Beispielperson"
+        }
+      ],
+      "license": {
+        "id": "https://creativecommons.org/licenses/by-sa/3.0/"
+      }
+    }
+  ],
+  "educationalLevel": [
+    {
+      "id": "https://w3id.org/kim/educationalLevel/level_06",
+      "prefLabel": {
+        "de": "Bachelor oder äquivalent",
+        "en": "Bachelor or equivalent"
+      }
+    }
+  ],
+  "isAccessibleForFree": true,
+  "interactivityType": {
+    "id": "http://purl.org/dcx/lrmi-vocabs/interactivityType/active",
+    "type": "Concept",
+    "prefLabel": {
+      "de": "aktiv (eher selbstgesteuert)",
+      "en": "active"
+    }
+  },
+  "publisher": {
+    "name": "Institut für Interaktive Systeme",
+    "sameAs": [
+      "https://www.th-luebeck.de"
+    ],
+    "type": "Organization",
+    "image": {
+      "description": "Logo der Technischen Hochschule Lübeck",
+      "type": "ImageObject",
+      "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
+      "license": {
+        "identifier": "Proprietary",
+        "url": null
+      }
+    }
+  },
+  "creator": [
+    {
+      "name": "Institut für Interaktive Systeme",
+      "sameAs": [
+        "https://www.th-luebeck.de"
+      ],
+      "type": "Organization",
+      "image": {
+        "description": "Logo der Technischen Hochschule Lübeck",
+        "type": "ImageObject",
+        "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
+        "license": {
+          "identifier": "Proprietary",
+          "url": null
+        }
+      }
+    }
+  ],
+  "instructor": [
+    {
+      "name": "Beispielperson",
+      "type": "Person",
+      "id": "https://example.org/people/beispielperson",
+      "sameAs": [
+        "https://orcid.org/0000-0002-1234-5678"
+      ]
+    }
+  ],
+  "contributor": [
+    {
+      "name": "Institut für Interaktive Systeme",
+      "sameAs": [
+        "https://www.th-luebeck.de"
+      ],
+      "type": "Organization",
+      "image": {
+        "description": "Logo der Technischen Hochschule Lübeck",
+        "type": "ImageObject",
+        "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
+        "license": {
+          "identifier": "Proprietary",
+          "url": null
+        }
+      }
+    }
+  ],
+  "funder": [
+    {
+      "name": "Institut für Interaktive Systeme",
+      "sameAs": [
+        "https://www.th-luebeck.de"
+      ],
+      "type": "Organization",
+      "image": {
+        "description": "Logo der Technischen Hochschule Lübeck",
+        "type": "ImageObject",
+        "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
+        "license": {
+          "identifier": "Proprietary",
+          "url": null
+        }
+      }
+    }
+  ],
+  "license": {
+    "identifier": "CC0 1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "image": {
+    "description": "A thumbnail image of the course",
+    "type": "ImageObject",
+    "contentUrl": "https://futurelearnlab.de/0/Kachel_Vorseite2.png",
+    "license": {
+      "identifier": "CC0 1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  "trailer": {
+    "description": "A thumbnail image of the course",
+    "type": "VideoObject",
+    "contentUrl": "https://futurelearnlab.de/trailer.mp4",
+    "license": {
+      "identifier": "Proprietary",
+      "url": null
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/moochub/draft/schemas/id.json",
+  "title": "ID",
+  "description": "The ID of the course as an UUID.",
+  "type": "string",
+  "format": "uuid"
+}
