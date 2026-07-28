@@ -1,0 +1,76 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://w3id.org/moochub/draft/schemas/offer.json",
+    "title": "Offer",
+    "description": "An offer to provide a course or course instance. The url can be used for a specific booking, checkout, enrollment, or access page.",
+    "type": "object",
+    "properties": {
+        "type": {
+            "const": "Offer",
+            "description": "The schema.org type of this object."
+        },
+        "price": {
+            "type": "number",
+            "minimum": 0,
+            "description": "The price of the offer in the specified currency."
+        },
+        "priceCurrency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "The ISO 4217 currency code for the price."
+        },
+        "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "A booking, checkout, enrollment, or access URL for this offer."
+        },
+        "validFrom": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+        },
+        "validThrough": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+        },
+        "availability": {
+            "type": "string",
+            "enum": [
+                "https://schema.org/Discontinued",
+                "https://schema.org/InStock",
+                "https://schema.org/InStoreOnly",
+                "https://schema.org/LimitedAvailability",
+                "https://schema.org/OnlineOnly",
+                "https://schema.org/OutOfStock",
+                "https://schema.org/PreOrder",
+                "https://schema.org/PreSale",
+                "https://schema.org/SoldOut"
+            ]
+        },
+        "category": {
+            "type": "string",
+            "enum": [
+                "course",
+                "certificate",
+                "complete"
+            ],
+            "description": "Whether the offer covers the course, certification only, or both."
+        },
+        "paymentFrequency": {
+            "type": "string",
+            "enum": [
+                "one-time",
+                "weekly",
+                "monthly",
+                "quarterly",
+                "half-yearly",
+                "by semester",
+                "yearly",
+                "other"
+            ],
+            "description": "The payment frequency used by the MOOChub profile."
+        }
+    },
+    "required": [
+        "type",
+        "price",
+        "priceCurrency"
+    ]
+}

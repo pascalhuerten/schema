@@ -415,13 +415,15 @@ Link: <[...]>; rel="describedby"
 
                 ### <dfn>image</dfn>
 
-                Thumbnail der Ressource.
+                Cover image der Ressource. Das Objekt MUSS die Property
+                <code>contentUrl</code> und eine Lizenz enthalten. Es kann als
+                <code>schema:image</code> exportiert werden;
 
                 <dl>
                     <dt>Pflichtfeld</dt>
                     <dd>nein</dd>
                     <dt>Typ</dt>
-                    <dd>`string` (URI)</dd>
+                    <dd>`object` (ImageObject)</dd>
                     <dt>Validierung</dt>
                     <dd><a href="https://w3id.org/kim/amb/draft/schemas/image.json">JSON Schema</a></dd>
                     <dd></dd>
@@ -433,12 +435,13 @@ Link: <[...]>; rel="describedby"
 
                 ### <dfn>trailer</dfn>
 
-                Ein AV- oder Audio-Trailer zu einer Bildungsressource. MUSS ein JSON-Objekt enthalten, das
-                <code>"type": "VideoObject"</code> oder <code>"type": "AudioObject"</code> sowie die Property
+                Ein Video-Trailer oder Teaser zu einer Bildungsressource. MUSS ein JSON-Objekt enthalten, das
+                <code>"type": "VideoObject"</code> sowie die Property
                 <code>contentUrl</code> oder <code>embedUrl</code> enthalten MUSS und folgende weitere Properties
                 enthalten KANN: <code>contentSize</code> (in bytes ohne Maßangabe) , <code>embedUrl</code>,
                 <code>sha256</code>, <code>bitrate</code> (in kb/s ohne Maßangabe) sowie <code>encodingFormat</code>,
-                das bei Verwendung Werte aus [[IANA-MEDIA-TYPES]] enthalten MUSS.
+                das bei Verwendung Werte aus [[IANA-MEDIA-TYPES]] enthalten MUSS. Eine Lizenz ist ebenfalls
+                erforderlich.
 
                 <dl>
                     <dt>Pflichtfeld</dt>
@@ -828,10 +831,11 @@ Link: <[...]>; rel="describedby"
 
                 ### <dfn>educationalLevel</dfn>
 
-                Verweis auf eine Stufe im Bildungssystem als Lehr-/Lernkontext, für den eine Bildungsressource
+                Verweis auf eine Stufe im Bildungs- oder Kompetenzkontext, für den eine Bildungsressource
                 ausgewiesen ist. MUSS ein oder mehrere JSON-Objekte enthalten, die eine Property `id` aufweisen MÜSSEN,
-                die Property `prefLabel` aufweisen SOLLEN und weitere Properties aufweisen KÖNNEN.
-                Die Property `id` MUSS einem URI aus den [[Bildungsstufen]] entsprechen.
+                die Property `prefLabel` und `inScheme` aufweisen SOLLEN und weitere Properties aufweisen KÖNNEN.
+                Die Property `id` MUSS ein stabiler URI aus einem veröffentlichten oder provider-kontrollierten
+                Begriffsschema sein.
 
                 - `id` zur Angabe eines Identifikators der Stufe
                 - `prefLabel` zur Angabe einer Bezeichnung für die Stufe
@@ -842,11 +846,11 @@ Link: <[...]>; rel="describedby"
                     <dt>Typ</dt>
                     <dd>`array[object]`</dd>
                     <dt>Elemente</dt>
-                    <dd>JSON-Objekt, das einen `id`-Wert aus [[Bildungsstufen]] der DINI-AG-KIM aufweisen MUSS. Zudem
-                        SOLL das Objekt die Eigenschaften `type` und `prefLabel` aufweisen. Wenn vorhanden MUSS der Wert
-                        von `type` gleich `Concept` sein.</dd>
+                    <dd>JSON-Objekt, das einen stabilen `id`-Wert aus einem Begriffsschema aufweisen MUSS. Zudem
+                        SOLL das Objekt die Eigenschaften `type`, `prefLabel` und `inScheme` aufweisen. Wenn vorhanden
+                        MUSS der Wert von `type` gleich `Concept` sein.</dd>
                     <dt>Validierung</dt>
-                    <dd><a href="https://w3id.org/kim/amb/draft/schemas/educationalLevel.json">JSON Schema</a></dd>
+                    <dd><a href="https://w3id.org/moochub/draft/schemas/concepts.json">JSON Schema</a></dd>
                 </dl>
 
             </section>

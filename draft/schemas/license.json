@@ -3,25 +3,26 @@
   "$id": "https://w3id.org/moochub/draft/schemas/license.json",
   "title": "License",
   "type": "object",
-  "description": "This schema describes the attributes of a license.",
-  "required": ["identifier", "url"],
+  "description": "A license or rights statement with a readable label and an optional canonical URI. A null URI explicitly indicates that no public license document is available, for example for proprietary or all-rights-reserved content.",
+  "required": [
+    "identifier",
+    "id"
+  ],
   "properties": {
+    "id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri",
+      "description": "The URI of the license document or license terms. This is the AMB-compatible license identifier and maps to JSON-LD @id. Use null when no public license document exists.",
+      "example": "https://creativecommons.org/licenses/by/4.0/"
+    },
     "identifier": {
-      "description": "A license shortcode according to https://spdx.org/licenses/ or \"proprietary\".",
-      "example": "CC-BY-SA-4.0",
-      "type": "string"
-    },
-    "url": {
-      "type": ["string", "null"],
-      "format": "uri",
-      "description": "A license according to https://spdx.org/licenses/ or \"null\" if proprietary.",
-      "example": "https://spdx.org/licenses/CC-BY-SA-4.0.html"
-    },
-    "contentUrl": {
-      "type": ["string", "null"],
-      "format": "uri",
-      "example": null,
-      "description": "A link to the specific license document (if any, otherwise set to \"null\" - the identifier pointing at the general license is to be considered the license document then). Has to be \"null\" if identifier is \"proprietary\"."
+      "type": "string",
+      "minLength": 1,
+      "description": "A readable license label or identifier, such as CC BY 4.0, CC0 1.0 Universal, or Proprietary.",
+      "example": "CC BY 4.0"
     }
   }
 }

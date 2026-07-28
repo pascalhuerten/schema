@@ -8,7 +8,150 @@
   "id": "c96a2376-bdf2-4307-a21f-19a4ff141b5f",
   "url": "https://futurelearnlab.de/detailpage.php?id=18",
   "name": "Digital Trainer (Gesamtkurs)",
+  "type": [
+    "LearningResource",
+    "Course"
+  ],
   "courseCode": "DIGITAL-TRAINER",
+  "timeRequired": "PT42H",
+  "numberOfCredits": 3.5,
+  "accessMode": [
+    "auditory",
+    "textual",
+    "visual"
+  ],
+  "offers": [
+    {
+      "type": "Offer",
+      "price": 0,
+      "priceCurrency": "EUR",
+      "category": "course",
+      "paymentFrequency": "one-time",
+      "availability": "https://schema.org/OnlineOnly"
+    }
+  ],
+  "hasCourseInstance": [
+    {
+      "id": "https://futurelearnlab.de/course-instances/digital-trainer-summer-2026",
+      "type": "CourseInstance",
+      "name": "Sommersemester 2026",
+      "courseMode": [
+        "blended",
+        "synchronous"
+      ],
+      "startDate": "2026-05-04",
+      "endDate": "2026-06-12",
+      "subEvent": [
+        {
+          "type": "Event",
+          "name": "Practical phase",
+          "eventSchedule": [
+            {
+              "type": "Schedule",
+              "byDay": [
+                "https://schema.org/Monday",
+                "https://schema.org/Wednesday"
+              ],
+              "startTime": "18:00:00",
+              "endTime": "20:00:00",
+              "repeatFrequency": "P1W",
+              "startDate": "2026-05-04",
+              "endDate": "2026-05-22",
+              "scheduleTimezone": "Europe/Berlin"
+            }
+          ],
+          "location": [
+            {
+              "type": "Place",
+              "name": "Campus Luebeck, Building A, Room 101"
+            }
+          ]
+        },
+        {
+          "type": "Event",
+          "name": "Online phase",
+          "eventSchedule": [
+            {
+              "type": "Schedule",
+              "byDay": [
+                "https://schema.org/Monday",
+                "https://schema.org/Wednesday"
+              ],
+              "startTime": "18:00:00",
+              "endTime": "20:00:00",
+              "repeatFrequency": "P1W",
+              "startDate": "2026-05-25",
+              "endDate": "2026-06-12",
+              "scheduleTimezone": "Europe/Berlin"
+            }
+          ],
+          "location": [
+            {
+              "type": "VirtualLocation",
+              "url": "https://futurelearnlab.de/courses/digital-trainer"
+            }
+          ]
+        },
+        {
+          "type": "Event",
+          "name": "Oral exam",
+          "startDate": "2026-06-15T10:00:00",
+          "endDate": "2026-06-15T12:00:00",
+          "location": [
+            {
+              "type": "VirtualLocation",
+              "url": "https://futurelearnlab.de/courses/digital-trainer"
+            }
+          ]
+        },
+        {
+          "type": "Event",
+          "name": "Written exam",
+          "startDate": "2026-06-20T10:00:00",
+          "endDate": "2026-06-20T12:00:00",
+          "location": [
+            {
+              "type": "Place",
+              "name": "Campus Luebeck, Building A, Room 101"
+            }
+          ]
+        }
+      ],
+      "applicationStartDate": "2026-02-01",
+      "applicationDeadline": "2026-04-30",
+      "offers": [
+        {
+          "type": "Offer",
+          "price": 125,
+          "priceCurrency": "EUR",
+          "category": "complete",
+          "paymentFrequency": "one-time",
+          "url": "https://futurelearnlab.de/enroll/digital-trainer-summer-2026",
+          "validFrom": "2026-02-01",
+          "validThrough": "2026-04-30",
+          "availability": "https://schema.org/InStock"
+        }
+      ],
+      "instructor": [
+        {
+          "id": "https://example.org/people/beispielperson",
+          "name": "Beispielperson",
+          "type": "Person"
+        }
+      ]
+    },
+    {
+      "id": "https://futurelearnlab.de/course-instances/digital-trainer-winter-2025",
+      "type": "CourseInstance",
+      "name": "Wintersemester 2025",
+      "courseMode": [
+        "online",
+        "asynchronous"
+      ],
+      "startDate": "2025-01-13",
+      "endDate": "2025-02-28"
+    }
+  ],
   "description": "<div><p>Der Kurs verfolgt im Zuge der fortschreitenden Digitalisierung von Arbeits- und Geschäftsprozessen das Ziel, deine digitale Kompetenz und Methodik zu stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder zu entwickeln. Zugleich steht eine\r\n    Verbesserung der Selbstvermarktung und ein Erkennen neuer Handlungsoptionen im Vordergrund.</p>\r\n</div>",
   "about": [
     {
@@ -50,6 +193,7 @@
   "assesses": [
     {
       "id": "https://example.org/competencies/1",
+      "type": "Concept",
       "prefLabel": {
         "de": "Awesomeness"
       }
@@ -58,6 +202,7 @@
   "competencyRequired": [
     {
       "id": "https://example.org/competencies/2",
+      "type": "Concept",
       "prefLabel": {
         "de": "Humor"
       }
@@ -65,10 +210,33 @@
   ],
   "teaches": [
     {
-      "id": "https://example.org/competencies/3",
+      "id": "https://example.org/vocab/digcomp/3.0/competence/1.1",
+      "type": "Concept",
       "prefLabel": {
-        "de": "Resilience"
-      }
+        "en": "Browsing, searching and filtering information"
+      },
+      "inScheme": "https://example.org/vocab/digcomp/3.0/",
+      "educationalLevel": [
+        {
+          "id": "https://example.org/vocab/digcomp/3.0/proficiency-level/intermediate-3",
+          "type": "Concept",
+          "prefLabel": {
+            "en": "Intermediate"
+          },
+          "inScheme": "https://example.org/vocab/digcomp/3.0/"
+        }
+      ]
+    }
+  ],
+  "educationalAlignment": [
+    {
+      "type": "AlignmentObject",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "ISCED-F 2013",
+      "targetName": {
+        "en": "Computer use"
+      },
+      "targetUrl": "http://data.europa.eu/esco/isced-f/0611"
     }
   ],
   "isPartOf": [
@@ -112,6 +280,7 @@
   "educationalLevel": [
     {
       "id": "https://w3id.org/kim/educationalLevel/level_06",
+      "type": "Concept",
       "prefLabel": {
         "de": "Bachelor oder äquivalent",
         "en": "Bachelor or equivalent"
@@ -139,7 +308,7 @@
       "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
       "license": {
         "identifier": "Proprietary",
-        "url": null
+        "id": null
       }
     }
   },
@@ -156,7 +325,7 @@
         "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
         "license": {
           "identifier": "Proprietary",
-          "url": null
+          "id": null
         }
       }
     }
@@ -184,7 +353,7 @@
         "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
         "license": {
           "identifier": "Proprietary",
-          "url": null
+          "id": null
         }
       }
     }
@@ -202,31 +371,31 @@
         "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
         "license": {
           "identifier": "Proprietary",
-          "url": null
+          "id": null
         }
       }
     }
   ],
   "license": {
     "identifier": "CC0 1.0 Universal",
-    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    "id": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "image": {
-    "description": "A thumbnail image of the course",
+    "description": "A cover image of the course",
     "type": "ImageObject",
     "contentUrl": "https://futurelearnlab.de/0/Kachel_Vorseite2.png",
     "license": {
       "identifier": "CC0 1.0 Universal",
-      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      "id": "https://creativecommons.org/publicdomain/zero/1.0/"
     }
   },
   "trailer": {
-    "description": "A thumbnail image of the course",
+    "description": "A teaser video of the course",
     "type": "VideoObject",
     "contentUrl": "https://futurelearnlab.de/trailer.mp4",
     "license": {
       "identifier": "Proprietary",
-      "url": null
+      "id": null
     }
   }
 }

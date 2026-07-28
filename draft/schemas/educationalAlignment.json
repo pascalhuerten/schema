@@ -1,0 +1,40 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://w3id.org/moochub/draft/schemas/educationalAlignment.json",
+    "title": "Educational alignment",
+    "description": "A schema.org AlignmentObject describing how a course aligns with a target in an educational framework.",
+    "type": "array",
+    "minItems": 1,
+    "uniqueItems": true,
+    "items": {
+        "type": "object",
+        "properties": {
+            "type": {
+                "const": "AlignmentObject"
+            },
+            "alignmentType": {
+                "type": "string",
+                "minLength": 1
+            },
+            "educationalFramework": {
+                "type": "string",
+                "minLength": 1
+            },
+            "targetName": {
+                "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+            },
+            "targetDescription": {
+                "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+            },
+            "targetUrl": {
+                "type": "string",
+                "format": "uri"
+            }
+        },
+        "required": [
+            "type",
+            "educationalFramework",
+            "targetUrl"
+        ]
+    }
+}

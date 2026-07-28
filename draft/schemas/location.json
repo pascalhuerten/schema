@@ -1,0 +1,60 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://w3id.org/moochub/draft/schemas/location.json",
+    "title": "Course location",
+    "description": "One or more physical or virtual locations for a course instance.",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+        "oneOf": [
+            {
+                "type": "string",
+                "minLength": 1
+            },
+            {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "Place",
+                            "VirtualLocation"
+                        ]
+                    },
+                    "name": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "address": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "url": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "required": [
+                    "type"
+                ],
+                "anyOf": [
+                    {
+                        "required": [
+                            "name"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "address"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "url"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -2,18 +2,11 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://w3id.org/moochub/draft/schemas/instructor.json",
   "title": "Instructor",
-  "description": "List of instructors of the course. Also organizations can be given.",
+  "description": "List of people who instruct the course or a course instance.",
   "type": "array",
   "uniqueItems": true,
   "minItems": 1,
   "items": {
-    "anyOf": [
-      {
-        "$ref": "https://w3id.org/moochub/draft/schemas/organization.json"
-      },
-      {
-        "$ref": "https://w3id.org/moochub/draft/schemas/person.json"
-      }
-    ]
+    "$ref": "https://w3id.org/moochub/draft/schemas/person.json"
   }
 }

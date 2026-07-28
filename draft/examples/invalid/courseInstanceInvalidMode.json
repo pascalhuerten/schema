@@ -12,7 +12,6 @@
         "LearningResource",
         "Course"
     ],
-    "courseCode": "",
     "publisher": {
         "name": "Example University",
         "type": "Organization"
@@ -26,5 +25,14 @@
     "license": {
         "identifier": "proprietary",
         "id": null
-    }
+    },
+    "hasCourseInstance": [
+        {
+            "id": "https://example.org/course-instances/course-1-2026",
+            "type": "CourseInstance",
+            "courseMode": [
+                "hybrid"
+            ]
+        }
+    ]
 }

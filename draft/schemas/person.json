@@ -11,12 +11,12 @@
       ],
       "format": "uri",
       "description": "A URI identifying the person in the supplied data graph.",
-      "example": "https://example.org/people/christoph-meinel"
+      "example": "https://example.org/people/jane-doe"
     },
     "name": {
       "type": "string",
       "description": "The name of the person. Honorific prefix and suffix have to be excluded.",
-      "example": "Christoph Meinel"
+      "example": "Jane Doe"
     },
     "honorificPrefix": {
       "type": [

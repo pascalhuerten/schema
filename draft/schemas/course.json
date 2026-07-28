@@ -4,18 +4,6 @@
   "title": "MOOChub v4 learning opportunity",
   "description": "TODO",
   "type": "object",
-  "default": {
-    "@context": [
-      "https://w3id.org/moochub/draft/context.jsonld",
-      {
-        "@language": "de"
-      }
-    ],
-    "type": [
-      "LearningResource",
-      "Course"
-    ]
-  },
   "properties": {
     "@context": {
       "$ref": "https://w3id.org/moochub/draft/schemas/context-schema.json"
@@ -29,8 +17,26 @@
     "name": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/name.json"
     },
+    "type": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/courseType.json"
+    },
     "courseCode": {
       "$ref": "https://w3id.org/moochub/draft/schemas/courseCode.json"
+    },
+    "timeRequired": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/timeRequired.json"
+    },
+    "numberOfCredits": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/numberOfCredits.json"
+    },
+    "accessMode": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/accessMode.json"
+    },
+    "offers": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/offers.json"
+    },
+    "hasCourseInstance": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/hasCourseInstance.json"
     },
     "publisher": {
       "$ref": "https://w3id.org/moochub/draft/schemas/publisher.json"
@@ -96,16 +102,19 @@
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/conditionsOfAccess.json"
     },
     "assesses": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/assesses.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
     },
     "competencyRequired": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/competencyRequired.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
     },
     "teaches": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/teaches.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
     },
     "educationalLevel": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/educationalLevel.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/concepts.json"
+    },
+    "educationalAlignment": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/educationalAlignment.json"
     },
     "isAccessibleForFree": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/isAccessibleForFree.json"
@@ -119,6 +128,7 @@
     "id",
     "url",
     "name",
+    "type",
     "publisher",
     "creator",
     "license"

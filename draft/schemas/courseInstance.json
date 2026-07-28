@@ -1,0 +1,67 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://w3id.org/moochub/draft/schemas/courseInstance.json",
+    "title": "Course instance",
+    "description": "An offering of a course at a particular time, location, or mode of study.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uri",
+            "description": "A stable URI identifying this offering."
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "CourseInstance"
+            ]
+        },
+        "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An optional label for this offering, such as Summer semester 2026."
+        },
+        "courseMode": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/courseMode.json"
+        },
+        "offers": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/offers.json"
+        },
+        "subEvent": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "https://w3id.org/moochub/draft/schemas/courseEvent.json"
+            }
+        },
+        "courseSchedule": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "https://w3id.org/moochub/draft/schemas/schedule.json"
+            }
+        },
+        "location": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/location.json"
+        },
+        "instructor": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/instructor.json"
+        },
+        "startDate": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+        },
+        "endDate": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+        },
+        "applicationStartDate": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/applicationStartDate.json"
+        },
+        "applicationDeadline": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/applicationDeadline.json"
+        }
+    },
+    "required": [
+        "id",
+        "type"
+    ]
+}

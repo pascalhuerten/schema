@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json",
+    "title": "Date or date-time",
+    "description": "An ISO 8601 calendar date or date-time.",
+    "type": "string",
+    "anyOf": [
+        {
+            "format": "date"
+        },
+        {
+            "format": "date-time"
+        }
+    ]
+}
