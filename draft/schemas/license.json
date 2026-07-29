@@ -10,11 +10,14 @@
   ],
   "properties": {
     "id": {
-      "type": [
-        "string",
-        "null"
+      "anyOf": [
+        {
+          "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
+        },
+        {
+          "type": "null"
+        }
       ],
-      "format": "uri",
       "description": "The URI of the license document or license terms. This is the AMB-compatible license identifier and maps to JSON-LD @id. Use null when no public license document exists.",
       "example": "https://creativecommons.org/licenses/by/4.0/"
     },

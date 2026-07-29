@@ -6,9 +6,7 @@
     "type": "object",
     "properties": {
         "id": {
-            "type": "string",
-            "format": "uri",
-            "description": "A stable URI identifying this offering."
+            "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
         },
         "type": {
             "type": "string",
@@ -24,9 +22,6 @@
         "courseMode": {
             "$ref": "https://w3id.org/moochub/draft/schemas/courseMode.json"
         },
-        "offers": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/offers.json"
-        },
         "subEvent": {
             "type": "array",
             "minItems": 1,
@@ -41,12 +36,6 @@
                 "$ref": "https://w3id.org/moochub/draft/schemas/schedule.json"
             }
         },
-        "location": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/location.json"
-        },
-        "instructor": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/instructor.json"
-        },
         "startDate": {
             "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
         },
@@ -58,6 +47,15 @@
         },
         "applicationDeadline": {
             "$ref": "https://w3id.org/moochub/draft/schemas/applicationDeadline.json"
+        },
+        "location": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/location.json"
+        },
+        "instructor": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/instructor.json"
+        },
+        "offers": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/offers.json"
         }
     },
     "required": [

@@ -6,19 +6,19 @@
     "type": "object",
     "properties": {
         "id": {
-            "type": "string",
-            "format": "uri",
-            "description": "The stable URI identifying the concept."
+            "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
         },
         "type": {
             "const": "Concept",
             "description": "The SKOS type of this concept."
         },
         "prefLabel": {
-            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
+            "description": "The preferred label of the concept in one or more languages."
         },
-        "description": {
-            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+        "definition": {
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
+            "description": "A definition of the concept in one or more languages."
         },
         "inScheme": {
             "type": "string",

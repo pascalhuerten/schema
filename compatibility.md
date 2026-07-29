@@ -89,6 +89,40 @@ relationship between the course and a framework target using
 subject, discipline, or other framework concepts that are not better expressed
 by direct properties, such as an ISCED-F knowledge area.
 
+## Educational credentials
+
+`educationalCredentialAwarded` follows
+[schema.org/educationalCredentialAwarded](https://schema.org/educationalCredentialAwarded)
+and describes a credential that can be achieved by successfully completing the
+course. A credential's `credentialCategory` is a SKOS `Concept` from the
+European Digital Credentials credential vocabulary:
+`http://data.europa.eu/snb/credential/25831c2`. The draft profile currently
+supports these categories:
+
+- Learning Activity:
+	`http://data.europa.eu/snb/credential/48b514e72a`
+- Diploma Supplement:
+	`http://data.europa.eu/snb/credential/6dff8a0f87`
+- Learning Entitlement:
+	`http://data.europa.eu/snb/credential/bdc47cb449`
+- Generic:
+	`http://data.europa.eu/snb/credential/e34929035b`
+
+`credentialCategory` extends the generic MOOChub concept profile. Its `id` is
+restricted to the supported category URIs and its `inScheme` must identify the
+European Digital Credentials credential vocabulary. The URI is authoritative;
+optional concept labels and descriptions are convenience metadata and should
+use the preferred label and definition from the EU vocabulary.
+Use `Learning Activity` when the credential primarily records participation in
+or completion of a learning activity, `Diploma Supplement` for the European
+higher-education diploma supplement credential, and `Learning Entitlement` for
+a right to access learning. Use `Generic` for assessed competency credentials
+and other credentials not covered by those categories.
+
+The credential-level `competencyRequired` property describes the
+competencies asserted by the credential and therefore the outcome a learner can
+expect to gain if the credential is awarded. The course-level property `assesses` remains useful on the course because a course may evaluate additional competencies that are not part of every credential it awards, while `competencyRequired` communicates the credential's learner-facing value.
+
 `offers` follows [schema.org/offers](https://schema.org/offers) and may be
 provided on both the course and a specific course instance. Course-level offers
 describe generally available pricing. Instance-level offers describe the

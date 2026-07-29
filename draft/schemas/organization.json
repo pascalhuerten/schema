@@ -6,13 +6,7 @@
   "description": "This schema describes the attributes of an organization.",
   "properties": {
     "id": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "format": "uri",
-      "description": "A URI identifying the organization in the supplied data graph.",
-      "example": "https://example.org/organizations/openhpi"
+      "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
     },
     "type": {
       "type": "string",

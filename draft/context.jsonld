@@ -1,7 +1,15 @@
 {
     "@context": {
-        "@import": "https://w3id.org/kim/amb/20231019/context.jsonld",
-        "@vocab": "https://schema.org/",
+        "id": "@id",
+        "type": "@type",
+        "@vocab": "http://schema.org/",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "prefLabel": {
+            "@id": "skos:prefLabel",
+            "@container": "@language"
+        },
+        "inScheme": "skos:inScheme",
+        "Concept": "skos:Concept",
         "applicationDeadline": "https://schema.org/applicationDeadline",
         "applicationStartDate": "https://schema.org/applicationStartDate",
         "accessMode": "https://schema.org/accessMode",
@@ -11,7 +19,11 @@
         "endDate": "https://schema.org/endDate",
         "eventSchedule": "https://schema.org/eventSchedule",
         "courseSchedule": "https://schema.org/courseSchedule",
+        "credentialCategory": "https://schema.org/credentialCategory",
+        "educationalCredentialAwarded": "https://schema.org/educationalCredentialAwarded",
+        "educationalOccupationalCredential": "https://schema.org/educationalOccupationalCredential",
         "educationalAlignment": "https://schema.org/educationalAlignment",
+        "educationalLevel": "https://schema.org/educationalLevel",
         "educationalFramework": "https://schema.org/educationalFramework",
         "hasCourseInstance": "https://schema.org/hasCourseInstance",
         "offers": "https://schema.org/offers",
@@ -20,6 +32,7 @@
         "price": "https://schema.org/price",
         "priceCurrency": "https://schema.org/priceCurrency",
         "repeatFrequency": "https://schema.org/repeatFrequency",
+        "recognizedBy": "https://schema.org/recognizedBy",
         "scheduleTimezone": "https://schema.org/scheduleTimezone",
         "validFrom": "https://schema.org/validFrom",
         "validThrough": "https://schema.org/validThrough",
@@ -36,6 +49,18 @@
         "targetDescription": "https://schema.org/targetDescription",
         "targetName": "https://schema.org/targetName",
         "targetUrl": "https://schema.org/targetUrl",
-        "url": "https://schema.org/url"
+        "url": "https://schema.org/url",
+        "hasPart": "https://schema.org/hasPart",
+        "isPartOf": "https://schema.org/isPartOf",
+        "license": "https://schema.org/license",
+        "creator": "https://schema.org/creator",
+        "publisher": "https://schema.org/publisher",
+        "contributor": "https://schema.org/contributor",
+        "funder": "https://schema.org/funder",
+        "description": "https://schema.org/description",
+        "about": "https://schema.org/about",
+        "assesses": "https://schema.org/assesses",
+        "competencyRequired": "https://schema.org/competencyRequired",
+        "teaches": "https://schema.org/teaches"
     }
 }

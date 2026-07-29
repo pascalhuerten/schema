@@ -5,7 +5,7 @@
       "@language": "de"
     }
   ],
-  "id": "c96a2376-bdf2-4307-a21f-19a4ff141b5f",
+  "id": "urn:uuid:c96a2376-bdf2-4307-a21f-19a4ff141b5f",
   "url": "https://futurelearnlab.de/detailpage.php?id=18",
   "name": "Digital Trainer (Gesamtkurs)",
   "type": [
@@ -237,6 +237,43 @@
         "en": "Computer use"
       },
       "targetUrl": "http://data.europa.eu/esco/isced-f/0611"
+    }
+  ],
+  "educationalCredentialAwarded": [
+    {
+      "id": "urn:uuid:8f0f1b44-94c1-4f44-a3e1-0f06f7c6b2af",
+      "type": "EducationalOccupationalCredential",
+      "name": "Computer Structures Certificate",
+      "credentialCategory": {
+        "id": "http://data.europa.eu/snb/credential/48b514e72a",
+        "name": "Lernaktivität",
+        "type": "Concept",
+        "inScheme": "http://data.europa.eu/snb/credential/25831c2"
+      },
+      "recognizedBy": {
+        "name": "Institut für Interaktive Systeme",
+        "type": "Organization"
+      },
+      "competencyRequired": [
+        {
+          "id": "https://example.org/vocab/digcomp/3.0/competence/1.1",
+          "type": "Concept",
+          "prefLabel": {
+            "en": "Browsing, searching and filtering information"
+          },
+          "inScheme": "https://example.org/vocab/digcomp/3.0/",
+          "educationalLevel": [
+            {
+              "id": "https://example.org/vocab/digcomp/3.0/proficiency-level/intermediate-3",
+              "type": "Concept",
+              "prefLabel": {
+                "en": "Intermediate"
+              },
+              "inScheme": "https://example.org/vocab/digcomp/3.0/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "isPartOf": [

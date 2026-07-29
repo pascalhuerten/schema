@@ -47,14 +47,14 @@
     "instructor": {
       "$ref": "https://w3id.org/moochub/draft/schemas/instructor.json"
     },
-    "license": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
-    },
     "contributor": {
       "$ref": "https://w3id.org/moochub/draft/schemas/contributor.json"
     },
     "funder": {
       "$ref": "https://w3id.org/moochub/draft/schemas/funder.json"
+    },
+    "license": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
     },
     "description": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/description.json"
@@ -115,6 +115,9 @@
     },
     "educationalAlignment": {
       "$ref": "https://w3id.org/moochub/draft/schemas/educationalAlignment.json"
+    },
+    "educationalCredentialAwarded": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/educationalCredentialAwarded.json"
     },
     "isAccessibleForFree": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/isAccessibleForFree.json"
