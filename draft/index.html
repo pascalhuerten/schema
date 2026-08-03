@@ -728,21 +728,22 @@ Link: <[...]>; rel="describedby"
 
                 ### <dfn>audience</dfn>
 
-                `audience` beschreibt die Zielgruppe(n), für die diese Bildungsresource didaktisiert wurde. MUSS einer
-                *Educational Audience Role* von [[!LRMI]] entsprechen.
+                `audience` beschreibt die Zielgruppe, für die diese Bildungsresource didaktisiert wurde. Mindestens eine
+                der folgenden Angaben MUSS enthalten sein: Audience Types aus der *Educational Audience Role* Vocabulary
+                von [[!LRMI]], eine natürliche Sprachbeschreibung oder ein empfohlenes Alter.
 
                 <dl>
                     <dt>Pflichtfeld</dt>
                     <dd>nein</dd>
                     <dt>Typ</dt>
-                    <dd>`array[object]`</dd>
-                    <dt>Elemente</dt>
-                    <dd>JSON-Objekt, welches eine Property `id` mit einem Wert aus <a
+                        <dd>`object`</dd>
+                        <dt>Eigenschaften</dt>
+                            <dd>Das Objekt MUSS mindestens eine der Properties `audienceType` als Array von Konzepten aus der <a
                             href="http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole/">LRMI Educational Audience
-                            Roles</a> aufweisen MUSS. Es SOLL die Eigenschaften `type` und `prefLabel` aufweisen. Wenn
-                        vorhanden MUSS der Wert von `type` gleich `Concept` sein.</dd>
+                                Roles</a>, `description` als natürliche Sprachbeschreibung oder `suggestedAge` enthalten.
+                        </dd>
                     <dt>Validierung</dt>
-                    <dd><a href="https://w3id.org/kim/amb/draft/schemas/audience.json">JSON Schema</a></dd>
+                        <dd><a href="https://w3id.org/moochub/draft/schemas/audience.json">JSON Schema</a></dd>
                 </dl>
 
             </section>

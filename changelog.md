@@ -31,17 +31,10 @@
 
 ## Differences of v4 to amb 20231019
 
-- amb requires an uri as the id of the learning ressource. In Moochub v4 a
-  course requires a uuid as the id and may have a url property that now
-  references the amb [ID](https://w3id.org/kim/amb/20231019/schemas/id.json)
-  schema. This should allow coverting a Moochub v4 course to an amb learning
-  resource by using the Moochub v4 course url as the amb id. Since the url
-  peroperty is an optional property in Moochub, the conversion to amb is only
-  possible if the url property is set.
-- type and learningResourceType preoperty is not used by a Moochub v4 course.
-  When converted to amb, the type may automatically be set to
-  ["LearningResource", "Course"] and the learningResourceType may automatically
+- learningResourceType preoperty is not used by a Moochub v4 course.
+  When converted to amb, the learningResourceType may automatically
   be set to ["https://w3id.org/kim/hcrt/course"].
 - amb mainEntityOfPage not used
 - amb encoding not used
 - amb caption not used
+- statt about wird die hochschulfächersystematik und die schulfächersystematik über educationalAlignment angegeben.

@@ -171,15 +171,26 @@
     "de",
     "en"
   ],
-  "audience": [
-    {
-      "id": "http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole/student",
-      "prefLabel": {
-        "en": "student"
-      },
-      "type": "Concept"
+  "audience": {
+    "audienceType": [
+      {
+        "id": "http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole/student",
+        "type": "Concept",
+        "prefLabel": {
+          "en": "Student",
+          "de": "Studierende"
+        },
+        "inScheme": "http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole"
+      }
+    ],
+    "description": {
+      "de": "Studierende, die ihre digitale Kompetenz und Methodik stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder entwickeln möchten."
+    },
+    "suggestedAge": {
+      "minValue": 18,
+      "maxValue": 50
     }
-  ],
+  },
   "keywords": [
     "Digitale Kompetenzen",
     "Digitalisierung"

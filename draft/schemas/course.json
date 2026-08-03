@@ -87,7 +87,7 @@
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/inLanguage.json"
     },
     "audience": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/audience.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/audience.json"
     },
     "isBasedOn": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/isBasedOn.json"
