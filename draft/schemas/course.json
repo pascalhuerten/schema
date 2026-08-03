@@ -77,6 +77,9 @@
     "dateModified": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/dateModified.json"
     },
+    "expires": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/expires.json"
+    },
     "duration": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/duration.json"
     },
