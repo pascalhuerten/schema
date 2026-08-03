@@ -83,11 +83,43 @@ assessed, or required. Generic concepts cannot carry an educational level.
 
 `educationalAlignment` follows
 [schema.org/educationalAlignment](https://schema.org/educationalAlignment) and
-contains schema.org `AlignmentObject` values. An alignment object describes the
-relationship between the course and a framework target using
-`educationalFramework`, `targetUrl`, and optional target metadata. Use it for
-subject, discipline, or other framework concepts that are not better expressed
-by direct properties, such as an ISCED-F knowledge area.
+contains schema.org `AlignmentObject` values. MOOChub limits this property to
+two alignment types because competencies, skills, prerequisites, and
+assessments belong in the dedicated `teaches`, `assesses`, and
+`competencyRequired` properties:
+
+- `educationalSubject` for subject and field-of-study classifications.
+- `learnerInterest` for Holland Code / RIASEC career interests.
+
+Each alignment must include `type: "AlignmentObject"`, one of the two
+`alignmentType` values, an `educationalFramework`, and a localized
+`targetName`. The target must be identified by at least one of `targetUrl` or
+`identifier`; both may be supplied. `targetDescription` is optional.
+
+The v3 `hollandCode` array is represented in v4 through `learnerInterest`
+alignments. Use `educationalFramework: "Holland Code"`, the one-letter code in
+`identifier`, a readable localized label in `targetName`, and, where possible,
+the corresponding O*NET concept URI in `targetUrl`. The allowed identifiers are
+`R`, `I`, `A`, `S`, `E`, and `C`. The target URI must be one of the six O*NET
+Career Interest Type concept IRIs: Realistic, Investigative, Artistic, Social,
+Enterprising, or Conventional. These IRIs identify the concepts and expose
+their definitions and labels. For example, `A`, `S`, and `E` become separate alignment
+objects for Artistic, Social, and Enterprising.
+
+For `educationalSubject`, the allowed frameworks are:
+
+- `ISCED-F`
+- `OEFOS`
+- `Destatis-Systematik der Fächergruppen, Studienbereiche und Studienfächer`
+- `Schulfächer`
+
+ISCED-F targets must use the
+`http://data.europa.eu/esco/isced-f/` namespace. Destatis higher-education
+subject targets must use
+`https://w3id.org/kim/hochschulfaechersystematik/`, and school-subject targets
+must use `http://w3id.org/kim/schulfaecher/`. OEFOS currently identifies the
+target through a two-to-four-digit numeric `identifier`; its target URL is
+optional and the profile does not impose a canonical OEFOS URL namespace.
 
 ## Educational credentials
 

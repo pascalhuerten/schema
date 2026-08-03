@@ -232,11 +232,48 @@
     {
       "type": "AlignmentObject",
       "alignmentType": "educationalSubject",
-      "educationalFramework": "ISCED-F 2013",
+      "educationalFramework": "ISCED-F",
       "targetName": {
         "en": "Computer use"
       },
       "targetUrl": "http://data.europa.eu/esco/isced-f/0611"
+    },
+    {
+      "type": "AlignmentObject",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "OEFOS",
+      "targetName": {
+        "en": "Computer use"
+      },
+      "identifier": "0611"
+    },
+    {
+      "type": "AlignmentObject",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "Destatis-Systematik der Fächergruppen, Studienbereiche und Studienfächer",
+      "targetName": {
+        "en": "Medieninformatik"
+      },
+      "targetUrl": "https://w3id.org/kim/hochschulfaechersystematik/n121"
+    },
+    {
+      "type": "AlignmentObject",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "Schulfächer",
+      "targetName": {
+        "en": "Informatik"
+      },
+      "targetUrl": "http://w3id.org/kim/schulfaecher/s1013"
+    },
+    {
+      "type": "AlignmentObject",
+      "alignmentType": "learnerInterest",
+      "educationalFramework": "Holland Code",
+      "targetName": {
+        "en": "Artistic (A)"
+      },
+      "targetUrl": "https://www.onetcenter.org/rdf/resources/onet/Element/52c657cb-1b12-11ea-8239-782bcb5df6ac",
+      "identifier": "A"
     }
   ],
   "educationalCredentialAwarded": [
