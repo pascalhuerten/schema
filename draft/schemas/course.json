@@ -93,10 +93,10 @@
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/isBasedOn.json"
     },
     "isPartOf": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/isPartOf.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/isPartOf.json"
     },
     "hasPart": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/hasPart.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/hasPart.json"
     },
     "keywords": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/keywords.json"

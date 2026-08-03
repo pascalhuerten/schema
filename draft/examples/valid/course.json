@@ -333,9 +333,22 @@
         "Course"
       ],
       "name": "Computer Structures and Operating Systems"
+    },
+    {
+      "id": "https://example-hochschule.de/programs/digital-trainer",
+      "type": "EducationalOccupationalProgram",
+      "name": "Digital Trainer Program"
     }
   ],
   "hasPart": [
+    {
+      "id": "https://oer.gitlab.io/OS-Basics",
+      "type": [
+        "LearningResource",
+        "Course"
+      ],
+      "name": "Computer Structures and Operating Systems - Basics"
+    },
     {
       "id": "https://oer.gitlab.io/OS/figures/OS/hail_f0613_with_embedded_frame_nos.png",
       "type": [

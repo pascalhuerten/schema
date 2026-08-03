@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://w3id.org/moochub/draft/schemas/learningItem.json",
+    "title": "LearningItem",
+    "type": "object",
+    "description": "A learning item is a resource that is part of a course or learning opportunity. It can be a video, a reading, an assignment, or any other type of educational content.",
+    "properties": {
+        "type": {
+            "$ref": "https://w3id.org/kim/amb/draft/schemas/type.json"
+        },
+        "id": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
+        },
+        "name": {
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/name.json"
+        },
+        "timeRequired": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/timeRequired.json"
+        },
+        "assesses": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+        },
+        "competencyRequired": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+        },
+        "teaches": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+        }
+    }
+}
