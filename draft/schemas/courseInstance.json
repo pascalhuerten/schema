@@ -10,9 +10,7 @@
         },
         "type": {
             "type": "string",
-            "enum": [
-                "CourseInstance"
-            ]
+            "const": "CourseInstance"
         },
         "name": {
             "type": "string",
@@ -21,6 +19,11 @@
         },
         "courseMode": {
             "$ref": "https://w3id.org/moochub/draft/schemas/courseMode.json"
+        },
+        "maximumAttendeeCapacity": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "The maximum number of attendees who can participate in this offering."
         },
         "subEvent": {
             "type": "array",

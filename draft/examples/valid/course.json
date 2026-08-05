@@ -26,8 +26,7 @@
       "price": 0,
       "priceCurrency": "EUR",
       "category": "course",
-      "paymentFrequency": "one-time",
-      "availability": "https://schema.org/OnlineOnly"
+      "paymentFrequency": "one-time"
     }
   ],
   "hasCourseInstance": [
@@ -41,6 +40,7 @@
       ],
       "startDate": "2026-05-04",
       "endDate": "2026-06-12",
+      "maximumAttendeeCapacity": 20,
       "subEvent": [
         {
           "type": "Event",
@@ -127,9 +127,8 @@
           "category": "complete",
           "paymentFrequency": "one-time",
           "url": "https://futurelearnlab.de/enroll/digital-trainer-summer-2026",
-          "validFrom": "2026-02-01",
-          "validThrough": "2026-04-30",
-          "availability": "https://schema.org/InStock"
+          "availabilityStarts": "2026-02-01",
+          "availabilityEnds": "2026-04-30"
         }
       ],
       "instructor": [
