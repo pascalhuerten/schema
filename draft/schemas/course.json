@@ -15,7 +15,7 @@
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/id.json"
     },
     "name": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/name.json"
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
     },
     "type": {
       "$ref": "https://w3id.org/moochub/draft/schemas/courseType.json"
@@ -57,7 +57,7 @@
       "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
     },
     "description": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/description.json"
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
     },
     "about": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/about.json"

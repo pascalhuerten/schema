@@ -13,8 +13,7 @@
             "const": "CourseInstance"
         },
         "name": {
-            "type": "string",
-            "minLength": 1,
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
             "description": "An optional label for this offering, such as Summer semester 2026."
         },
         "courseMode": {

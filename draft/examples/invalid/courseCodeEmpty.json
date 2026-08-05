@@ -7,19 +7,25 @@
     ],
     "id": "urn:uuid:c96a2376-bdf2-4307-a21f-19a4ff141b5f",
     "url": "https://example.org/courses/course-1",
-    "name": "Example course",
+    "name": {
+        "de": "Example course"
+    },
     "type": [
         "LearningResource",
         "Course"
     ],
     "courseCode": "",
     "publisher": {
-        "name": "Example University",
+        "name": {
+            "de": "Example University"
+        },
         "type": "Organization"
     },
     "creator": [
         {
-            "name": "Example University",
+            "name": {
+                "de": "Example University"
+            },
             "type": "Organization"
         }
     ],

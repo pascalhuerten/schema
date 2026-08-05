@@ -16,15 +16,11 @@
       ]
     },
     "name": {
-      "type": "string",
-      "description": "The name of the organization.",
-      "example": "openHPI"
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
+      "description": "The name of the organization."
     },
     "sameAs": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "description": "URIs that are asserted to identify the same organization, such as its homepage, ROR, or Wikidata.",
       "items": {
         "type": "string",
@@ -37,10 +33,7 @@
       ]
     },
     "description": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
       "description": "A short description of the organization. Should be provided in HTML.",
       "example": "openHPI is a digital educational platform situated at the HPI with a focus on topics regarding computational sciences, internet and world wide web and design thinking."
     },

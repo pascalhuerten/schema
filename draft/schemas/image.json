@@ -22,7 +22,7 @@
       "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
     },
     "description": {
-      "type": "string",
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
       "description": "A short description of the image. It can be used as alternative text when the image cannot be displayed.",
       "example": "This is an image. It shows ..."
     }

@@ -5,14 +5,17 @@
     "type": "object",
     "description": "A learning item is a resource that is part of a course or learning opportunity. It can be a video, a reading, an assignment, or any other type of educational content.",
     "properties": {
-        "type": {
-            "$ref": "https://w3id.org/kim/amb/draft/schemas/type.json"
-        },
         "id": {
             "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
         },
+        "type": {
+            "$ref": "https://w3id.org/kim/amb/draft/schemas/type.json"
+        },
         "name": {
-            "$ref": "https://w3id.org/kim/amb/20231019/schemas/name.json"
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+        },
+        "description": {
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
         },
         "timeRequired": {
             "$ref": "https://w3id.org/moochub/draft/schemas/timeRequired.json"
@@ -25,6 +28,20 @@
         },
         "teaches": {
             "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+        },
+        "license": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
+        },
+        "creator": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/creator.json"
+        },
+        "publisher": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/publisher.json"
         }
-    }
+    },
+    "required": [
+        "id",
+        "type",
+        "name"
+    ]
 }

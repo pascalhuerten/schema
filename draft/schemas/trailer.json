@@ -16,7 +16,7 @@
           "description": "The trailer is a schema.org VideoObject. Audio trailers are not part of the MOOChub course profile."
         },
         "description": {
-          "type": "string",
+          "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
           "description": "A short description of the video teaser. It can be used as alternative text when the video cannot be displayed."
         },
         "license": {

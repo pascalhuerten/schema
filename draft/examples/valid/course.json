@@ -7,7 +7,9 @@
   ],
   "id": "urn:uuid:c96a2376-bdf2-4307-a21f-19a4ff141b5f",
   "url": "https://futurelearnlab.de/detailpage.php?id=18",
-  "name": "Digital Trainer (Gesamtkurs)",
+  "name": {
+    "de": "Digital Trainer (Gesamtkurs)"
+  },
   "type": [
     "LearningResource",
     "Course"
@@ -33,7 +35,9 @@
     {
       "id": "https://futurelearnlab.de/course-instances/digital-trainer-summer-2026",
       "type": "CourseInstance",
-      "name": "Sommersemester 2026",
+      "name": {
+        "de": "Sommersemester 2026"
+      },
       "courseMode": [
         "blended",
         "synchronous"
@@ -44,7 +48,9 @@
       "subEvent": [
         {
           "type": "Event",
-          "name": "Practical phase",
+          "name": {
+            "de": "Practical phase"
+          },
           "eventSchedule": [
             {
               "type": "Schedule",
@@ -71,12 +77,14 @@
                 "de": "Der Campus der Technischen Hochschule Lübeck befindet sich in der Nähe des Stadtzentrums von Lübeck und ist gut mit öffentlichen Verkehrsmitteln erreichbar. Die Buslinie 1 hält direkt vor dem Campus."
               },
               "address": {
+                "type": "PostalAddress",
                 "streetAddress": "Mönkhofer Weg 239",
                 "postalCode": "23562",
                 "addressLocality": "Luebeck",
                 "addressCountry": "Germany"
               },
               "geo": {
+                "type": "GeoCoordinates",
                 "latitude": 53.8695,
                 "longitude": 10.6861
               },
@@ -84,7 +92,9 @@
               "photo": {
                 "type": "ImageObject",
                 "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
-                "description": "Logo der Technischen Hochschule Lübeck",
+                "description": {
+                  "de": "Logo der Technischen Hochschule Lübeck"
+                },
                 "license": {
                   "identifier": "Proprietary",
                   "id": null
@@ -104,7 +114,9 @@
               "owner": {
                 "id": "https://www.th-luebeck.de",
                 "type": "Organization",
-                "name": "Technische Hochschule Lübeck"
+                "name": {
+                  "de": "Technische Hochschule Lübeck"
+                }
               },
               "maximumAttendeeCapacity": 20,
               "sameAs": [
@@ -115,7 +127,9 @@
         },
         {
           "type": "Event",
-          "name": "Online phase",
+          "name": {
+            "de": "Online phase"
+          },
           "eventSchedule": [
             {
               "type": "Schedule",
@@ -143,7 +157,9 @@
         },
         {
           "type": "Event",
-          "name": "Oral exam",
+          "name": {
+            "de": "Oral exam"
+          },
           "startDate": "2026-06-15T10:00:00",
           "endDate": "2026-06-15T12:00:00",
           "location": [
@@ -158,7 +174,9 @@
         },
         {
           "type": "Event",
-          "name": "Written exam",
+          "name": {
+            "de": "Written exam"
+          },
           "startDate": "2026-06-20T10:00:00",
           "endDate": "2026-06-20T12:00:00",
           "location": [
@@ -169,6 +187,7 @@
                 "en": "Campus Luebeck, Building A, Room 101"
               },
               "address": {
+                "type": "PostalAddress",
                 "streetAddress": "Mönkhofer Weg 239",
                 "postalCode": "23562",
                 "addressLocality": "Luebeck",
@@ -203,7 +222,9 @@
     {
       "id": "https://futurelearnlab.de/course-instances/digital-trainer-winter-2025",
       "type": "CourseInstance",
-      "name": "Wintersemester 2025",
+      "name": {
+        "de": "Wintersemester 2025"
+      },
       "courseMode": [
         "online",
         "asynchronous"
@@ -212,7 +233,9 @@
       "endDate": "2025-02-28"
     }
   ],
-  "description": "<div><p>Der Kurs verfolgt im Zuge der fortschreitenden Digitalisierung von Arbeits- und Geschäftsprozessen das Ziel, deine digitale Kompetenz und Methodik zu stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder zu entwickeln. Zugleich steht eine\r\n    Verbesserung der Selbstvermarktung und ein Erkennen neuer Handlungsoptionen im Vordergrund.</p>\r\n</div>",
+  "description": {
+    "de": "<div><p>Der Kurs verfolgt im Zuge der fortschreitenden Digitalisierung von Arbeits- und Geschäftsprozessen das Ziel, deine digitale Kompetenz und Methodik zu stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder zu entwickeln. Zugleich steht eine\r\n    Verbesserung der Selbstvermarktung und ein Erkennen neuer Handlungsoptionen im Vordergrund.</p>\r\n</div>"
+  },
   "about": [
     {
       "id": "https://w3id.org/kim/hochschulfaechersystematik/n0",
@@ -244,10 +267,11 @@
       }
     ],
     "description": {
-      "de": "Studierende, die ihre digitale Kompetenz und Methodik stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder entwickeln möchten."
+      "de": "Studierende, die ihre digitale Kompetenz und Methodik stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder entwickeln möchten.",
+      "en": "Students who want to strengthen their digital competence and methodology and develop a deeper awareness of new digital learning fields."
     },
     "suggestedAge": {
-      "minValue": 18,
+      "minValue": 16,
       "maxValue": 50
     }
   },
@@ -352,15 +376,21 @@
     {
       "id": "urn:uuid:8f0f1b44-94c1-4f44-a3e1-0f06f7c6b2af",
       "type": "EducationalOccupationalCredential",
-      "name": "Computer Structures Certificate",
+      "name": {
+        "de": "Computer Structures Certificate"
+      },
       "credentialCategory": {
         "id": "http://data.europa.eu/snb/credential/48b514e72a",
-        "name": "Lernaktivität",
+        "prefLabel": {
+          "de": "Lernaktivität"
+        },
         "type": "Concept",
         "inScheme": "http://data.europa.eu/snb/credential/25831c2"
       },
       "recognizedBy": {
-        "name": "Institut für Interaktive Systeme",
+        "name": {
+          "de": "Institut für Interaktive Systeme"
+        },
         "type": "Organization"
       },
       "competencyRequired": [
@@ -392,12 +422,16 @@
         "LearningResource",
         "Course"
       ],
-      "name": "Computer Structures and Operating Systems"
+      "name": {
+        "de": "Computer Structures and Operating Systems"
+      }
     },
     {
       "id": "https://example-hochschule.de/programs/digital-trainer",
       "type": "EducationalOccupationalProgram",
-      "name": "Digital Trainer Program"
+      "name": {
+        "de": "Digital Trainer Program"
+      }
     }
   ],
   "hasPart": [
@@ -407,7 +441,9 @@
         "LearningResource",
         "Course"
       ],
-      "name": "Computer Structures and Operating Systems - Basics"
+      "name": {
+        "de": "Computer Structures and Operating Systems - Basics"
+      }
     },
     {
       "id": "https://oer.gitlab.io/OS/figures/OS/hail_f0613_with_embedded_frame_nos.png",
@@ -415,16 +451,21 @@
         "LearningResource",
         "ImageObject"
       ],
-      "name": "A-32 two-level page table"
+      "name": {
+        "de": "A-32 two-level page table"
+      }
     }
   ],
   "isBasedOn": [
     {
+      "id": "https://oer.gitlab.io/OS/wiki/concept.pdf",
       "type": [
         "LearningResource",
         "PresentationDigitalDocument"
       ],
-      "name": "Digital Trainer Kurskonzept",
+      "name": {
+        "de": "Digital Trainer Kurskonzept"
+      },
       "creator": [
         {
           "type": "Person",
@@ -432,7 +473,8 @@
         }
       ],
       "license": {
-        "id": "https://creativecommons.org/licenses/by-sa/3.0/"
+        "id": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "identifier": "CC-BY-SA-3.0"
       }
     }
   ],
@@ -456,13 +498,17 @@
     }
   },
   "publisher": {
-    "name": "Institut für Interaktive Systeme",
+    "name": {
+      "de": "Institut für Interaktive Systeme"
+    },
     "sameAs": [
       "https://www.th-luebeck.de"
     ],
     "type": "Organization",
     "image": {
-      "description": "Logo der Technischen Hochschule Lübeck",
+      "description": {
+        "de": "Logo der Technischen Hochschule Lübeck"
+      },
       "type": "ImageObject",
       "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
       "license": {
@@ -473,13 +519,17 @@
   },
   "creator": [
     {
-      "name": "Institut für Interaktive Systeme",
+      "name": {
+        "de": "Institut für Interaktive Systeme"
+      },
       "sameAs": [
         "https://www.th-luebeck.de"
       ],
       "type": "Organization",
       "image": {
-        "description": "Logo der Technischen Hochschule Lübeck",
+        "description": {
+          "de": "Logo der Technischen Hochschule Lübeck"
+        },
         "type": "ImageObject",
         "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
         "license": {
@@ -501,13 +551,17 @@
   ],
   "contributor": [
     {
-      "name": "Institut für Interaktive Systeme",
+      "name": {
+        "de": "Institut für Interaktive Systeme"
+      },
       "sameAs": [
         "https://www.th-luebeck.de"
       ],
       "type": "Organization",
       "image": {
-        "description": "Logo der Technischen Hochschule Lübeck",
+        "description": {
+          "de": "Logo der Technischen Hochschule Lübeck"
+        },
         "type": "ImageObject",
         "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
         "license": {
@@ -519,13 +573,17 @@
   ],
   "funder": [
     {
-      "name": "Institut für Interaktive Systeme",
+      "name": {
+        "de": "Institut für Interaktive Systeme"
+      },
       "sameAs": [
         "https://www.th-luebeck.de/isy"
       ],
       "type": "Organization",
       "image": {
-        "description": "Logo der Technischen Hochschule Lübeck",
+        "description": {
+          "de": "Logo der Technischen Hochschule Lübeck"
+        },
         "type": "ImageObject",
         "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
         "license": {
@@ -540,7 +598,9 @@
     "id": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "image": {
-    "description": "A cover image of the course",
+    "description": {
+      "en": "A cover image of the course"
+    },
     "type": "ImageObject",
     "contentUrl": "https://futurelearnlab.de/0/Kachel_Vorseite2.png",
     "license": {
@@ -549,7 +609,9 @@
     }
   },
   "trailer": {
-    "description": "A teaser video of the course",
+    "description": {
+      "en": "A teaser video of the course"
+    },
     "type": "VideoObject",
     "contentUrl": "https://futurelearnlab.de/trailer.mp4",
     "license": {
