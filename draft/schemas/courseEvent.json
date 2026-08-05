@@ -29,7 +29,7 @@
             "minLength": 1
         },
         "location": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/location.json"
+            "$ref": "https://w3id.org/moochub/draft/schemas/courseLocation.json"
         },
         "instructor": {
             "$ref": "https://w3id.org/moochub/draft/schemas/instructor.json"

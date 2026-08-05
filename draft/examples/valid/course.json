@@ -62,8 +62,54 @@
           ],
           "location": [
             {
+              "id": "urn:uuid:f988cf9e-d10e-4847-8c0f-d87e88ff4f2a",
               "type": "Place",
-              "name": "Campus Luebeck, Building A, Room 101"
+              "name": {
+                "en": "Campus Luebeck, Building A, Room 101"
+              },
+              "description": {
+                "de": "Der Campus der Technischen Hochschule Lübeck befindet sich in der Nähe des Stadtzentrums von Lübeck und ist gut mit öffentlichen Verkehrsmitteln erreichbar. Die Buslinie 1 hält direkt vor dem Campus."
+              },
+              "address": {
+                "streetAddress": "Mönkhofer Weg 239",
+                "postalCode": "23562",
+                "addressLocality": "Luebeck",
+                "addressCountry": "Germany"
+              },
+              "geo": {
+                "latitude": 53.8695,
+                "longitude": 10.6861
+              },
+              "publicAccess": true,
+              "photo": {
+                "type": "ImageObject",
+                "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
+                "description": "Logo der Technischen Hochschule Lübeck",
+                "license": {
+                  "identifier": "Proprietary",
+                  "id": null
+                }
+              },
+              "openingHoursSpecification": [
+                {
+                  "type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "https://schema.org/Monday",
+                    "https://schema.org/Wednesday"
+                  ],
+                  "opens": "08:00:00",
+                  "closes": "18:00:00"
+                }
+              ],
+              "owner": {
+                "id": "https://www.th-luebeck.de",
+                "type": "Organization",
+                "name": "Technische Hochschule Lübeck"
+              },
+              "maximumAttendeeCapacity": 20,
+              "sameAs": [
+                "https://pubdoc.th-luebeck.de/1af09392ff"
+              ]
             }
           ]
         },
@@ -88,7 +134,10 @@
           "location": [
             {
               "type": "VirtualLocation",
-              "url": "https://futurelearnlab.de/courses/digital-trainer"
+              "name": {
+                "de": "Webinarraum"
+              },
+              "url": "https://bbb.futurelearnlab.de/b/digtrainer-2026"
             }
           ]
         },
@@ -100,7 +149,10 @@
           "location": [
             {
               "type": "VirtualLocation",
-              "url": "https://futurelearnlab.de/courses/digital-trainer"
+              "name": {
+                "de": "Webinarraum"
+              },
+              "url": "https://bbb.futurelearnlab.de/b/digtrainer-2026"
             }
           ]
         },
@@ -111,8 +163,17 @@
           "endDate": "2026-06-20T12:00:00",
           "location": [
             {
+              "id": "urn:uuid:f988cf9e-d10e-4847-8c0f-d87e88ff4f2a",
               "type": "Place",
-              "name": "Campus Luebeck, Building A, Room 101"
+              "name": {
+                "en": "Campus Luebeck, Building A, Room 101"
+              },
+              "address": {
+                "streetAddress": "Mönkhofer Weg 239",
+                "postalCode": "23562",
+                "addressLocality": "Luebeck",
+                "addressCountry": "Germany"
+              }
             }
           ]
         }
@@ -460,7 +521,7 @@
     {
       "name": "Institut für Interaktive Systeme",
       "sameAs": [
-        "https://www.th-luebeck.de"
+        "https://www.th-luebeck.de/isy"
       ],
       "type": "Organization",
       "image": {

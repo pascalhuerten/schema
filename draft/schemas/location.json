@@ -1,60 +1,92 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://w3id.org/moochub/draft/schemas/location.json",
-    "title": "Course location",
-    "description": "One or more physical or virtual locations for a course instance.",
-    "type": "array",
-    "minItems": 1,
-    "items": {
-        "oneOf": [
-            {
-                "type": "string",
-                "minLength": 1
-            },
-            {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "enum": [
-                            "Place",
-                            "VirtualLocation"
-                        ]
-                    },
-                    "name": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "address": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "url": {
-                        "type": "string",
-                        "format": "uri"
-                    }
-                },
-                "required": [
-                    "type"
-                ],
-                "anyOf": [
-                    {
-                        "required": [
-                            "name"
-                        ]
-                    },
-                    {
-                        "required": [
-                            "address"
-                        ]
-                    },
-                    {
-                        "required": [
-                            "url"
-                        ]
-                    }
-                ]
+    "title": "Location",
+    "description": "A physical or virtual location. A location can be either a url in case of a virtual location or a postal address or geocoordinates in case of a physical location.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "Place",
+                "VirtualLocation"
+            ]
+        },
+        "name": {
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+        },
+        "description": {
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+        },
+        "address": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/postalAddress.json"
+        },
+        "url": {
+            "type": "string",
+            "format": "uri"
+        },
+        "geo": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/geoCoordinates.json"
+        },
+        "publicAccess": {
+            "type": "boolean"
+        },
+        "photo": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/image.json"
+        },
+        "openingHoursSpecification": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "https://w3id.org/moochub/draft/schemas/openingHoursSpecification.json"
             }
-        ]
-    }
+        },
+        "owner": {
+            "oneOf": [
+                {
+                    "$ref": "https://w3id.org/moochub/draft/schemas/person.json"
+                },
+                {
+                    "$ref": "https://w3id.org/moochub/draft/schemas/organization.json"
+                }
+            ]
+        },
+        "maximumAttendeeCapacity": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "sameAs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "format": "uri"
+            },
+            "description": "A list of URLs of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+        }
+    },
+    "required": [
+        "type",
+        "name"
+    ],
+    "anyOf": [
+        {
+            "required": [
+                "address"
+            ]
+        },
+        {
+            "required": [
+                "url"
+            ]
+        },
+        {
+            "required": [
+                "geo"
+            ]
+        }
+    ]
 }
