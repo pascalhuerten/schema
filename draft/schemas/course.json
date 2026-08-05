@@ -56,6 +56,9 @@
     "license": {
       "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
     },
+    "abstract": {
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+    },
     "description": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
     },
