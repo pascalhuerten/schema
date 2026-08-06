@@ -97,6 +97,7 @@
         "competencyRequired": "https://schema.org/competencyRequired",
         "teaches": "https://schema.org/teaches",
         "LearningOutcome": "http://data.europa.eu/snb/model/ontology/LearningOutcome",
+        "CompetencyRequirement": "https://w3id.org/moochub/v4/CompetencyRequirement",
         "learningOutcomeSummary": {
             "@id": "http://data.europa.eu/snb/model/ontology/learningOutcomeSummary",
             "@container": "@language"

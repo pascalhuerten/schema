@@ -7,6 +7,6 @@
     "minItems": 1,
     "uniqueItems": true,
     "items": {
-        "$ref": "https://w3id.org/moochub/draft/schemas/competency.json"
+        "$ref": "https://w3id.org/moochub/draft/schemas/competencyRequirement.json"
     }
 }

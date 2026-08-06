@@ -446,7 +446,7 @@
   "competencyRequired": [
     {
       "id": "urn:uuid:7e8f9g0h-1i2j-3k4l-5m6n-7o8p9q0r1s2t",
-      "type": "LearningOutcome",
+      "type": "CompetencyRequirement",
       "name": {
         "en": "Englisch B2"
       },
@@ -534,7 +534,7 @@
       "competencyRequired": [
         {
           "id": "urn:uuid:9e7c1b64-c460-4672-b666-cb64dc2d3921",
-          "type": "LearningOutcome",
+          "type": "CompetencyRequirement",
           "name": {
             "en": "Communication, collaboration and creativity"
           },
@@ -567,7 +567,7 @@
         },
         {
           "id": "urn:uuid:3f9f5899-c3cd-43a9-aecb-266483fcbf6a",
-          "type": "LearningOutcome",
+          "type": "CompetencyRequirement",
           "name": {
             "en": "Developing digital content"
           },

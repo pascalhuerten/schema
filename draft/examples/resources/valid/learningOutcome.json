@@ -119,7 +119,7 @@
   "competencyRequired": [
     {
       "id": "urn:uuid:7e8f9g0h-1i2j-3k4l-5m6n-7o8p9q0r1s2t",
-      "type": "LearningOutcome",
+      "type": "CompetencyRequirement",
       "name": {
         "en": "Englisch B2"
       },

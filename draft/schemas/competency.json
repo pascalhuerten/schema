@@ -2,15 +2,14 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://w3id.org/moochub/draft/schemas/competency.json",
     "title": "Competency",
-    "description": "A competency that is required to understand a LearningResource, intended to be learned with help of the resource or must be demonstrated in order to do complete the resource or earn an Educational Occupational Credential. It is strongly recommended to use the realtedSkill property to map the competency to realted defined skill concepts to support interoperability and searchability.",
+    "description": "Shared properties for competencies, learning outcomes, and competency requirements. It is strongly recommended to use the relatedSkill property to map the competency to defined skill concepts to support interoperability and searchability.",
     "type": "object",
     "properties": {
         "id": {
             "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
         },
         "type": {
-            "type": "string",
-            "const": "LearningOutcome"
+            "type": "string"
         },
         "name": {
             "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"

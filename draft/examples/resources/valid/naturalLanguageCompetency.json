@@ -42,7 +42,7 @@
     "competencyRequired": [
         {
             "id": "https://provider.example/courses/ethical-ai/requirements/critical-thinking",
-            "type": "LearningOutcome",
+            "type": "CompetencyRequirement",
             "name": {
                 "en": "Basic critical thinking"
             }
