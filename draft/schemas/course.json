@@ -101,6 +101,12 @@
     "hasPart": {
       "$ref": "https://w3id.org/moochub/draft/schemas/hasPart.json"
     },
+    "coursePrerequisites": {
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+    },
+    "prerequisiteCourses": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/prerequisiteCourses.json"
+    },
     "keywords": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/keywords.json"
     },
@@ -108,13 +114,16 @@
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/conditionsOfAccess.json"
     },
     "assesses": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/assesses.json"
     },
     "competencyRequired": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/competencyRequired.json"
     },
     "teaches": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/teaches.json"
+    },
+    "learningOutcomeSummary": {
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
     },
     "educationalLevel": {
       "$ref": "https://w3id.org/moochub/draft/schemas/concepts.json"

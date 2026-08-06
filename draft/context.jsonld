@@ -16,6 +16,11 @@
         "alignmentType": "https://schema.org/alignmentType",
         "courseCode": "https://schema.org/courseCode",
         "courseMode": "https://schema.org/courseMode",
+        "coursePrerequisites": {
+            "@id": "https://schema.org/coursePrerequisites",
+            "@container": "@language"
+        },
+        "prerequisiteCourses": "https://schema.org/coursePrerequisites",
         "maximumAttendeeCapacity": "https://schema.org/maximumAttendeeCapacity",
         "endDate": "https://schema.org/endDate",
         "eventSchedule": "https://schema.org/eventSchedule",
@@ -69,10 +74,23 @@
         "publisher": "https://schema.org/publisher",
         "contributor": "https://schema.org/contributor",
         "funder": "https://schema.org/funder",
-        "description": "https://schema.org/description",
+        "name": {
+            "@id": "https://schema.org/name",
+            "@container": "@language"
+        },
+        "description": {
+            "@id": "https://schema.org/description",
+            "@container": "@language"
+        },
         "about": "https://schema.org/about",
         "assesses": "https://schema.org/assesses",
         "competencyRequired": "https://schema.org/competencyRequired",
-        "teaches": "https://schema.org/teaches"
+        "teaches": "https://schema.org/teaches",
+        "LearningOutcome": "http://data.europa.eu/snb/model/ontology/LearningOutcome",
+        "learningOutcomeSummary": {
+            "@id": "http://data.europa.eu/snb/model/ontology/learningOutcomeSummary",
+            "@container": "@language"
+        },
+        "relatedSkill": "http://data.europa.eu/snb/model/ontology/relatedSkill"
     }
 }
