@@ -31,6 +31,12 @@
       "paymentFrequency": "one-time"
     }
   ],
+  "aggregateRating": {
+    "ratingValue": 4.5,
+    "ratingCount": 24,
+    "bestRating": 5,
+    "worstRating": 1
+  },
   "hasCourseInstance": [
     {
       "id": "https://futurelearnlab.de/course-instances/digital-trainer-summer-2026",

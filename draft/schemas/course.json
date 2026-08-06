@@ -35,6 +35,9 @@
     "offers": {
       "$ref": "https://w3id.org/moochub/draft/schemas/offers.json"
     },
+    "aggregateRating": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/aggregateRating.json"
+    },
     "hasCourseInstance": {
       "$ref": "https://w3id.org/moochub/draft/schemas/hasCourseInstance.json"
     },
