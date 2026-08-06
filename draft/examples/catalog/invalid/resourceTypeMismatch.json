@@ -1,0 +1,46 @@
+{
+    "links": {
+        "self": "https://provider.example/api/v4/catalog"
+    },
+    "data": [
+        {
+            "type": "courses",
+            "id": "https://provider.example/programs/digital-skills-microdegree",
+            "attributes": {
+                "@context": [
+                    "https://w3id.org/moochub/draft/context.jsonld",
+                    {
+                        "@language": "en"
+                    }
+                ],
+                "id": "https://provider.example/programs/digital-skills-microdegree",
+                "type": "EducationalOccupationalProgram",
+                "url": "https://provider.example/programs/digital-skills-microdegree",
+                "name": {
+                    "en": "Digital Skills Microdegree"
+                },
+                "provider": {
+                    "type": "Organization",
+                    "name": {
+                        "en": "Example University"
+                    }
+                },
+                "hasCourse": [
+                    {
+                        "course": {
+                            "id": "https://provider.example/courses/intro-digital-skills",
+                            "type": [
+                                "LearningResource",
+                                "Course"
+                            ],
+                            "name": {
+                                "en": "Introduction to Digital Skills"
+                            }
+                        },
+                        "requirementLevel": "mandatory"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -14,6 +14,11 @@ The draft profile is compatible with the pinned AMB `20231019` release. See the
 [compatibility notes](compatibility.md) for the shared context, entity identity
 fields, and course role definitions.
 
+The v4 draft exposes courses and educational programs through a common,
+paginated JSON:API catalog. The resource types, pagination rules, program
+model, and complete feed example are documented in
+[draft/CATALOG.md](draft/CATALOG.md).
+
 The MOOChub API specification consists of two major parts: (1) A JSON format and
 (2) an API versioning concept.
 

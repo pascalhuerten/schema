@@ -1,0 +1,66 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://w3id.org/moochub/draft/schemas/program.json",
+    "title": "Educational occupational program",
+    "description": "A structured educational program consisting of one or more courses.",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/context-schema.json"
+        },
+        "id": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
+        },
+        "type": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/programType.json"
+        },
+        "url": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
+        },
+        "name": {
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+        },
+        "description": {
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+        },
+        "image": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/image.json"
+        },
+        "provider": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/publisher.json"
+        },
+        "applicationStartDate": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/applicationStartDate.json"
+        },
+        "applicationDeadline": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/applicationDeadline.json"
+        },
+        "educationalCredentialAwarded": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/educationalCredentialAwarded.json"
+        },
+        "educationalProgramMode": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/educationalProgramMode.json"
+        },
+        "timeToComplete": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/timeRequired.json"
+        },
+        "numberOfCredits": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/numberOfCredits.json"
+        },
+        "programPrerequisites": {
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+        },
+        "hasCourse": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/programCourses.json"
+        }
+    },
+    "required": [
+        "@context",
+        "id",
+        "type",
+        "url",
+        "name",
+        "provider",
+        "hasCourse"
+    ]
+}

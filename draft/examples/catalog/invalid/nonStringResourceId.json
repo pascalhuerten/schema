@@ -1,0 +1,44 @@
+{
+    "links": {
+        "self": "https://provider.example/api/v4/catalog"
+    },
+    "data": [
+        {
+            "type": "courses",
+            "id": 5234,
+            "attributes": {
+                "@context": [
+                    "https://w3id.org/moochub/draft/context.jsonld",
+                    {
+                        "@language": "en"
+                    }
+                ],
+                "id": "https://provider.example/courses/intro-digital-skills",
+                "url": "https://provider.example/courses/intro-digital-skills",
+                "name": {
+                    "en": "Introduction to Digital Skills"
+                },
+                "type": [
+                    "LearningResource",
+                    "Course"
+                ],
+                "publisher": {
+                    "type": "Organization",
+                    "name": {
+                        "en": "Example University"
+                    }
+                },
+                "creator": [
+                    {
+                        "type": "Person",
+                        "name": "Example Author"
+                    }
+                ],
+                "license": {
+                    "identifier": "Proprietary",
+                    "id": null
+                }
+            }
+        }
+    ]
+}

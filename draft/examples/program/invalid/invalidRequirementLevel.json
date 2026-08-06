@@ -1,0 +1,35 @@
+{
+    "@context": [
+        "https://w3id.org/moochub/draft/context.jsonld",
+        {
+            "@language": "en"
+        }
+    ],
+    "id": "https://provider.example/programs/invalid-program",
+    "type": "EducationalOccupationalProgram",
+    "url": "https://provider.example/programs/invalid-program",
+    "name": {
+        "en": "Invalid Program"
+    },
+    "provider": {
+        "type": "Organization",
+        "name": {
+            "en": "Example University"
+        }
+    },
+    "hasCourse": [
+        {
+            "course": {
+                "id": "https://provider.example/courses/intro-digital-skills",
+                "type": [
+                    "LearningResource",
+                    "Course"
+                ],
+                "name": {
+                    "en": "Introduction to Digital Skills"
+                }
+            },
+            "requirementLevel": "not-a-valid-level"
+        }
+    ]
+}

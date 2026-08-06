@@ -8,10 +8,6 @@ const addFormats = require('ajv-formats')
 const projectRoot = __dirname
 const schemasDirectory = path.join(projectRoot, '../draft/schemas')
 const cacheDirectory = path.join(projectRoot, '../.cache', 'remote-schemas')
-const rootSchemaFile = path.resolve(
-  projectRoot,
-  process.argv[2] || '../draft/schemas/course.json'
-)
 const readJson = (filename) => JSON.parse(fs.readFileSync(filename, 'utf8'))
 
 function cachedSchemaFilename(uri) {
@@ -45,43 +41,63 @@ const ajv = new Ajv2020({
 })
 ajv.addMetaSchema(draft7MetaSchema)
 
-for (const filename of fs.readdirSync(schemasDirectory)) {
+for (const filename of fs.readdirSync(schemasDirectory, { recursive: true })) {
   if (!filename.endsWith('.json')) continue
   const schemaFile = path.join(schemasDirectory, filename)
-  if (path.resolve(schemaFile) === rootSchemaFile) continue
   ajv.addSchema(readJson(schemaFile))
 }
 addFormats(ajv)
 
 async function main() {
-  const validate = await ajv.compileAsync(readJson(rootSchemaFile))
   let passed = 0
   let failed = 0
 
-  for (const [directory, expected] of [
-    ['../draft/examples/valid', true],
-    ['../draft/examples/invalid', false],
+  for (const suite of [
+    {
+      rootSchema: '../draft/schemas/course.json',
+      directories: [
+        ['../draft/examples/resources/valid', true],
+        ['../draft/examples/resources/invalid', false],
+      ],
+    },
+    {
+      rootSchema: '../draft/schemas/api/catalogFeed.json',
+      directories: [
+        ['../draft/examples/catalog/valid', true],
+        ['../draft/examples/catalog/invalid', false],
+      ],
+    },
+    {
+      rootSchema: '../draft/schemas/program.json',
+      directories: [
+        ['../draft/examples/program/valid', true],
+        ['../draft/examples/program/invalid', false],
+      ],
+    },
   ]) {
-    for (const filename of fs.readdirSync(path.join(projectRoot, directory))) {
-      if (!filename.endsWith('.json')) continue
-      const data = readJson(path.join(projectRoot, directory, filename))
-      const actual = validate(data)
-      if (actual !== expected) {
-        console.error(
-          `${directory}/${filename} was expected to be ${
-            expected ? 'valid' : 'invalid'
-          }`
-        )
-        if (!actual) console.error(ajv.errorsText(validate.errors))
-        process.exitCode = 1
-        failed++
-      } else {
-        console.log(
-          `${directory}/${filename} is ${
-            expected ? 'valid' : 'invalid'
-          } as expected`
-        )
-        passed++
+    const rootSchema = readJson(path.resolve(projectRoot, suite.rootSchema))
+    const validate = await ajv.compileAsync({ $ref: rootSchema.$id })
+
+    for (const [directory, expected] of suite.directories) {
+      for (const filename of fs.readdirSync(path.join(projectRoot, directory))) {
+        if (!filename.endsWith('.json')) continue
+        const data = readJson(path.join(projectRoot, directory, filename))
+        const actual = validate(data)
+        if (actual !== expected) {
+          console.error(
+            `${directory}/${filename} was expected to be ${expected ? 'valid' : 'invalid'
+            }`
+          )
+          if (!actual) console.error(ajv.errorsText(validate.errors))
+          process.exitCode = 1
+          failed++
+        } else {
+          console.log(
+            `${directory}/${filename} is ${expected ? 'valid' : 'invalid'
+            } as expected`
+          )
+          passed++
+        }
       }
     }
   }
