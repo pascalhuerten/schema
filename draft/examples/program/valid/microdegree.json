@@ -1,0 +1,62 @@
+{
+    "@context": [
+        "https://w3id.org/moochub/draft/context.jsonld",
+        {
+            "@language": "en"
+        }
+    ],
+    "id": "https://provider.example/programs/digital-skills-microdegree",
+    "type": "EducationalOccupationalProgram",
+    "url": "https://example.edu/programs/digital-skills",
+    "name": {
+        "en": "Digital Skills Microdegree"
+    },
+    "description": {
+        "en": "A structured program covering foundational digital skills."
+    },
+    "provider": {
+        "type": "Organization",
+        "name": {
+            "en": "Example University"
+        }
+    },
+    "applicationStartDate": "2026-01-01",
+    "applicationDeadline": "2026-03-31",
+    "educationalProgramMode": [
+        "online",
+        "asynchronous"
+    ],
+    "timeToComplete": "P3M",
+    "numberOfCredits": 10,
+    "programPrerequisites": {
+        "en": "Basic digital literacy."
+    },
+    "hasCourse": [
+        {
+            "course": {
+                "id": "https://provider.example/courses/intro-digital-skills",
+                "type": [
+                    "LearningResource",
+                    "Course"
+                ],
+                "name": {
+                    "en": "Introduction to Digital Skills"
+                }
+            },
+            "requirementLevel": "mandatory"
+        },
+        {
+            "course": {
+                "id": "https://provider.example/courses/digital-communication",
+                "type": [
+                    "LearningResource",
+                    "Course"
+                ],
+                "name": {
+                    "en": "Digital Communication"
+                }
+            },
+            "requirementLevel": "elective"
+        }
+    ]
+}

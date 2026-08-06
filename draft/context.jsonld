@@ -16,6 +16,16 @@
         "alignmentType": "https://schema.org/alignmentType",
         "courseCode": "https://schema.org/courseCode",
         "courseMode": "https://schema.org/courseMode",
+        "EducationalOccupationalProgram": "https://schema.org/EducationalOccupationalProgram",
+        "educationalProgramMode": "https://schema.org/educationalProgramMode",
+        "hasCourse": "https://schema.org/hasCourse",
+        "provider": "https://schema.org/provider",
+        "timeToComplete": "https://schema.org/timeToComplete",
+        "programPrerequisites": {
+            "@id": "https://schema.org/programPrerequisites",
+            "@container": "@language"
+        },
+        "requirementLevel": "https://w3id.org/moochub/draft/requirementLevel",
         "coursePrerequisites": {
             "@id": "https://schema.org/coursePrerequisites",
             "@container": "@language"
