@@ -19,7 +19,7 @@
             "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
         },
         "description": {
-            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+            "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
         },
         "address": {
             "$ref": "https://w3id.org/moochub/draft/schemas/postalAddress.json"

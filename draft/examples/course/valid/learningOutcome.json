@@ -98,12 +98,22 @@
       ]
     }
   ],
-  "learningOutcomeSummary": {
-    "en": "Stduents will be able to communicate, collaborate and stimulate creativity in the team. They will also be able to develop digital content."
-  },
-  "coursePrerequisites": {
-    "en": "Basic digital literacy and familiarity with online learning platforms and English B2 level."
-  },
+  "learningOutcomeSummary": [
+    {
+      "type": "TextObject",
+      "inLanguage": "en",
+      "text": "Stduents will be able to communicate, collaborate and stimulate creativity in the team. They will also be able to develop digital content.",
+      "encodingFormat": "text/plain"
+    }
+  ],
+  "coursePrerequisites": [
+    {
+      "type": "TextObject",
+      "inLanguage": "en",
+      "text": "Basic digital literacy and familiarity with online learning platforms and English B2 level.",
+      "encodingFormat": "text/plain"
+    }
+  ],
   "prerequisiteCourses": [
     {
       "id": "urn:uuid:1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",

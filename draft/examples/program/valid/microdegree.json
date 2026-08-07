@@ -11,9 +11,14 @@
     "name": {
         "en": "Digital Skills Microdegree"
     },
-    "description": {
-        "en": "A structured program covering foundational digital skills."
-    },
+    "description": [
+        {
+            "type": "TextObject",
+            "inLanguage": "en",
+            "text": "A structured program covering foundational digital skills.",
+            "encodingFormat": "text/plain"
+        }
+    ],
     "provider": {
         "type": "Organization",
         "name": {
@@ -28,9 +33,14 @@
     ],
     "timeToComplete": "P3M",
     "numberOfCredits": 10,
-    "programPrerequisites": {
-        "en": "Basic digital literacy."
-    },
+    "programPrerequisites": [
+        {
+            "type": "TextObject",
+            "inLanguage": "en",
+            "text": "Basic digital literacy.",
+            "encodingFormat": "text/plain"
+        }
+    ],
     "hasCourse": [
         {
             "course": {

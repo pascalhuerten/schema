@@ -21,7 +21,7 @@
             "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
         },
         "description": {
-            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+            "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
         },
         "image": {
             "$ref": "https://w3id.org/moochub/draft/schemas/image.json"
@@ -48,7 +48,7 @@
             "$ref": "https://w3id.org/moochub/draft/schemas/numberOfCredits.json"
         },
         "programPrerequisites": {
-            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+            "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
         },
         "hasCourse": {
             "$ref": "https://w3id.org/moochub/draft/schemas/programCourses.json"

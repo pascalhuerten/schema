@@ -33,8 +33,8 @@
       ]
     },
     "description": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
-      "description": "A short description of the organization. Should be provided in HTML.",
+      "$ref": "https://w3id.org/moochub/draft/schemas/richText.json",
+      "description": "A description of the organization.",
       "example": "openHPI is a digital educational platform situated at the HPI with a focus on topics regarding computational sciences, internet and world wide web and design thinking."
     },
     "image": {

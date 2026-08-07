@@ -79,9 +79,14 @@
               "name": {
                 "en": "Campus Luebeck, Building A, Room 101"
               },
-              "description": {
-                "de": "Der Campus der Technischen Hochschule Lübeck befindet sich in der Nähe des Stadtzentrums von Lübeck und ist gut mit öffentlichen Verkehrsmitteln erreichbar. Die Buslinie 1 hält direkt vor dem Campus."
-              },
+              "description": [
+                {
+                  "type": "TextObject",
+                  "inLanguage": "de",
+                  "text": "Der Campus der Technischen Hochschule Lübeck befindet sich in der Nähe des Stadtzentrums von Lübeck und ist gut mit öffentlichen Verkehrsmitteln erreichbar. Die Buslinie 1 hält direkt vor dem Campus.",
+                  "encodingFormat": "text/plain"
+                }
+              ],
               "address": {
                 "type": "PostalAddress",
                 "streetAddress": "Mönkhofer Weg 239",
@@ -242,9 +247,14 @@
   "abstract": {
     "de": "Digitalisierung von Arbeits- und Geschäftsprozessen, Stärkung der digitalen Kompetenz und Methodik, Verbesserung der Selbstvermarktung, Erkennen neuer Handlungsoptionen."
   },
-  "description": {
-    "de": "<div><p>Der Kurs verfolgt im Zuge der fortschreitenden Digitalisierung von Arbeits- und Geschäftsprozessen das Ziel, deine digitale Kompetenz und Methodik zu stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder zu entwickeln. Zugleich steht eine\r\n    Verbesserung der Selbstvermarktung und ein Erkennen neuer Handlungsoptionen im Vordergrund.</p>\r\n</div>"
-  },
+  "description": [
+    {
+      "type": "TextObject",
+      "inLanguage": "de",
+      "text": "<div><p>Der Kurs verfolgt im Zuge der fortschreitenden Digitalisierung von Arbeits- und Geschäftsprozessen das Ziel, deine digitale Kompetenz und Methodik zu stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder zu entwickeln. Zugleich steht eine\r\n    Verbesserung der Selbstvermarktung und ein Erkennen neuer Handlungsoptionen im Vordergrund.</p>\r\n</div>",
+      "encodingFormat": "text/html"
+    }
+  ],
   "about": [
     {
       "id": "https://w3id.org/kim/hochschulfaechersystematik/n0",
@@ -275,10 +285,20 @@
         "inScheme": "http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole"
       }
     ],
-    "description": {
-      "de": "Studierende, die ihre digitale Kompetenz und Methodik stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder entwickeln möchten.",
-      "en": "Students who want to strengthen their digital competence and methodology and develop a deeper awareness of new digital learning fields."
-    },
+    "description": [
+      {
+        "type": "TextObject",
+        "inLanguage": "de",
+        "text": "Studierende, die ihre digitale Kompetenz und Methodik stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder entwickeln möchten.",
+        "encodingFormat": "text/plain"
+      },
+      {
+        "type": "TextObject",
+        "inLanguage": "en",
+        "text": "Students who want to strengthen their digital competence and methodology and develop a deeper awareness of new digital learning fields.",
+        "encodingFormat": "text/plain"
+      }
+    ],
     "suggestedAge": {
       "minValue": 16,
       "maxValue": 50
@@ -431,12 +451,22 @@
       ]
     }
   ],
-  "learningOutcomeSummary": {
-    "en": "Stduents will be able to communicate, collaborate and stimulate creativity in the team. They will also be able to develop digital content."
-  },
-  "coursePrerequisites": {
-    "en": "Basic digital literacy and familiarity with online learning platforms and English B2 level."
-  },
+  "learningOutcomeSummary": [
+    {
+      "type": "TextObject",
+      "inLanguage": "en",
+      "text": "Stduents will be able to communicate, collaborate and stimulate creativity in the team. They will also be able to develop digital content.",
+      "encodingFormat": "text/plain"
+    }
+  ],
+  "coursePrerequisites": [
+    {
+      "type": "TextObject",
+      "inLanguage": "en",
+      "text": "Basic digital literacy and familiarity with online learning platforms and English B2 level.",
+      "encodingFormat": "text/plain"
+    }
+  ],
   "prerequisiteCourses": [
     {
       "id": "urn:uuid:1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",

@@ -63,9 +63,14 @@
                 "name": {
                     "en": "Digital Skills Microdegree"
                 },
-                "description": {
-                    "en": "A course program for foundational digital skills."
-                },
+                "description": [
+                    {
+                        "type": "TextObject",
+                        "inLanguage": "en",
+                        "text": "A course program for foundational digital skills.",
+                        "encodingFormat": "text/plain"
+                    }
+                ],
                 "provider": {
                     "type": "Organization",
                     "name": {

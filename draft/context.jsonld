@@ -97,6 +97,9 @@
             "@id": "https://schema.org/description",
             "@container": "@language"
         },
+        "TextObject": "https://schema.org/TextObject",
+        "text": "https://schema.org/text",
+        "encodingFormat": "https://schema.org/encodingFormat",
         "about": "https://schema.org/about",
         "assesses": "https://schema.org/assesses",
         "competencyRequired": "https://schema.org/competencyRequired",

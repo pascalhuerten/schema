@@ -56,8 +56,8 @@ async function main() {
     {
       rootSchema: '../draft/schemas/course.json',
       directories: [
-        ['../draft/examples/resources/valid', true],
-        ['../draft/examples/resources/invalid', false],
+        ['../draft/examples/course/valid', true],
+        ['../draft/examples/course/invalid', false],
       ],
     },
     {

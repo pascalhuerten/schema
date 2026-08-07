@@ -63,7 +63,7 @@
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
     },
     "description": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
     },
     "about": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/about.json"
@@ -105,7 +105,7 @@
       "$ref": "https://w3id.org/moochub/draft/schemas/hasPart.json"
     },
     "coursePrerequisites": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
     },
     "prerequisiteCourses": {
       "$ref": "https://w3id.org/moochub/draft/schemas/prerequisiteCourses.json"
@@ -126,7 +126,7 @@
       "$ref": "https://w3id.org/moochub/draft/schemas/teaches.json"
     },
     "learningOutcomeSummary": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
     },
     "educationalLevel": {
       "$ref": "https://w3id.org/moochub/draft/schemas/concepts.json"

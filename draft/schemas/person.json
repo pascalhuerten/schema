@@ -35,8 +35,8 @@
       "example": "Professor of Computer Science"
     },
     "description": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
-      "description": "A short description of the person. Can be a CV-like description. Should be provided in HTML"
+      "$ref": "https://w3id.org/moochub/draft/schemas/richText.json",
+      "description": "A description of the person."
     },
     "image": {
       "$ref": "https://w3id.org/moochub/draft/schemas/image.json"

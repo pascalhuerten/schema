@@ -10,8 +10,8 @@
     },
     "description": {
       "title": "Description",
-      "description": "A natural-language description of the intended audience.",
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+      "description": "A description text of the intended audience.",
+      "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
     },
     "suggestedAge": {
       "$ref": "https://w3id.org/moochub/draft/schemas/suggestedAge.json"
