@@ -1,19 +1,17 @@
 # Compatibility
 
-The MOOChub draft course profile is aligned with the AMB release published at
-`https://w3id.org/kim/amb/20231019/`.
+The MOOChub draft course profile reuses selected schemas from the AMB release
+published at `https://w3id.org/kim/amb/20231019/`.
 
 All reused AMB JSON Schemas are referenced at their immutable `20231019` URLs.
 The MOOChub JSON-LD context is published separately at
-`https://w3id.org/moochub/draft/context.jsonld`; it imports the pinned AMB
-context and adds MOOChub terms. This keeps the transport profile identifiable
-without introducing a second vocabulary for shared schema.org properties.
+`https://w3id.org/moochub/draft/context.jsonld` and defines the terms used by
+the v4 profile directly. This keeps the transport profile identifiable without
+introducing a second vocabulary for shared schema.org properties.
 
 Every MOOChub course must contain `type: ["LearningResource", "Course"]`.
 This is required by the AMB type contract and identifies the resource as a
-schema.org Course. The value is explicit in the JSON-LD data; a JSON Schema
-`default` is not used because defaults are annotations and do not populate
-serialized data.
+schema.org Course.
 
 ## Course code
 
@@ -48,8 +46,6 @@ array of `Event` course events or phases. A one-off event supplies its own
 which contains its days, times, repeat frequency, time zone, and date range.
 Each course event or phase may have its own location and instructors. Use
 multiple events for irregular dates, pauses, or a change of location.
-`timeRequired` remains a course-level property because it normally describes
-the learning commitment for every offering.
 
 ## Course effort, accessibility, and offers
 

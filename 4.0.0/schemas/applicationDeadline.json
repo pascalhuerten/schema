@@ -1,0 +1,8 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://w3id.org/moochub/4.0.0/schemas/applicationDeadline.json",
+    "title": "Application deadline",
+    "description": "The date by which applications for a course instance must be submitted.",
+    "type": "string",
+    "format": "date"
+}

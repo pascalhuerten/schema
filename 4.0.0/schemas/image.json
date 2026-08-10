@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/moochub/4.0.0/schemas/image.json",
+  "title": "ImageObject",
+  "type": "object",
+  "description": "A licensed cover image for a course or other learning resource. It is a schema.org ImageObject and can be exported as the course's image property.",
+  "properties": {
+    "contentUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "The URI pointing at the actual image. Third parties may use this URI to embed or display the course cover.",
+      "example": "https://imgproxy.services.openhpi.de/BTTB8dtdudOl-9rC9_BH3blZE8Y6lPOYCeDwOrM3MtA/rs:fill:314:195:0/g:ce/plain/https://openhpi-public.s3.openhpicloud.de/courses/4H0PlIvB5Pl3LVRzqcZF8x/6xCHlCi7Kj4QQCnoNlk3Hl/07_2x_green.png"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the object.",
+      "enum": [
+        "ImageObject"
+      ]
+    },
+    "license": {
+      "$ref": "https://w3id.org/moochub/4.0.0/schemas/license.json"
+    },
+    "description": {
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
+      "description": "A short description of the image. It can be used as alternative text when the image cannot be displayed.",
+      "example": "This is an image. It shows ..."
+    }
+  },
+  "required": [
+    "contentUrl",
+    "license"
+  ]
+}

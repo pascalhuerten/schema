@@ -49,18 +49,18 @@
       otherLinks: [{
         key: "Links zur Spezifikation",
         data: [{
-          value: "Permalink zum Entwurf",
-          href: "https://w3id.org/moochub/draft/"
+          value: "Permalink zu dieser Version",
+          href: "https://w3id.org/moochub/4.0.0/"
         }, {
           value: "JSON-LD-Kontext",
-          href: "https://w3id.org/moochub/draft/context.jsonld"
+          href: "https://w3id.org/moochub/4.0.0/context.jsonld"
         }, {
           value: "GitHub-Repository",
           href: "https://github.com/MOOChub/schema"
         }]
       }],
-      publishDate: "",
-      specStatus: "unofficial"
+      publishDate: "2026-08-10",
+      specStatus: "base"
     };
   </script>
 </head>
@@ -112,16 +112,16 @@
     Suche, Darstellung und Einschreibung unterstützen.
 
     Die normativen JSON Schemas liegen im Verzeichnis
-    [`draft/schemas`](schemas/). Die Beispiele im Verzeichnis
-    [`draft/examples`](examples/) sind Bestandteil der Entwicklung und
-    zeigen typische gültige und ungültige Dokumente.
+    [`schemas`](schemas/). Die Beispiele im Verzeichnis
+    [`examples`](examples/) dokumentieren typische gültige und ungültige
+    Dokumente.
 
     <h3>Versionsstatus</h3>
 
-    Dieses Dokument beschreibt den MOOChub-v4-Entwurf. Die in den Schemas
-    verwendeten URLs enthalten deshalb den Pfad `draft`. Änderungen an
-    Pflichtfeldern, Wertebereichen oder der JSON-LD-Semantik müssen vor
-    einer Veröffentlichung als neue Version abgestimmt werden.
+    Dieses Dokument beschreibt die Version 4.0.0 des MOOChub-v4-Profils.
+    Die in den Schemas verwendeten URLs enthalten deshalb den Pfad `4.0.0`.
+    Änderungen an Pflichtfeldern, Wertebereichen oder der JSON-LD-Semantik
+    müssen in einer neuen Version veröffentlicht werden.
   </section>
 
   <section id="conformance">
@@ -154,7 +154,7 @@ npm test
     <pre class="example" title="JSON-LD-Kontext eines MOOChub-v4-Objekts">
 {
   "@context": [
-    "https://w3id.org/moochub/draft/context.jsonld",
+    "https://w3id.org/moochub/4.0.0/context.jsonld",
     { "@language": "de" }
   ]
 }

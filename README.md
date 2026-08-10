@@ -15,9 +15,12 @@ The draft profile is compatible with the pinned AMB `20231019` release. See the
 fields, and course role definitions.
 
 The v4 draft exposes courses and educational programs through a common,
-paginated JSON:API catalog. The resource types, pagination rules, program
-model, and complete feed example are documented in
-[draft/CATALOG.md](draft/CATALOG.md).
+paginated JSON:API catalog. The resource types, pagination rules, program model,
+and complete feed example are documented in [CATALOG.md](CATALOG.md). The
+normative German specification is published from
+[draft/index.html](draft/index.html). The 4.0.0 release is available from
+[4.0.0/index.html](4.0.0/index.html); [latest/index.html](latest/index.html)
+points to the newest published version.
 
 The MOOChub API specification consists of two major parts: (1) A JSON format and
 (2) an API versioning concept.

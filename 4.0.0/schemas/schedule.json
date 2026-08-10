@@ -1,0 +1,68 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://w3id.org/moochub/4.0.0/schemas/schedule.json",
+    "title": "Recurring schedule",
+    "description": "A recurring meeting schedule for a course instance or event.",
+    "type": "object",
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": [
+                "Schedule"
+            ]
+        },
+        "byDay": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "string",
+                "enum": [
+                    "https://schema.org/Monday",
+                    "https://schema.org/Tuesday",
+                    "https://schema.org/Wednesday",
+                    "https://schema.org/Thursday",
+                    "https://schema.org/Friday",
+                    "https://schema.org/Saturday",
+                    "https://schema.org/Sunday"
+                ]
+            }
+        },
+        "startTime": {
+            "type": "string",
+            "format": "time"
+        },
+        "endTime": {
+            "type": "string",
+            "format": "time"
+        },
+        "repeatFrequency": {
+            "type": "string",
+            "format": "duration",
+            "description": "The ISO 8601 interval between occurrences, for example P1W."
+        },
+        "startDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The calendar date when the recurring schedule starts."
+        },
+        "endDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The calendar date when the recurring schedule ends."
+        },
+        "scheduleTimezone": {
+            "type": "string",
+            "description": "An IANA time-zone identifier, for example Europe/Berlin."
+        }
+    },
+    "required": [
+        "type",
+        "byDay",
+        "startTime",
+        "endTime",
+        "repeatFrequency",
+        "startDate",
+        "endDate"
+    ]
+}

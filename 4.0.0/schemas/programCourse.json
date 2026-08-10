@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://w3id.org/moochub/4.0.0/schemas/programCourse.json",
+    "title": "Program course",
+    "description": "A course within an educational program and its requirement level.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "course": {
+            "$ref": "https://w3id.org/moochub/4.0.0/schemas/courseReference.json"
+        },
+        "requirementLevel": {
+            "type": "string",
+            "enum": [
+                "mandatory",
+                "elective"
+            ]
+        }
+    },
+    "required": [
+        "course",
+        "requirementLevel"
+    ]
+}
