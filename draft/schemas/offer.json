@@ -6,8 +6,7 @@
     "type": "object",
     "properties": {
         "type": {
-            "const": "Offer",
-            "description": "The schema.org type of this object."
+            "const": "Offer"
         },
         "price": {
             "type": "number",
@@ -18,6 +17,15 @@
             "type": "string",
             "pattern": "^[A-Z]{3}$",
             "description": "The ISO 4217 currency code for the price."
+        },
+        "category": {
+            "type": "string",
+            "enum": [
+                "course",
+                "certificate",
+                "complete"
+            ],
+            "description": "Whether the offer covers the course, certification only, or both."
         },
         "paymentFrequency": {
             "type": "string",
@@ -34,24 +42,18 @@
             "description": "The payment frequency used by the MOOChub profile."
         },
         "availabilityStarts": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+            "type": "string",
+            "format": "date-time",
+            "description": "The RFC 3339 date-time at which the offer becomes available."
         },
         "availabilityEnds": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+            "type": "string",
+            "format": "date-time",
+            "description": "The RFC 3339 date-time at which the offer is no longer available."
         },
         "url": {
-            "type": "string",
-            "format": "uri",
+            "$ref": "https://w3id.org/moochub/draft/schemas/url.json",
             "description": "A booking, checkout, enrollment, or access URL for this offer that differs from the main course URL."
-        },
-        "category": {
-            "type": "string",
-            "enum": [
-                "course",
-                "certificate",
-                "complete"
-            ],
-            "description": "Whether the offer covers the course, certification only, or both."
         }
     },
     "required": [

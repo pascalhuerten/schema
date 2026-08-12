@@ -30,6 +30,7 @@
         }
     ],
     "license": {
+        "type": "License",
         "identifier": "proprietary",
         "id": null
     }

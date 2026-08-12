@@ -15,9 +15,18 @@
             "$ref": "https://w3id.org/moochub/draft/schemas/programType.json"
         },
         "url": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
+            "$ref": "https://w3id.org/moochub/draft/schemas/url.json"
         },
         "name": {
+            "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+        },
+        "provider": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/publisher.json"
+        },
+        "hasCourse": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/programCourses.json"
+        },
+        "abstract": {
             "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
         },
         "description": {
@@ -25,9 +34,6 @@
         },
         "image": {
             "$ref": "https://w3id.org/moochub/draft/schemas/image.json"
-        },
-        "provider": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/publisher.json"
         },
         "applicationStartDate": {
             "$ref": "https://w3id.org/moochub/draft/schemas/applicationStartDate.json"
@@ -49,9 +55,6 @@
         },
         "programPrerequisites": {
             "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
-        },
-        "hasCourse": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/programCourses.json"
         }
     },
     "required": [

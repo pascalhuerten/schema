@@ -13,11 +13,7 @@
       "example": "Jane Doe"
     },
     "type": {
-      "type": "string",
-      "description": "The type of the object.",
-      "enum": [
-        "Person"
-      ]
+      "const": "Person"
     },
     "honorificPrefix": {
       "type": "string",
@@ -43,10 +39,9 @@
     },
     "sameAs": {
       "type": "array",
-      "description": "URIs that are asserted to identify the same person, such as verified social profiles, a homepage, ORCID, or Wikidata.",
+      "description": "HTTPS-URLs that are asserted to identify the same person, such as verified social profiles, a homepage, ORCID, or Wikidata.",
       "items": {
-        "type": "string",
-        "format": "uri"
+        "$ref": "https://w3id.org/moochub/draft/schemas/url.json"
       },
       "uniqueItems": true,
       "example": [
@@ -55,7 +50,13 @@
       ]
     },
     "affiliation": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/organization.json"
+      "type": "array",
+      "description": "Organizations that the person is affiliated with, such as an employer or a university.",
+      "minItems": 1,
+      "items": {
+        "$ref": "https://w3id.org/moochub/draft/schemas/organization.json"
+      },
+      "uniqueItems": true
     }
   },
   "required": [

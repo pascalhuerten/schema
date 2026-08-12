@@ -11,53 +11,17 @@
     "id": {
       "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
     },
+    "type": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/courseType.json"
+    },
     "url": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/id.json"
+      "$ref": "https://w3id.org/moochub/draft/schemas/url.json"
     },
     "name": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
     },
-    "type": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/courseType.json"
-    },
     "courseCode": {
       "$ref": "https://w3id.org/moochub/draft/schemas/courseCode.json"
-    },
-    "timeRequired": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/timeRequired.json"
-    },
-    "numberOfCredits": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/numberOfCredits.json"
-    },
-    "accessMode": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/accessMode.json"
-    },
-    "offers": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/offers.json"
-    },
-    "aggregateRating": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/aggregateRating.json"
-    },
-    "hasCourseInstance": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/hasCourseInstance.json"
-    },
-    "publisher": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/publisher.json"
-    },
-    "creator": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/creator.json"
-    },
-    "instructor": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/instructor.json"
-    },
-    "contributor": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/contributor.json"
-    },
-    "funder": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/funder.json"
-    },
-    "license": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
     },
     "abstract": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
@@ -65,8 +29,32 @@
     "description": {
       "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
     },
-    "about": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/about.json"
+    "keywords": {
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/keywords.json"
+    },
+    "inLanguage": {
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/inLanguage.json"
+    },
+    "timeRequired": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/timeRequired.json"
+    },
+    "numberOfCredits": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/numberOfCredits.json"
+    },
+    "interactivityType": {
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/interactivityType.json"
+    },
+    "isAccessibleForFree": {
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/isAccessibleForFree.json"
+    },
+    "conditionsOfAccess": {
+      "$ref": "https://w3id.org/kim/amb/20231019/schemas/conditionsOfAccess.json"
+    },
+    "accessMode": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/accessMode.json"
+    },
+    "license": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
     },
     "image": {
       "$ref": "https://w3id.org/moochub/draft/schemas/image.json"
@@ -74,26 +62,50 @@
     "trailer": {
       "$ref": "https://w3id.org/moochub/draft/schemas/trailer.json"
     },
-    "dateCreated": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/dateCreated.json"
+    "publisher": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/publisher.json"
     },
-    "datePublished": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/datePublished.json"
+    "creator": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/creator.json"
     },
-    "dateModified": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/dateModified.json"
+    "contributor": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/contributor.json"
     },
-    "expires": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/expires.json"
-    },
-    "duration": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/duration.json"
-    },
-    "inLanguage": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/inLanguage.json"
+    "funder": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/funder.json"
     },
     "audience": {
       "$ref": "https://w3id.org/moochub/draft/schemas/audience.json"
+    },
+    "coursePrerequisites": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
+    },
+    "prerequisiteCourses": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/prerequisiteCourses.json"
+    },
+    "competencyRequired": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/competencyRequired.json"
+    },
+    "learningOutcomeSummary": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
+    },
+    "teaches": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/teaches.json"
+    },
+    "assesses": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/assesses.json"
+    },
+    "educationalLevel": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/educationalLevels.json"
+    },
+    "educationalAlignment": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/educationalAlignment.json"
+    },
+    "hasCourseInstance": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/hasCourseInstance.json"
+    },
+    "educationalCredentialAwarded": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/educationalCredentialAwarded.json"
     },
     "isBasedOn": {
       "$ref": "https://w3id.org/moochub/draft/schemas/isBasedOn.json"
@@ -104,52 +116,32 @@
     "hasPart": {
       "$ref": "https://w3id.org/moochub/draft/schemas/hasPart.json"
     },
-    "coursePrerequisites": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
+    "aggregateRating": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/aggregateRating.json"
     },
-    "prerequisiteCourses": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/prerequisiteCourses.json"
+    "dateCreated": {
+      "type": "string",
+      "format": "date-time"
     },
-    "keywords": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/keywords.json"
+    "datePublished": {
+      "type": "string",
+      "format": "date-time"
     },
-    "conditionsOfAccess": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/conditionsOfAccess.json"
+    "dateModified": {
+      "type": "string",
+      "format": "date-time"
     },
-    "assesses": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/assesses.json"
-    },
-    "competencyRequired": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/competencyRequired.json"
-    },
-    "teaches": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/teaches.json"
-    },
-    "learningOutcomeSummary": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/richText.json"
-    },
-    "educationalLevel": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/concepts.json"
-    },
-    "educationalAlignment": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/educationalAlignment.json"
-    },
-    "educationalCredentialAwarded": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/educationalCredentialAwarded.json"
-    },
-    "isAccessibleForFree": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/isAccessibleForFree.json"
-    },
-    "interactivityType": {
-      "$ref": "https://w3id.org/kim/amb/20231019/schemas/interactivityType.json"
+    "expires": {
+      "type": "string",
+      "format": "date-time"
     }
   },
   "required": [
     "@context",
     "id",
+    "type",
     "url",
     "name",
-    "type",
     "publisher",
     "creator",
     "license"

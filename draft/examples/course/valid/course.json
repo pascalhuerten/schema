@@ -22,15 +22,6 @@
     "textual",
     "visual"
   ],
-  "offers": [
-    {
-      "type": "Offer",
-      "price": 0,
-      "priceCurrency": "EUR",
-      "category": "course",
-      "paymentFrequency": "one-time"
-    }
-  ],
   "aggregateRating": {
     "ratingValue": 4.5,
     "ratingCount": 24,
@@ -48,8 +39,9 @@
         "blended",
         "synchronous"
       ],
-      "startDate": "2026-05-04",
-      "endDate": "2026-06-12",
+      "startDate": "2026-05-04T00:00:00Z",
+      "endDate": "2026-06-12T23:59:59Z",
+      "duration": "P6W",
       "maximumAttendeeCapacity": 20,
       "subEvent": [
         {
@@ -107,6 +99,7 @@
                   "de": "Logo der Technischen Hochschule Lübeck"
                 },
                 "license": {
+                  "type": "License",
                   "identifier": "Proprietary",
                   "id": null
                 }
@@ -171,8 +164,8 @@
           "name": {
             "de": "Oral exam"
           },
-          "startDate": "2026-06-15T10:00:00",
-          "endDate": "2026-06-15T12:00:00",
+          "startDate": "2026-06-15T10:00:00Z",
+          "endDate": "2026-06-15T12:00:00Z",
           "location": [
             {
               "type": "VirtualLocation",
@@ -188,8 +181,8 @@
           "name": {
             "de": "Written exam"
           },
-          "startDate": "2026-06-20T10:00:00",
-          "endDate": "2026-06-20T12:00:00",
+          "startDate": "2026-06-20T10:00:00Z",
+          "endDate": "2026-06-20T12:00:00Z",
           "location": [
             {
               "id": "urn:uuid:f988cf9e-d10e-4847-8c0f-d87e88ff4f2a",
@@ -208,8 +201,8 @@
           ]
         }
       ],
-      "applicationStartDate": "2026-02-01",
-      "applicationDeadline": "2026-04-30",
+      "applicationStartDate": "2026-02-01T00:00:00Z",
+      "applicationDeadline": "2026-04-30T23:59:59Z",
       "offers": [
         {
           "type": "Offer",
@@ -218,8 +211,8 @@
           "category": "complete",
           "paymentFrequency": "one-time",
           "url": "https://futurelearnlab.de/enroll/digital-trainer-summer-2026",
-          "availabilityStarts": "2026-02-01",
-          "availabilityEnds": "2026-04-30"
+          "availabilityStarts": "2026-02-01T00:00:00Z",
+          "availabilityEnds": "2026-04-30T23:59:59Z"
         }
       ],
       "instructor": [
@@ -240,8 +233,8 @@
         "online",
         "asynchronous"
       ],
-      "startDate": "2025-01-13",
-      "endDate": "2025-02-28"
+      "startDate": "2025-01-13T00:00:00Z",
+      "endDate": "2025-02-28T23:59:59Z"
     }
   ],
   "abstract": {
@@ -255,25 +248,16 @@
       "encodingFormat": "text/html"
     }
   ],
-  "about": [
-    {
-      "id": "https://w3id.org/kim/hochschulfaechersystematik/n0",
-      "prefLabel": {
-        "de": "Fachübergreifend"
-      },
-      "type": "Concept"
-    }
-  ],
-  "dateCreated": "2019-07-03T13:13:13",
-  "datePublished": "2019-07-03T13:13:13",
+  "dateCreated": "2019-07-03T13:13:13Z",
+  "datePublished": "2019-07-03T13:13:13Z",
   "dateModified": "2022-03-26T08:35:37Z",
   "expires": "2026-12-31T23:59:59Z",
-  "duration": "PT14H",
   "inLanguage": [
     "de",
     "en"
   ],
   "audience": {
+    "type": "Audience",
     "audienceType": [
       {
         "id": "http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole/student",
@@ -318,7 +302,7 @@
   "assesses": [
     {
       "id": "urn:uuid:9e7c1b64-c460-4672-b666-cb64dc2d3921",
-      "type": "LearningOutcome",
+      "type": "Competency",
       "name": {
         "en": "Communication, collaboration and creativity"
       },
@@ -351,7 +335,7 @@
     },
     {
       "id": "urn:uuid:3f9f5899-c3cd-43a9-aecb-266483fcbf6a",
-      "type": "LearningOutcome",
+      "type": "Competency",
       "name": {
         "en": "Developing digital content"
       },
@@ -386,7 +370,7 @@
   "teaches": [
     {
       "id": "urn:uuid:9e7c1b64-c460-4672-b666-cb64dc2d3921",
-      "type": "LearningOutcome",
+      "type": "Competency",
       "name": {
         "en": "Communication, collaboration and creativity"
       },
@@ -419,7 +403,7 @@
     },
     {
       "id": "urn:uuid:3f9f5899-c3cd-43a9-aecb-266483fcbf6a",
-      "type": "LearningOutcome",
+      "type": "Competency",
       "name": {
         "en": "Developing digital content"
       },
@@ -482,7 +466,7 @@
   "competencyRequired": [
     {
       "id": "urn:uuid:7e8f9g0h-1i2j-3k4l-5m6n-7o8p9q0r1s2t",
-      "type": "CompetencyRequirement",
+      "type": "Competency",
       "name": {
         "en": "Englisch B2"
       },
@@ -520,7 +504,7 @@
     {
       "type": "AlignmentObject",
       "alignmentType": "educationalSubject",
-      "educationalFramework": "Destatis-Systematik der Fächergruppen, Studienbereiche und Studienfächer",
+      "educationalFramework": "Hochschulfächersystematik",
       "targetName": {
         "en": "Medieninformatik"
       },
@@ -537,8 +521,8 @@
     },
     {
       "type": "AlignmentObject",
-      "alignmentType": "learnerInterest",
-      "educationalFramework": "Holland Code",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "Holland Codes",
       "targetName": {
         "en": "Artistic (A)"
       },
@@ -561,16 +545,18 @@
         "type": "Concept",
         "inScheme": "http://data.europa.eu/snb/credential/25831c2"
       },
-      "recognizedBy": {
-        "name": {
-          "de": "Institut für Interaktive Systeme"
-        },
-        "type": "Organization"
-      },
+      "recognizedBy": [
+        {
+          "name": {
+            "de": "Institut für Interaktive Systeme"
+          },
+          "type": "Organization"
+        }
+      ],
       "competencyRequired": [
         {
           "id": "urn:uuid:9e7c1b64-c460-4672-b666-cb64dc2d3921",
-          "type": "CompetencyRequirement",
+          "type": "Competency",
           "name": {
             "en": "Communication, collaboration and creativity"
           },
@@ -603,7 +589,7 @@
         },
         {
           "id": "urn:uuid:3f9f5899-c3cd-43a9-aecb-266483fcbf6a",
-          "type": "CompetencyRequirement",
+          "type": "Competency",
           "name": {
             "en": "Developing digital content"
           },
@@ -695,6 +681,7 @@
         }
       ],
       "license": {
+        "type": "License",
         "id": "https://creativecommons.org/licenses/by-sa/3.0/",
         "identifier": "CC-BY-SA-3.0"
       }
@@ -702,7 +689,7 @@
   ],
   "educationalLevel": [
     {
-      "id": "https://w3id.org/kim/educationalLevel/level_06",
+      "id": "https://w3id.org/kim/educationalLevel/level_6",
       "type": "Concept",
       "prefLabel": {
         "de": "Bachelor oder äquivalent",
@@ -734,6 +721,7 @@
       "type": "ImageObject",
       "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
       "license": {
+        "type": "License",
         "identifier": "Proprietary",
         "id": null
       }
@@ -741,33 +729,30 @@
   },
   "creator": [
     {
-      "name": {
-        "de": "Institut für Interaktive Systeme"
-      },
+      "type": "Person",
+      "name": "Beispielperson",
       "sameAs": [
-        "https://www.th-luebeck.de"
+        "https://example.org/people/beispielperson"
       ],
-      "type": "Organization",
       "image": {
         "description": {
-          "de": "Logo der Technischen Hochschule Lübeck"
+          "de": "Foto von Beispielperson"
         },
         "type": "ImageObject",
-        "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
+        "contentUrl": "https://example.org/images/beispielperson.jpg",
         "license": {
+          "type": "License",
           "identifier": "Proprietary",
           "id": null
         }
-      }
-    }
-  ],
-  "instructor": [
-    {
-      "name": "Beispielperson",
-      "type": "Person",
-      "id": "https://example.org/people/beispielperson",
-      "sameAs": [
-        "https://orcid.org/0000-0002-1234-5678"
+      },
+      "affiliation": [
+        {
+          "name": {
+            "de": "Institut für Interaktive Systeme"
+          },
+          "type": "Organization"
+        }
       ]
     }
   ],
@@ -787,6 +772,7 @@
         "type": "ImageObject",
         "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
         "license": {
+          "type": "License",
           "identifier": "Proprietary",
           "id": null
         }
@@ -809,6 +795,7 @@
         "type": "ImageObject",
         "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
         "license": {
+          "type": "License",
           "identifier": "Proprietary",
           "id": null
         }
@@ -816,27 +803,30 @@
     }
   ],
   "license": {
+    "type": "License",
     "identifier": "CC0 1.0 Universal",
     "id": "https://creativecommons.org/publicdomain/zero/1.0/"
   },
   "image": {
+    "type": "ImageObject",
+    "contentUrl": "https://futurelearnlab.de/0/Kachel_Vorseite2.png",
     "description": {
       "en": "A cover image of the course"
     },
-    "type": "ImageObject",
-    "contentUrl": "https://futurelearnlab.de/0/Kachel_Vorseite2.png",
     "license": {
+      "type": "License",
       "identifier": "CC0 1.0 Universal",
       "id": "https://creativecommons.org/publicdomain/zero/1.0/"
     }
   },
   "trailer": {
+    "type": "VideoObject",
+    "contentUrl": "https://futurelearnlab.de/trailer.mp4",
     "description": {
       "en": "A teaser video of the course"
     },
-    "type": "VideoObject",
-    "contentUrl": "https://futurelearnlab.de/trailer.mp4",
     "license": {
+      "type": "License",
       "identifier": "Proprietary",
       "id": null
     }

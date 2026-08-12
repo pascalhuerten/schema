@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://w3id.org/moochub/draft/schemas/trailer.json",
   "title": "Trailer",
-  "description": "A licensed video trailer or teaser of the learning resource. It is intended for third-party players or embeds used to market the course.",
+  "description": "A licensed video or audio trailer or teaser of the learning resource. It is intended for third-party players or embeds used to market the course.",
   "type": "object",
   "allOf": [
     {
@@ -11,20 +11,15 @@
     {
       "type": "object",
       "properties": {
-        "type": {
-          "const": "VideoObject",
-          "description": "The trailer is a schema.org VideoObject. Audio trailers are not part of the MOOChub course profile."
+        "license": {
+          "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
         },
         "description": {
           "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
           "description": "A short description of the video teaser. It can be used as alternative text when the video cannot be displayed."
-        },
-        "license": {
-          "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
         }
       },
       "required": [
-        "type",
         "license"
       ]
     }

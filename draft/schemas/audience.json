@@ -5,6 +5,9 @@
   "description": "The intended audience of the course.",
   "type": "object",
   "properties": {
+    "type": {
+      "const": "Audience"
+    },
     "audienceType": {
       "$ref": "https://w3id.org/moochub/draft/schemas/audienceType.json"
     },
@@ -17,6 +20,9 @@
       "$ref": "https://w3id.org/moochub/draft/schemas/suggestedAge.json"
     }
   },
+  "required": [
+    "type"
+  ],
   "anyOf": [
     {
       "required": [

@@ -9,13 +9,13 @@
             "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
         },
         "type": {
-            "type": "string"
+            "const": "Competency"
         },
         "name": {
             "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
         },
         "relatedSkill": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+            "$ref": "https://w3id.org/moochub/draft/schemas/skillConcepts.json"
         }
     },
     "required": [

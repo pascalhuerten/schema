@@ -30,6 +30,8 @@
         }
     ],
     "license": {
-        "identifier": "https://spdx.org/licenses/CC-BY-4.0.html"
+        "type": "License",
+        "identifier": "https://spdx.org/licenses/CC-BY-4.0.html",
+        "id": "CC-BY-4.0"
     }
 }

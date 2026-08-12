@@ -9,7 +9,6 @@
             "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
         },
         "type": {
-            "type": "string",
             "enum": [
                 "Place",
                 "VirtualLocation"
@@ -25,8 +24,7 @@
             "$ref": "https://w3id.org/moochub/draft/schemas/postalAddress.json"
         },
         "url": {
-            "type": "string",
-            "format": "uri"
+            "$ref": "https://w3id.org/moochub/draft/schemas/url.json"
         },
         "geo": {
             "$ref": "https://w3id.org/moochub/draft/schemas/geoCoordinates.json"
@@ -45,14 +43,7 @@
             }
         },
         "owner": {
-            "oneOf": [
-                {
-                    "$ref": "https://w3id.org/moochub/draft/schemas/person.json"
-                },
-                {
-                    "$ref": "https://w3id.org/moochub/draft/schemas/organization.json"
-                }
-            ]
+            "$ref": "https://w3id.org/moochub/draft/schemas/owner.json"
         },
         "maximumAttendeeCapacity": {
             "type": "integer",
@@ -62,10 +53,9 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "format": "uri"
+                "$ref": "https://w3id.org/moochub/draft/schemas/url.json"
             },
-            "description": "A list of URLs of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+            "description": "A list of HTTPS-URLs of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
         }
     },
     "required": [

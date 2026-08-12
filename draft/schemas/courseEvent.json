@@ -6,16 +6,17 @@
     "type": "object",
     "properties": {
         "type": {
-            "type": "string",
-            "enum": [
-                "Event"
-            ]
+            "const": "Event"
         },
         "startDate": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+            "type": "string",
+            "format": "date-time",
+            "description": "The RFC 3339 date-time at which the event or phase starts."
         },
         "endDate": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+            "type": "string",
+            "format": "date-time",
+            "description": "The RFC 3339 date-time at which the event or phase ends."
         },
         "eventSchedule": {
             "type": "array",

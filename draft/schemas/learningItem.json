@@ -21,13 +21,13 @@
             "$ref": "https://w3id.org/moochub/draft/schemas/timeRequired.json"
         },
         "assesses": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+            "$ref": "https://w3id.org/moochub/draft/schemas/assesses.json"
         },
         "competencyRequired": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+            "$ref": "https://w3id.org/moochub/draft/schemas/competencyRequired.json"
         },
         "teaches": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/skills.json"
+            "$ref": "https://w3id.org/moochub/draft/schemas/teaches.json"
         },
         "license": {
             "$ref": "https://w3id.org/moochub/draft/schemas/license.json"

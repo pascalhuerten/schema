@@ -9,7 +9,6 @@
             "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
         },
         "type": {
-            "type": "string",
             "const": "CourseInstance"
         },
         "name": {
@@ -25,11 +24,7 @@
             "description": "The maximum number of attendees who can participate in this offering."
         },
         "subEvent": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-                "$ref": "https://w3id.org/moochub/draft/schemas/courseEvent.json"
-            }
+            "$ref": "https://w3id.org/moochub/draft/schemas/subEvent.json"
         },
         "courseSchedule": {
             "type": "array",
@@ -39,10 +34,19 @@
             }
         },
         "startDate": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+            "type": "string",
+            "format": "date-time",
+            "description": "The RFC 3339 date-time at which the course offering starts."
         },
         "endDate": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+            "type": "string",
+            "format": "date-time",
+            "description": "The RFC 3339 date-time at which the course offering ends."
+        },
+        "duration": {
+            "type": "string",
+            "format": "duration",
+            "description": "The ISO 8601 duration of the course offering, for example P3M."
         },
         "applicationStartDate": {
             "$ref": "https://w3id.org/moochub/draft/schemas/applicationStartDate.json"

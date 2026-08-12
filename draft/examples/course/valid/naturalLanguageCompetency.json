@@ -27,13 +27,14 @@
         }
     ],
     "license": {
+        "type": "License",
         "identifier": "Proprietary",
         "id": null
     },
     "teaches": [
         {
             "id": "https://provider.example/courses/ethical-ai/outcomes/explain-implications",
-            "type": "LearningOutcome",
+            "type": "Competency",
             "name": {
                 "en": "Explain ethical implications of AI-supported decisions"
             }
@@ -42,7 +43,7 @@
     "competencyRequired": [
         {
             "id": "https://provider.example/courses/ethical-ai/requirements/critical-thinking",
-            "type": "CompetencyRequirement",
+            "type": "Competency",
             "name": {
                 "en": "Basic critical thinking"
             }

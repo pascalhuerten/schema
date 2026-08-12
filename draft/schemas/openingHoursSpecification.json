@@ -6,7 +6,6 @@
     "type": "object",
     "properties": {
         "type": {
-            "type": "string",
             "const": "OpeningHoursSpecification"
         },
         "dayOfWeek": {
@@ -14,16 +13,7 @@
             "minItems": 1,
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "enum": [
-                    "https://schema.org/Monday",
-                    "https://schema.org/Tuesday",
-                    "https://schema.org/Wednesday",
-                    "https://schema.org/Thursday",
-                    "https://schema.org/Friday",
-                    "https://schema.org/Saturday",
-                    "https://schema.org/Sunday"
-                ]
+                "ref": "https://w3id.org/moochub/draft/schemas/dayOfWeek.json"
             }
         },
         "opens": {
@@ -35,10 +25,14 @@
             "format": "time"
         },
         "validFrom": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+            "type": "string",
+            "format": "date",
+            "description": "The first calendar date on which these opening hours apply."
         },
         "validThrough": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/dateOrDateTime.json"
+            "type": "string",
+            "format": "date",
+            "description": "The last calendar date on which these opening hours apply, inclusive."
         }
     },
     "required": [

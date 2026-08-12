@@ -1,7 +1,0 @@
-{
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://w3id.org/moochub/4.0.0/schemas/educationalProgramMode.json",
-    "title": "Educational program mode",
-    "description": "The delivery or study modes available for an educational program.",
-    "$ref": "https://w3id.org/moochub/4.0.0/schemas/courseMode.json"
-}

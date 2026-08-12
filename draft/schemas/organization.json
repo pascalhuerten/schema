@@ -2,18 +2,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://w3id.org/moochub/draft/schemas/organization.json",
   "title": "Organization",
-  "type": "object",
   "description": "This schema describes the attributes of an organization.",
+  "type": "object",
   "properties": {
     "id": {
       "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
     },
     "type": {
-      "type": "string",
-      "description": "The type of the object.",
-      "enum": [
-        "Organization"
-      ]
+      "const": "Organization"
     },
     "name": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json",
@@ -21,10 +17,9 @@
     },
     "sameAs": {
       "type": "array",
-      "description": "URIs that are asserted to identify the same organization, such as its homepage, ROR, or Wikidata.",
+      "description": "'HTTPS-URLs that are asserted to identify the same organization, such as its homepage, ROR, or Wikidata.",
       "items": {
-        "type": "string",
-        "format": "uri"
+        "$ref": "https://w3id.org/moochub/draft/schemas/url.json"
       },
       "uniqueItems": true,
       "example": [
@@ -42,7 +37,7 @@
     }
   },
   "required": [
-    "name",
-    "type"
+    "type",
+    "name"
   ]
 }

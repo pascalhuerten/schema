@@ -1,7 +1,0 @@
-{
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://w3id.org/moochub/4.0.0/schemas/expires.json",
-    "title": "Expiration Date",
-    "description": "Date the resource expires and is no longer useful or available. in ISO 8601 format: YYYY-MM-DD or CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]",
-    "$ref": "https://w3id.org/kim/amb/20231019/schemas/iso8601date.json"
-}

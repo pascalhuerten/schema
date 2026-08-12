@@ -33,6 +33,7 @@
         }
     ],
     "license": {
+        "type": "License",
         "identifier": "https://spdx.org/licenses/CC-BY-4.0.html",
         "id": null
     }
