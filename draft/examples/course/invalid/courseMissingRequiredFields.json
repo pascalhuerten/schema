@@ -10,8 +10,5 @@
   "name": {
     "de": "Digital Trainer (Gesamtkurs)"
   },
-  "type": [
-    "LearningResource",
-    "Course"
-  ]
+  "type": ["LearningResource", "Course"]
 }

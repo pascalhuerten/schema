@@ -18,14 +18,10 @@
   },
   "anyOf": [
     {
-      "required": [
-        "minValue"
-      ]
+      "required": ["minValue"]
     },
     {
-      "required": [
-        "maxValue"
-      ]
+      "required": ["maxValue"]
     }
   ]
 }

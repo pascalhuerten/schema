@@ -19,9 +19,7 @@
           "description": "A short description of the video teaser. It can be used as alternative text when the video cannot be displayed."
         }
       },
-      "required": [
-        "license"
-      ]
+      "required": ["license"]
     }
   ]
 }

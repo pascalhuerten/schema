@@ -1,112 +1,103 @@
 {
-    "links": {
-        "self": "https://provider.example/api/v4/catalog?page%5Bnumber%5D=1",
-        "first": "https://provider.example/api/v4/catalog?page%5Bnumber%5D=1",
-        "last": "https://provider.example/api/v4/catalog?page%5Bnumber%5D=1",
-        "next": null,
-        "prev": null
-    },
-    "meta": {
-        "total": 2
-    },
-    "data": [
-        {
-            "type": "courses",
-            "id": "5234",
-            "attributes": {
-                "@context": [
-                    "https://w3id.org/moochub/draft/context.jsonld",
-                    {
-                        "@language": "en"
-                    }
-                ],
-                "id": "https://provider.example/courses/intro-digital-skills",
-                "url": "https://provider.example/courses/intro-digital-skills",
-                "name": {
-                    "en": "Introduction to Digital Skills"
-                },
-                "type": [
-                    "LearningResource",
-                    "Course"
-                ],
-                "publisher": {
-                    "id": "https://provider.example/organizations/example-university",
-                    "type": "Organization",
-                    "name": {
-                        "en": "Example University"
-                    }
-                },
-                "creator": [
-                    {
-                        "id": "https://provider.example/people/example-author",
-                        "type": "Person",
-                        "name": "Example Author"
-                    }
-                ],
-                "license": {
-                    "type": "License",
-                    "identifier": "Proprietary"
-                }
-            }
+  "links": {
+    "self": "https://provider.example/api/v4/catalog?page%5Bnumber%5D=1",
+    "first": "https://provider.example/api/v4/catalog?page%5Bnumber%5D=1",
+    "last": "https://provider.example/api/v4/catalog?page%5Bnumber%5D=1",
+    "next": null,
+    "prev": null
+  },
+  "meta": {
+    "total": 2
+  },
+  "data": [
+    {
+      "type": "courses",
+      "id": "5234",
+      "attributes": {
+        "@context": [
+          "https://w3id.org/moochub/draft/context.jsonld",
+          {
+            "@language": "en"
+          }
+        ],
+        "id": "https://provider.example/courses/intro-digital-skills",
+        "url": "https://provider.example/courses/intro-digital-skills",
+        "name": {
+          "en": "Introduction to Digital Skills"
         },
-        {
-            "type": "programs",
-            "id": "microdegree-digital-skills",
-            "attributes": {
-                "@context": [
-                    "https://w3id.org/moochub/draft/context.jsonld",
-                    {
-                        "@language": "en"
-                    }
-                ],
-                "id": "https://provider.example/programs/digital-skills-microdegree",
-                "type": "EducationalOccupationalProgram",
-                "url": "https://provider.example/programs/digital-skills-microdegree",
-                "name": {
-                    "en": "Digital Skills Microdegree"
-                },
-                "description": [
-                    {
-                        "type": "TextObject",
-                        "inLanguage": "en",
-                        "text": "A course program for foundational digital skills.",
-                        "encodingFormat": "text/plain"
-                    }
-                ],
-                "provider": {
-                    "id": "https://provider.example/organizations/example-university",
-                    "type": "Organization",
-                    "name": {
-                        "en": "Example University"
-                    }
-                },
-                "educationalProgramMode": [
-                    "online",
-                    "asynchronous"
-                ],
-                "timeToComplete": "P3M",
-                "numberOfCredits": 10,
-                "hasPart": [
-                    {
-                        "name": {
-                            "en": "Core module"
-                        },
-                        "numberOfCredits": 10,
-                        "hasCourse": [
-                            {
-                                "id": "https://provider.example/courses/intro-digital-skills",
-                                "type": [
-                                    "LearningResource",
-                                    "Course"
-                                ],
-                                "name": {
-                                    "en": "Introduction to Digital Skills"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
+        "type": ["LearningResource", "Course"],
+        "publisher": {
+          "id": "https://provider.example/organizations/example-university",
+          "type": "Organization",
+          "name": {
+            "en": "Example University"
+          }
+        },
+        "creator": [
+          {
+            "id": "https://provider.example/people/example-author",
+            "type": "Person",
+            "name": "Example Author"
+          }
+        ],
+        "license": {
+          "type": "License",
+          "identifier": "Proprietary"
         }
-    ]
+      }
+    },
+    {
+      "type": "programs",
+      "id": "microdegree-digital-skills",
+      "attributes": {
+        "@context": [
+          "https://w3id.org/moochub/draft/context.jsonld",
+          {
+            "@language": "en"
+          }
+        ],
+        "id": "https://provider.example/programs/digital-skills-microdegree",
+        "type": "EducationalOccupationalProgram",
+        "url": "https://provider.example/programs/digital-skills-microdegree",
+        "name": {
+          "en": "Digital Skills Microdegree"
+        },
+        "description": [
+          {
+            "type": "TextObject",
+            "inLanguage": "en",
+            "text": "A course program for foundational digital skills.",
+            "encodingFormat": "text/plain"
+          }
+        ],
+        "provider": {
+          "id": "https://provider.example/organizations/example-university",
+          "type": "Organization",
+          "name": {
+            "en": "Example University"
+          }
+        },
+        "educationalProgramMode": ["online", "asynchronous"],
+        "timeToComplete": "P3M",
+        "numberOfCredits": 10,
+        "hasPart": [
+          {
+            "name": {
+              "en": "Core module"
+            },
+            "numberOfCredits": 10,
+            "hasCourse": [
+              {
+                "id": "https://provider.example/courses/intro-digital-skills",
+                "type": ["LearningResource", "Course"],
+                "name": {
+                  "en": "Introduction to Digital Skills"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }

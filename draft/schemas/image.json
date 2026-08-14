@@ -20,8 +20,5 @@
       "description": "A short description of the image. It can be used as alternative text when the image cannot be displayed."
     }
   },
-  "required": [
-    "contentUrl",
-    "license"
-  ]
+  "required": ["contentUrl", "license"]
 }

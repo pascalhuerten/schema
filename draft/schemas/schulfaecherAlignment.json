@@ -1,30 +1,28 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://w3id.org/moochub/draft/schemas/schulfaecherAlignment.json",
-    "title": "Schulfächer AlignmentObject",
-    "description": "An AlignmentObject for the Schulfächer framework.",
-    "allOf": [
-        {
-            "$ref": "https://w3id.org/moochub/draft/schemas/alignmentObject.json"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/moochub/draft/schemas/schulfaecherAlignment.json",
+  "title": "Schulfächer AlignmentObject",
+  "description": "An AlignmentObject for the Schulfächer framework.",
+  "allOf": [
+    {
+      "$ref": "https://w3id.org/moochub/draft/schemas/alignmentObject.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "alignmentType": {
+          "const": "educationalSubject"
         },
-        {
-            "type": "object",
-            "properties": {
-                "alignmentType": {
-                    "const": "educationalSubject"
-                },
-                "educationalFramework": {
-                    "const": "Schulfächer"
-                },
-                "targetUrl": {
-                    "type": "string",
-                    "format": "uri",
-                    "pattern": "^http://w3id.org/kim/schulfaecher/.*$"
-                }
-            },
-            "required": [
-                "targetUrl"
-            ]
+        "educationalFramework": {
+          "const": "Schulfächer"
+        },
+        "targetUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^http://w3id.org/kim/schulfaecher/.*$"
         }
-    ]
+      },
+      "required": ["targetUrl"]
+    }
+  ]
 }

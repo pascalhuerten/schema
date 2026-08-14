@@ -25,10 +25,7 @@
         "$ref": "https://w3id.org/moochub/draft/schemas/url.json"
       },
       "uniqueItems": true,
-      "example": [
-        "https://open.hpi.de/",
-        "https://ror.org/04xfq0f34"
-      ]
+      "example": ["https://open.hpi.de/", "https://ror.org/04xfq0f34"]
     },
     "description": {
       "$ref": "https://w3id.org/moochub/draft/schemas/richText.json",
@@ -43,9 +40,5 @@
       "format": "date-time"
     }
   },
-  "required": [
-    "id",
-    "type",
-    "name"
-  ]
+  "required": ["id", "type", "name"]
 }

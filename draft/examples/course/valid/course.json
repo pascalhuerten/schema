@@ -10,18 +10,11 @@
   "name": {
     "de": "Digital Trainer (Gesamtkurs)"
   },
-  "type": [
-    "LearningResource",
-    "Course"
-  ],
+  "type": ["LearningResource", "Course"],
   "courseCode": "DIGITAL-TRAINER",
   "timeRequired": "PT42H",
   "numberOfCredits": 3.5,
-  "accessMode": [
-    "auditory",
-    "textual",
-    "visual"
-  ],
+  "accessMode": ["auditory", "textual", "visual"],
   "aggregateRating": {
     "ratingValue": 4.5,
     "ratingCount": 24,
@@ -35,10 +28,7 @@
       "name": {
         "de": "Sommersemester 2026"
       },
-      "courseMode": [
-        "blended",
-        "synchronous"
-      ],
+      "courseMode": ["blended", "synchronous"],
       "startDate": "2026-05-04T00:00:00Z",
       "endDate": "2026-06-12T23:59:59Z",
       "duration": "P6W",
@@ -122,9 +112,7 @@
                 }
               },
               "maximumAttendeeCapacity": 20,
-              "sameAs": [
-                "https://pubdoc.th-luebeck.de/1af09392ff"
-              ]
+              "sameAs": ["https://pubdoc.th-luebeck.de/1af09392ff"]
             }
           ]
         },
@@ -230,10 +218,7 @@
       "name": {
         "de": "Wintersemester 2025"
       },
-      "courseMode": [
-        "online",
-        "asynchronous"
-      ],
+      "courseMode": ["online", "asynchronous"],
       "startDate": "2025-01-13T00:00:00Z",
       "endDate": "2025-02-28T23:59:59Z"
     }
@@ -253,10 +238,7 @@
   "datePublished": "2019-07-03T13:13:13Z",
   "dateModified": "2022-03-26T08:35:37Z",
   "expires": "2026-12-31T23:59:59Z",
-  "inLanguage": [
-    "de",
-    "en"
-  ],
+  "inLanguage": ["de", "en"],
   "audience": {
     "type": "Audience",
     "audienceType": [
@@ -289,10 +271,7 @@
       "maxValue": 50
     }
   },
-  "keywords": [
-    "Digitale Kompetenzen",
-    "Digitalisierung"
-  ],
+  "keywords": ["Digitale Kompetenzen", "Digitalisierung"],
   "conditionsOfAccess": {
     "prefLabel": {
       "de": "Anmeldung erforderlich"
@@ -455,10 +434,7 @@
   "prerequisiteCourses": [
     {
       "id": "urn:uuid:1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
-      "type": [
-        "LearningResource",
-        "Course"
-      ],
+      "type": ["LearningResource", "Course"],
       "name": {
         "en": "Introduction to Digital Skills"
       }
@@ -628,10 +604,7 @@
   "isPartOf": [
     {
       "id": "https://oer.gitlab.io/OS",
-      "type": [
-        "LearningResource",
-        "Course"
-      ],
+      "type": ["LearningResource", "Course"],
       "name": {
         "de": "Computer Structures and Operating Systems"
       }
@@ -647,20 +620,14 @@
   "hasPart": [
     {
       "id": "https://oer.gitlab.io/OS-Basics",
-      "type": [
-        "LearningResource",
-        "Course"
-      ],
+      "type": ["LearningResource", "Course"],
       "name": {
         "de": "Computer Structures and Operating Systems - Basics"
       }
     },
     {
       "id": "https://oer.gitlab.io/OS/figures/OS/hail_f0613_with_embedded_frame_nos.png",
-      "type": [
-        "LearningResource",
-        "ImageObject"
-      ],
+      "type": ["LearningResource", "ImageObject"],
       "name": {
         "de": "A-32 two-level page table"
       }
@@ -669,10 +636,7 @@
   "isBasedOn": [
     {
       "id": "https://oer.gitlab.io/OS/wiki/concept.pdf",
-      "type": [
-        "LearningResource",
-        "PresentationDigitalDocument"
-      ],
+      "type": ["LearningResource", "PresentationDigitalDocument"],
       "name": {
         "de": "Digital Trainer Kurskonzept"
       },
@@ -714,9 +678,7 @@
     "name": {
       "de": "Institut für Interaktive Systeme"
     },
-    "sameAs": [
-      "https://www.th-luebeck.de"
-    ],
+    "sameAs": ["https://www.th-luebeck.de"],
     "type": "Organization",
     "image": {
       "description": {
@@ -735,9 +697,7 @@
       "id": "https://example.org/people/beispielperson",
       "type": "Person",
       "name": "Beispielperson",
-      "sameAs": [
-        "https://example.org/people/beispielperson"
-      ],
+      "sameAs": ["https://example.org/people/beispielperson"],
       "image": {
         "description": {
           "de": "Foto von Beispielperson"
@@ -766,9 +726,7 @@
       "name": {
         "de": "Institut für Interaktive Systeme"
       },
-      "sameAs": [
-        "https://www.th-luebeck.de"
-      ],
+      "sameAs": ["https://www.th-luebeck.de"],
       "type": "Organization",
       "image": {
         "description": {
@@ -789,9 +747,7 @@
       "name": {
         "de": "Institut für Interaktive Systeme"
       },
-      "sameAs": [
-        "https://www.th-luebeck.de/isy"
-      ],
+      "sameAs": ["https://www.th-luebeck.de/isy"],
       "type": "Organization",
       "image": {
         "description": {

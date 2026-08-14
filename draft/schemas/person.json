@@ -66,9 +66,5 @@
       "format": "date-time"
     }
   },
-  "required": [
-    "id",
-    "name",
-    "type"
-  ]
+  "required": ["id", "name", "type"]
 }

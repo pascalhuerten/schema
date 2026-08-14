@@ -20,24 +20,16 @@
       "$ref": "https://w3id.org/moochub/draft/schemas/suggestedAge.json"
     }
   },
-  "required": [
-    "type"
-  ],
+  "required": ["type"],
   "anyOf": [
     {
-      "required": [
-        "audienceType"
-      ]
+      "required": ["audienceType"]
     },
     {
-      "required": [
-        "description"
-      ]
+      "required": ["description"]
     },
     {
-      "required": [
-        "suggestedAge"
-      ]
+      "required": ["suggestedAge"]
     }
   ]
 }

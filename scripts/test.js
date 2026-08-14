@@ -80,7 +80,11 @@ function findUnexpectedProperties(value, schema, instancePath = '') {
     value.forEach((item, index) => {
       for (const itemSchema of itemSchemas) {
         issues.push(
-          ...findUnexpectedProperties(item, itemSchema, `${instancePath}/${index}`)
+          ...findUnexpectedProperties(
+            item,
+            itemSchema,
+            `${instancePath}/${index}`
+          )
         )
       }
     })
@@ -90,7 +94,9 @@ function findUnexpectedProperties(value, schema, instancePath = '') {
 
   const properties = new Map()
   for (const branch of branches) {
-    for (const [name, propertySchema] of Object.entries(branch.properties ?? {})) {
+    for (const [name, propertySchema] of Object.entries(
+      branch.properties ?? {}
+    )) {
       properties.set(name, propertySchema)
     }
   }
@@ -117,7 +123,11 @@ function reportFailure(failures, message) {
 }
 
 function errorSignatures(errors) {
-  return [...new Set((errors ?? []).map((error) => `${error.keyword}:${error.instancePath}`))].sort()
+  return [
+    ...new Set(
+      (errors ?? []).map((error) => `${error.keyword}:${error.instancePath}`)
+    ),
+  ].sort()
 }
 
 async function main() {
@@ -152,14 +162,18 @@ async function main() {
     const validate = await ajv.compileAsync({ $ref: rootSchema.$id })
 
     for (const [directory, expected] of suite.directories) {
-      for (const filename of fs.readdirSync(path.join(projectRoot, directory))) {
+      for (const filename of fs.readdirSync(
+        path.join(projectRoot, directory)
+      )) {
         if (!filename.endsWith('.json')) continue
         const data = readJson(path.join(projectRoot, directory, filename))
         const actual = validate(data)
         if (actual !== expected) {
           reportFailure(
             failures,
-            `${directory}/${filename} was expected to be ${expected ? 'valid' : 'invalid'}: ${ajv.errorsText(validate.errors)}`
+            `${directory}/${filename} was expected to be ${
+              expected ? 'valid' : 'invalid'
+            }: ${ajv.errorsText(validate.errors)}`
           )
           process.exitCode = 1
           failed++
@@ -171,10 +185,16 @@ async function main() {
             )
             const expectedErrors = invalidExpectations[expectationPath]
             const actualErrors = errorSignatures(validate.errors)
-            if (!expectedErrors || JSON.stringify(actualErrors) !== JSON.stringify([...expectedErrors].sort())) {
+            if (
+              !expectedErrors ||
+              JSON.stringify(actualErrors) !==
+                JSON.stringify([...expectedErrors].sort())
+            ) {
               reportFailure(
                 failures,
-                `${directory}/${filename} has unexpected validation errors. Expected: ${expectedErrors?.join(', ') ?? 'none'}; actual: ${actualErrors.join(', ')}`
+                `${directory}/${filename} has unexpected validation errors. Expected: ${
+                  expectedErrors?.join(', ') ?? 'none'
+                }; actual: ${actualErrors.join(', ')}`
               )
               failed++
               continue
@@ -194,14 +214,20 @@ async function main() {
                   )
                 )
                 unexpected.push(
-                  ...findUnexpectedProperties(resource.attributes, attributesSchema, `/data/${data.data.indexOf(resource)}/attributes`)
+                  ...findUnexpectedProperties(
+                    resource.attributes,
+                    attributesSchema,
+                    `/data/${data.data.indexOf(resource)}/attributes`
+                  )
                 )
               }
             }
             if (unexpected.length > 0) {
               reportFailure(
                 failures,
-                `${directory}/${filename} contains unexpected properties: ${unexpected.join(', ')}`
+                `${directory}/${filename} contains unexpected properties: ${unexpected.join(
+                  ', '
+                )}`
               )
               failed++
               continue

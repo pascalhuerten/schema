@@ -10,10 +10,7 @@
   "name": {
     "de": "Digital Trainer (Gesamtkurs)"
   },
-  "type": [
-    "LearningResource",
-    "Course"
-  ],
+  "type": ["LearningResource", "Course"],
   "publisher": {
     "id": "https://example.org/organizations/isy",
     "name": {

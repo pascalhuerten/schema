@@ -21,8 +21,5 @@
       "example": "CC BY 4.0"
     }
   },
-  "required": [
-    "type",
-    "identifier"
-  ]
+  "required": ["type", "identifier"]
 }

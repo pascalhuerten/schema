@@ -1,11 +1,8 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://w3id.org/moochub/draft/schemas/courseType.json",
-    "title": "MOOChub course type",
-    "description": "The RDF types required for a MOOChub v4 course. LearningResource is required by AMB and Course identifies the schema.org course type.",
-    "type": "array",
-    "const": [
-        "LearningResource",
-        "Course"
-    ]
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/moochub/draft/schemas/courseType.json",
+  "title": "MOOChub course type",
+  "description": "The RDF types required for a MOOChub v4 course. LearningResource is required by AMB and Course identifies the schema.org course type.",
+  "type": "array",
+  "const": ["LearningResource", "Course"]
 }
