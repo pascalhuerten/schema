@@ -86,26 +86,19 @@ contains schema.org `AlignmentObject` values. MOOChub limits this property to
 two alignment types because competencies, skills, prerequisites, and
 assessments belong in the dedicated `teaches`, `assesses`, and
 `competencyRequired` properties:
+Use alignmentType `educationalSubject` for subject and field-of-study classifications and Holland Code / RIASEC career interests.
 
-- `educationalSubject` for subject and field-of-study classifications.
-- `learnerInterest` for Holland Code / RIASEC career interests.
-
-Each alignment must include `type: "AlignmentObject"`, one of the two
-`alignmentType` values, an `educationalFramework`, and a localized
+Each alignment must include `type: "AlignmentObject"`, an
+`alignmentType`, an `educationalFramework`, and a localized
 `targetName`. The target must be identified by at least one of `targetUrl` or
 `identifier`; both may be supplied. `targetDescription` is optional.
 
-The v3 `hollandCode` array is represented in v4 through `learnerInterest`
+The v3 `hollandCode` array is represented in v4 through `educationalSubject`
 alignments. Use `educationalFramework: "Holland Code"`, the one-letter code in
-`identifier`, a readable localized label in `targetName`, and, where possible,
-the corresponding O*NET concept URI in `targetUrl`. The allowed identifiers are
-`R`, `I`, `A`, `S`, `E`, and `C`. The target URI must be one of the six O*NET
-Career Interest Type concept IRIs: Realistic, Investigative, Artistic, Social,
-Enterprising, or Conventional. These IRIs identify the concepts and expose
-their definitions and labels. For example, `A`, `S`, and `E` become separate alignment
-objects for Artistic, Social, and Enterprising.
+`identifier`, a readable localized label in `targetName`. The allowed identifiers are
+`R` for Realistic, `I` for Investigative, `A` for Artistic, `S` for Social, `E` for Enterprising, and `C` for Conventional.
 
-For `educationalSubject`, the allowed frameworks are:
+The other allowed frameworks are:
 
 - `ISCED-F`
 - `OEFOS`
