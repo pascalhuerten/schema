@@ -16,6 +16,7 @@
     ],
     "courseCode": "",
     "publisher": {
+        "id": "https://example.org/organizations/example-university",
         "name": {
             "de": "Example University"
         },
@@ -23,6 +24,7 @@
     },
     "creator": [
         {
+            "id": "https://example.org/people/example-person",
             "name": {
                 "de": "Example University"
             },
@@ -31,7 +33,6 @@
     ],
     "license": {
         "type": "License",
-        "identifier": "proprietary",
-        "id": null
+        "identifier": "proprietary"
     }
 }

@@ -8,17 +8,26 @@
     "@context": {
       "$ref": "https://w3id.org/moochub/draft/schemas/context-schema.json"
     },
-    "id": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
-    },
     "type": {
       "$ref": "https://w3id.org/moochub/draft/schemas/courseType.json"
+    },
+    "id": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
     },
     "url": {
       "$ref": "https://w3id.org/moochub/draft/schemas/url.json"
     },
     "name": {
       "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
+    },
+    "publisher": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/publisher.json"
+    },
+    "creator": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/creator.json"
+    },
+    "license": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
     },
     "courseCode": {
       "$ref": "https://w3id.org/moochub/draft/schemas/courseCode.json"
@@ -53,20 +62,11 @@
     "accessMode": {
       "$ref": "https://w3id.org/moochub/draft/schemas/accessMode.json"
     },
-    "license": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/license.json"
-    },
     "image": {
       "$ref": "https://w3id.org/moochub/draft/schemas/image.json"
     },
     "trailer": {
       "$ref": "https://w3id.org/moochub/draft/schemas/trailer.json"
-    },
-    "publisher": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/publisher.json"
-    },
-    "creator": {
-      "$ref": "https://w3id.org/moochub/draft/schemas/creator.json"
     },
     "contributor": {
       "$ref": "https://w3id.org/moochub/draft/schemas/contributor.json"
@@ -137,7 +137,6 @@
     }
   },
   "required": [
-    "@context",
     "id",
     "type",
     "url",

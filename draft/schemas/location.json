@@ -5,6 +5,9 @@
     "description": "A physical or virtual location. A location can be either a url in case of a virtual location or a postal address or geocoordinates in case of a physical location.",
     "type": "object",
     "properties": {
+        "@context": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/context-schema.json"
+        },
         "id": {
             "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
         },
@@ -56,9 +59,14 @@
                 "$ref": "https://w3id.org/moochub/draft/schemas/url.json"
             },
             "description": "A list of HTTPS-URLs of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+        },
+        "dateModified": {
+            "type": "string",
+            "format": "date-time"
         }
     },
     "required": [
+        "id",
         "type",
         "name"
     ],

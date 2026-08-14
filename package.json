@@ -9,11 +9,13 @@
   "scripts": {
     "format": "prettier . --write",
     "lint:prettier": "prettier .",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "test:jsonld": "node scripts/jsonld-context-test.js"
   },
   "devDependencies": {
     "ajv": "^8.20.0",
     "ajv-formats": "^2.1.1",
+    "jsonld": "^9.0.0",
     "prettier": "^2.8.8",
     "prettier-plugin-sh": "^0.12.8"
   }

@@ -19,26 +19,11 @@
             "description": "The ISO 4217 currency code for the price."
         },
         "category": {
-            "type": "string",
-            "enum": [
-                "course",
-                "certificate",
-                "complete"
-            ],
+            "$ref": "https://w3id.org/moochub/draft/schemas/offerCategory.json",
             "description": "Whether the offer covers the course, certification only, or both."
         },
         "paymentFrequency": {
-            "type": "string",
-            "enum": [
-                "one-time",
-                "weekly",
-                "monthly",
-                "quarterly",
-                "half-yearly",
-                "by semester",
-                "yearly",
-                "other"
-            ],
+            "$ref": "https://w3id.org/moochub/draft/schemas/paymentFrequency.json",
             "description": "The payment frequency used by the MOOChub profile."
         },
         "availabilityStarts": {

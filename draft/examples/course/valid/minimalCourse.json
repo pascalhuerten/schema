@@ -15,6 +15,7 @@
     "Course"
   ],
   "publisher": {
+    "id": "https://example.org/organizations/isy",
     "name": {
       "de": "Institut für Interaktive Systeme"
     },
@@ -22,13 +23,13 @@
   },
   "creator": [
     {
+      "id": "https://example.org/people/beispielperson",
       "type": "Person",
       "name": "Beispielperson"
     }
   ],
   "license": {
     "type": "License",
-    "identifier": "Propriatary",
-    "id": null
+    "identifier": "Propriatary"
   }
 }

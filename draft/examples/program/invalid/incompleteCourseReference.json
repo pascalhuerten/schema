@@ -12,21 +12,27 @@
         "en": "Incomplete Program"
     },
     "provider": {
+        "id": "https://example.org/organizations/example-university",
         "type": "Organization",
         "name": {
             "en": "Example University"
         }
     },
-    "hasCourse": [
+    "hasPart": [
         {
-            "course": {
-                "id": "https://provider.example/courses/intro-digital-skills",
-                "type": [
-                    "LearningResource",
-                    "Course"
-                ]
+            "name": {
+                "en": "Core module"
             },
-            "requirementLevel": "mandatory"
+            "numberOfCredits": 5,
+            "hasCourse": [
+                {
+                    "id": "https://provider.example/courses/intro-digital-skills",
+                    "type": [
+                        "LearningResource",
+                        "Course"
+                    ]
+                }
+            ]
         }
     ]
 }

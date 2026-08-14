@@ -1,6 +1,8 @@
 {
     "links": {
-        "self": "https://provider.example/api/v4/catalog"
+        "self": "https://provider.example/api/v4/catalog",
+        "first": "https://provider.example/api/v4/catalog",
+        "last": "https://provider.example/api/v4/catalog"
     },
     "data": [
         {
@@ -20,24 +22,30 @@
                     "en": "Digital Skills Microdegree"
                 },
                 "provider": {
+                    "id": "https://example.org/organizations/example-university",
                     "type": "Organization",
                     "name": {
                         "en": "Example University"
                     }
                 },
-                "hasCourse": [
+                "hasPart": [
                     {
-                        "course": {
-                            "id": "https://provider.example/courses/intro-digital-skills",
-                            "type": [
-                                "LearningResource",
-                                "Course"
-                            ],
-                            "name": {
-                                "en": "Introduction to Digital Skills"
-                            }
+                        "name": {
+                            "en": "Core module"
                         },
-                        "requirementLevel": "mandatory"
+                        "numberOfCredits": 5,
+                        "hasCourse": [
+                            {
+                                "id": "https://provider.example/courses/intro-digital-skills",
+                                "name": {
+                                    "en": "Introduction to Digital Skills"
+                                },
+                                "type": [
+                                    "LearningResource",
+                                    "Course"
+                                ]
+                            }
+                        ]
                     }
                 ]
             }

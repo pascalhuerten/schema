@@ -15,7 +15,11 @@
             "$ref": "https://w3id.org/kim/amb/20231019/schemas/localizedString.json"
         },
         "relatedSkill": {
-            "$ref": "https://w3id.org/moochub/draft/schemas/skillConcepts.json"
+            "$ref": "https://w3id.org/moochub/draft/schemas/concepts.json"
+        },
+        "proficiencyLevel": {
+            "$ref": "https://w3id.org/moochub/draft/schemas/concepts.json",
+            "description": "One or more concepts that describe the proficiency level of this competency."
         }
     },
     "required": [

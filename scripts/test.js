@@ -4,11 +4,17 @@ const Ajv2020 = require('ajv/dist/2020')
 const crypto = require('node:crypto')
 const draft7MetaSchema = require('ajv/dist/refs/json-schema-draft-07.json')
 const addFormats = require('ajv-formats')
+const { runJsonLdTests } = require('./jsonld-context-test')
 
 const projectRoot = __dirname
 const schemasDirectory = path.join(projectRoot, '../draft/schemas')
 const cacheDirectory = path.join(projectRoot, '../.cache', 'remote-schemas')
 const readJson = (filename) => JSON.parse(fs.readFileSync(filename, 'utf8'))
+const invalidExpectations = readJson(
+  path.join(projectRoot, '../scripts/invalid-expectations.json')
+)
+const green = (text) => `\x1b[32m${text}\x1b[0m`
+const red = (text) => `\x1b[31m${text}\x1b[0m`
 
 function cachedSchemaFilename(uri) {
   const hash = crypto.createHash('sha256').update(uri).digest('hex')
@@ -37,6 +43,7 @@ async function loadRemoteSchema(uri) {
 
 const ajv = new Ajv2020({
   loadSchema: loadRemoteSchema,
+  allErrors: true,
   strict: false,
 })
 ajv.addMetaSchema(draft7MetaSchema)
@@ -48,9 +55,75 @@ for (const filename of fs.readdirSync(schemasDirectory, { recursive: true })) {
 }
 addFormats(ajv)
 
+function resolveSchema(schema) {
+  if (!schema?.$ref) return schema
+  return ajv.getSchema(schema.$ref)?.schema ?? schema
+}
+
+function schemaBranches(schema) {
+  const resolved = resolveSchema(schema)
+  return [
+    resolved,
+    ...(resolved?.allOf ?? []).flatMap(schemaBranches),
+    ...(resolved?.anyOf ?? []).flatMap(schemaBranches),
+    ...(resolved?.oneOf ?? []).flatMap(schemaBranches),
+  ]
+}
+
+function findUnexpectedProperties(value, schema, instancePath = '') {
+  const issues = []
+  const branches = schemaBranches(schema)
+  if (Array.isArray(value)) {
+    const itemSchemas = branches.flatMap((branch) =>
+      branch.items ? [branch.items] : []
+    )
+    value.forEach((item, index) => {
+      for (const itemSchema of itemSchemas) {
+        issues.push(
+          ...findUnexpectedProperties(item, itemSchema, `${instancePath}/${index}`)
+        )
+      }
+    })
+    return issues
+  }
+  if (!value || typeof value !== 'object') return issues
+
+  const properties = new Map()
+  for (const branch of branches) {
+    for (const [name, propertySchema] of Object.entries(branch.properties ?? {})) {
+      properties.set(name, propertySchema)
+    }
+  }
+  if (properties.size > 0) {
+    for (const [name, child] of Object.entries(value)) {
+      if (!properties.has(name)) {
+        issues.push(`${instancePath}/${name}`)
+      } else {
+        issues.push(
+          ...findUnexpectedProperties(
+            child,
+            properties.get(name),
+            `${instancePath}/${name}`
+          )
+        )
+      }
+    }
+  }
+  return issues
+}
+
+function reportFailure(failures, message) {
+  failures.push(message)
+}
+
+function errorSignatures(errors) {
+  return [...new Set((errors ?? []).map((error) => `${error.keyword}:${error.instancePath}`))].sort()
+}
+
 async function main() {
   let passed = 0
   let failed = 0
+  const failures = []
 
   for (const suite of [
     {
@@ -84,25 +157,79 @@ async function main() {
         const data = readJson(path.join(projectRoot, directory, filename))
         const actual = validate(data)
         if (actual !== expected) {
-          console.error(
-            `${directory}/${filename} was expected to be ${expected ? 'valid' : 'invalid'
-            }`
+          reportFailure(
+            failures,
+            `${directory}/${filename} was expected to be ${expected ? 'valid' : 'invalid'}: ${ajv.errorsText(validate.errors)}`
           )
-          if (!actual) console.error(ajv.errorsText(validate.errors))
           process.exitCode = 1
           failed++
         } else {
-          console.log(
-            `${directory}/${filename} is ${expected ? 'valid' : 'invalid'
-            } as expected`
-          )
+          if (!expected) {
+            const expectationPath = path.relative(
+              path.join(projectRoot, '../draft/examples'),
+              path.join(projectRoot, directory, filename)
+            )
+            const expectedErrors = invalidExpectations[expectationPath]
+            const actualErrors = errorSignatures(validate.errors)
+            if (!expectedErrors || JSON.stringify(actualErrors) !== JSON.stringify([...expectedErrors].sort())) {
+              reportFailure(
+                failures,
+                `${directory}/${filename} has unexpected validation errors. Expected: ${expectedErrors?.join(', ') ?? 'none'}; actual: ${actualErrors.join(', ')}`
+              )
+              failed++
+              continue
+            }
+          }
+          if (expected) {
+            let unexpected = findUnexpectedProperties(data, rootSchema)
+            if (suite.rootSchema.endsWith('api/catalogFeed.json')) {
+              unexpected = []
+              for (const resource of data.data) {
+                const attributesSchema = readJson(
+                  path.resolve(
+                    projectRoot,
+                    resource.type === 'programs'
+                      ? '../draft/schemas/program.json'
+                      : '../draft/schemas/course.json'
+                  )
+                )
+                unexpected.push(
+                  ...findUnexpectedProperties(resource.attributes, attributesSchema, `/data/${data.data.indexOf(resource)}/attributes`)
+                )
+              }
+            }
+            if (unexpected.length > 0) {
+              reportFailure(
+                failures,
+                `${directory}/${filename} contains unexpected properties: ${unexpected.join(', ')}`
+              )
+              failed++
+              continue
+            }
+          }
+          console.log(`${green('✓')} ${directory}/${filename}`)
           passed++
         }
       }
     }
   }
 
+  const jsonLdResult = await runJsonLdTests()
+  if (jsonLdResult.failures.length > 0) {
+    for (const error of jsonLdResult.failures) {
+      reportFailure(failures, `JSON-LD validation failed: ${error}`)
+    }
+    failed++
+  } else {
+    console.log(`${green('✓')} JSON-LD examples (${jsonLdResult.checked})`)
+    passed++
+  }
+
   console.log(`\nValidation completed. Passed: ${passed}, Failed: ${failed}`)
+  if (failures.length > 0) {
+    console.error(`\n${red('Failures:')}`)
+    for (const failure of failures) console.error(`- ${failure}`)
+  }
 }
 
 main().catch((error) => {

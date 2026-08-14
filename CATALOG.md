@@ -13,6 +13,24 @@ The feed's `data` array MAY contain these JSON:API resource types:
   [`draft/schemas/course.json`](draft/schemas/course.json)
 - `programs`: an educational program in `attributes`, conforming to
   [`draft/schemas/program.json`](draft/schemas/program.json)
+- `credentials`: an educational or occupational credential in
+  `attributes`, conforming to [`draft/schemas/educationalOccupationalCredential.json`](draft/schemas/educationalOccupationalCredential.json)
+- `persons`: a person in `attributes`, conforming to
+  [`draft/schemas/person.json`](draft/schemas/person.json)
+- `organizations`: an organization in `attributes`, conforming to
+  [`draft/schemas/organization.json`](draft/schemas/organization.json)
+- `locations`: a location in `attributes`, conforming to
+  [`draft/schemas/location.json`](draft/schemas/location.json)
+
+Each independently harvestable JSON-LD object MUST have a stable `id` and a
+corresponding `type`. Publishing these resource types independently is optional; providers
+may remain focused on courses.
+
+The MOOChub JSON Schemas do not require `@context`. Providers MAY include it
+in JSON:API attributes and embedded objects. A provider publishing an object as
+a standalone JSON-LD document SHOULD include a compatible context at the
+document root. The context MAY extend or replace the default MOOChub context,
+provided that the meaning of MOOChub-defined properties is preserved.
 
 The JSON:API resource `id` is a non-empty, provider-local string used to address
 the resource through the API, for example `GET /courses/5234`. The semantic
@@ -54,12 +72,31 @@ MUST NOT be reused for another resource. The JSON-LD `attributes.id` URI SHOULD
 also remain stable; changing it represents a new semantic resource to
 harvesters.
 
-Providers SHOULD update `attributes.dateModified` whenever published metadata
-changes. Harvesters SHOULD use the catalog's stable ordering and resource IDs
-to detect changes, and SHOULD retain resources that disappear from one page
-until the provider's complete catalog has been harvested again. A provider
-MAY publish a deletion marker or return `410 Gone` for a retired resource, but
-the behavior MUST be documented by the provider.
+Providers SHOULD update `attributes.dateModified` whenever the published
+representation of that resource changes. `dateModified` is optional for all
+independently harvestable resource types. For courses, it is the established
+incremental harvesting signal. If a provider supplies it, the value MUST
+change when the resource itself changes. If it is absent, harvesters MUST
+treat the resource as potentially changed rather than assuming that it is
+unchanged.
+
+When embedded data changes, providers SHOULD also update the containing
+resource's `dateModified` if the embedded object is not independently
+harvestable or does not provide its own `dateModified`. If the embedded object
+is independently harvestable and supplies its own `dateModified`, each
+resource's timestamp SHOULD change only when that respective resource changes.
+
+Harvester identity is the pair `(type, attributes.id)`. A compact reference
+with only `id`, `type`, and optionally `name` identifies the same entity as a
+full representation. References MUST NOT erase properties already stored from
+a full representation. Harvesters SHOULD merge non-empty representations and
+prefer a representation with the newest `dateModified` when available.
+
+Harvesters SHOULD use the catalog's stable ordering and resource IDs to detect
+changes, and SHOULD retain resources that disappear from one page until the
+provider's complete catalog has been harvested again. A provider MAY publish a
+deletion marker or return `410 Gone` for a retired resource, but the behavior
+MUST be documented by the provider.
 
 See [`examples/catalog/valid/catalog.json`](examples/catalog/valid/catalog.json)
 for a paginated feed containing both a course and a program.

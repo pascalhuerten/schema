@@ -5,6 +5,9 @@
   "description": "This schema describes the attributes of an organization.",
   "type": "object",
   "properties": {
+    "@context": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/context-schema.json"
+    },
     "id": {
       "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
     },
@@ -34,9 +37,14 @@
     },
     "image": {
       "$ref": "https://w3id.org/moochub/draft/schemas/image.json"
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time"
     }
   },
   "required": [
+    "id",
     "type",
     "name"
   ]

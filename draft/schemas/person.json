@@ -4,6 +4,9 @@
   "title": "Person",
   "type": "object",
   "properties": {
+    "@context": {
+      "$ref": "https://w3id.org/moochub/draft/schemas/context-schema.json"
+    },
     "id": {
       "$ref": "https://w3id.org/moochub/draft/schemas/id.json"
     },
@@ -57,9 +60,14 @@
         "$ref": "https://w3id.org/moochub/draft/schemas/organization.json"
       },
       "uniqueItems": true
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date-time"
     }
   },
   "required": [
+    "id",
     "name",
     "type"
   ]

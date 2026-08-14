@@ -72,10 +72,13 @@ permits concepts from any stable, published, or provider-controlled scheme.
 This allows formal KIM educational levels and DigComp proficiency levels to be
 represented without requiring MOOChub to publish or proxy a vocabulary.
 
-`teaches`, `assesses`, and `competencyRequired` use the MOOChub skill shape,
-which extends a concept with an optional `educationalLevel`. For example, a
-DigComp competence may carry the proficiency level at which it is taught,
-assessed, or required. Generic concepts cannot carry an educational level.
+`teaches`, `assesses`, and `competencyRequired` use `Competency` objects. A
+competency may refer to one or more skills through `relatedSkill` and may carry
+one or more framework concepts through `proficiencyLevel`. The referenced
+concepts are intentionally open. MOOChub currently provides a concrete
+proficiency-level recommendation for DigComp; DigComp and ESCO are recommended
+as skill frameworks. Clients must identify the framework through `inScheme` and must
+not compare levels from different frameworks without a known mapping.
 
 `educationalAlignment` follows
 [schema.org/educationalAlignment](https://schema.org/educationalAlignment) and
@@ -170,24 +173,24 @@ the MOOChub course-event schedule and map to schema.org properties.
 
 ## Licenses
 
-MOOChub licenses require a readable `identifier` and an `id` field. The
+MOOChub licenses require a readable `identifier`; `id` is optional. The
 `identifier` is intended for display and for expressing rights states, for
 example `CC BY 4.0`, `CC0 1.0 Universal`, `Proprietary`, or `All rights
 reserved`. The `id` is the URI of the license document or license terms. It
 maps to JSON-LD `@id` and matches AMB's license shape when it contains a URI.
 
-The `id` value may be `null`. This is intentional and means that the rights
-state is known but no public license document is available. It is appropriate
-for proprietary or all-rights-reserved content. A missing `license` object has
-a different meaning: the provider has not supplied the required rights
-metadata, so clients must not silently infer that the item is proprietary.
+Omit `id` when no public license document is available. Do not use `id: null`,
+because `id` is mapped to the JSON-LD keyword `@id`, which does not allow null
+values. A missing `license` object has a different meaning: the provider has
+not supplied the required rights metadata, so clients must not silently infer
+that the item is proprietary.
 
 The URI may point to a Creative Commons, SPDX, Open Source Initiative, or
 provider-hosted license document. MOOChub does not distinguish between a
 general license URL and a separate `contentUrl`; one canonical URI is
 sufficient. A proprietary or all-rights-reserved item should provide a
 provider-hosted terms or rights page when available; that URI can be placed in
-`id` instead of using `null`.
+`id`.
 
 ## Course media
 

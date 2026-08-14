@@ -7,13 +7,6 @@
     "minItems": 1,
     "uniqueItems": true,
     "items": {
-        "type": "string",
-        "enum": [
-            "online",
-            "onsite",
-            "blended",
-            "synchronous",
-            "asynchronous"
-        ]
+        "$ref": "https://w3id.org/moochub/draft/schemas/learningMode.json"
     }
 }

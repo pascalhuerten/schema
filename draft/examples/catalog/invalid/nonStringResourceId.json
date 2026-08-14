@@ -1,6 +1,8 @@
 {
     "links": {
-        "self": "https://provider.example/api/v4/catalog"
+        "self": "https://provider.example/api/v4/catalog",
+        "first": "https://provider.example/api/v4/catalog",
+        "last": "https://provider.example/api/v4/catalog"
     },
     "data": [
         {
@@ -23,6 +25,7 @@
                     "Course"
                 ],
                 "publisher": {
+                    "id": "https://example.org/organizations/example-university",
                     "type": "Organization",
                     "name": {
                         "en": "Example University"
@@ -30,14 +33,14 @@
                 },
                 "creator": [
                     {
+                        "id": "https://example.org/people/example-author",
                         "type": "Person",
                         "name": "Example Author"
                     }
                 ],
                 "license": {
                     "type": "License",
-                    "identifier": "Proprietary",
-                    "id": null
+                    "identifier": "Proprietary"
                 }
             }
         }

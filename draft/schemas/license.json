@@ -3,22 +3,15 @@
   "$id": "https://w3id.org/moochub/draft/schemas/license.json",
   "title": "License",
   "type": "object",
-  "description": "A license or rights statement with a readable label and an optional canonical URL. A null ID explicitly indicates that no public license document is available, for example for proprietary or all-rights-reserved content.",
+  "description": "A license or rights statement with a readable label and an optional canonical URL. Omit id when no public license document is available, for example for proprietary or all-rights-reserved content.",
   "properties": {
     "type": {
       "const": "License"
     },
     "id": {
-      "anyOf": [
-        {
-          "type": "string",
-          "format": "url"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "description": "The URL of the license document or license terms. Use null when no public license document exists.",
+      "type": "string",
+      "format": "url",
+      "description": "The URL of the license document or license terms. Omit when no public license document exists.",
       "example": "https://creativecommons.org/licenses/by/4.0/"
     },
     "identifier": {
@@ -30,7 +23,6 @@
   },
   "required": [
     "type",
-    "id",
     "identifier"
   ]
 }

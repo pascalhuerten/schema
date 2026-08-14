@@ -12,6 +12,7 @@
         "en": "Empty Program"
     },
     "provider": {
+        "id": "https://example.org/organizations/example-university",
         "type": "Organization",
         "name": {
             "en": "Example University"

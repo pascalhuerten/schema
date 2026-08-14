@@ -21,6 +21,7 @@
         "Course"
     ],
     "publisher": {
+        "id": "https://example.org/organizations/example-university",
         "name": {
             "de": "Beispielanbieter"
         },
@@ -28,13 +29,14 @@
     },
     "creator": [
         {
+            "id": "https://example.org/people/example-person",
             "type": "Person",
             "name": "Beispielperson"
         }
     ],
     "license": {
         "type": "License",
-        "identifier": "https://spdx.org/licenses/CC-BY-4.0.html",
-        "id": null
+        "id": "https://spdx.org/licenses/CC-BY-4.0.html",
+        "identifier": "CC-BY-4.0"
     }
 }

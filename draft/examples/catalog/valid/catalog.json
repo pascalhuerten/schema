@@ -30,6 +30,7 @@
                     "Course"
                 ],
                 "publisher": {
+                    "id": "https://provider.example/organizations/example-university",
                     "type": "Organization",
                     "name": {
                         "en": "Example University"
@@ -37,14 +38,14 @@
                 },
                 "creator": [
                     {
+                        "id": "https://provider.example/people/example-author",
                         "type": "Person",
                         "name": "Example Author"
                     }
                 ],
                 "license": {
                     "type": "License",
-                    "identifier": "Proprietary",
-                    "id": null
+                    "identifier": "Proprietary"
                 }
             }
         },
@@ -73,6 +74,7 @@
                     }
                 ],
                 "provider": {
+                    "id": "https://provider.example/organizations/example-university",
                     "type": "Organization",
                     "name": {
                         "en": "Example University"
@@ -84,19 +86,24 @@
                 ],
                 "timeToComplete": "P3M",
                 "numberOfCredits": 10,
-                "hasCourse": [
+                "hasPart": [
                     {
-                        "course": {
-                            "id": "https://provider.example/courses/intro-digital-skills",
-                            "type": [
-                                "LearningResource",
-                                "Course"
-                            ],
-                            "name": {
-                                "en": "Introduction to Digital Skills"
-                            }
+                        "name": {
+                            "en": "Core module"
                         },
-                        "requirementLevel": "mandatory"
+                        "numberOfCredits": 10,
+                        "hasCourse": [
+                            {
+                                "id": "https://provider.example/courses/intro-digital-skills",
+                                "type": [
+                                    "LearningResource",
+                                    "Course"
+                                ],
+                                "name": {
+                                    "en": "Introduction to Digital Skills"
+                                }
+                            }
+                        ]
                     }
                 ]
             }

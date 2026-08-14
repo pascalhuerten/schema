@@ -100,8 +100,7 @@
                 },
                 "license": {
                   "type": "License",
-                  "identifier": "Proprietary",
-                  "id": null
+                  "identifier": "Proprietary"
                 }
               },
               "openingHoursSpecification": [
@@ -151,6 +150,7 @@
           ],
           "location": [
             {
+              "id": "https://example.org/locations/webinar-room",
               "type": "VirtualLocation",
               "name": {
                 "de": "Webinarraum"
@@ -168,6 +168,7 @@
           "endDate": "2026-06-15T12:00:00Z",
           "location": [
             {
+              "id": "https://example.org/locations/webinar-room",
               "type": "VirtualLocation",
               "name": {
                 "de": "Webinarraum"
@@ -547,6 +548,7 @@
       },
       "recognizedBy": [
         {
+          "id": "https://example.org/organizations/isy",
           "name": {
             "de": "Institut für Interaktive Systeme"
           },
@@ -676,6 +678,7 @@
       },
       "creator": [
         {
+          "id": "https://example.org/people/beispielperson",
           "type": "Person",
           "name": "Beispielperson"
         }
@@ -707,6 +710,7 @@
     }
   },
   "publisher": {
+    "id": "https://example.org/organizations/isy",
     "name": {
       "de": "Institut für Interaktive Systeme"
     },
@@ -722,13 +726,13 @@
       "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
       "license": {
         "type": "License",
-        "identifier": "Proprietary",
-        "id": null
+        "identifier": "Proprietary"
       }
     }
   },
   "creator": [
     {
+      "id": "https://example.org/people/beispielperson",
       "type": "Person",
       "name": "Beispielperson",
       "sameAs": [
@@ -742,12 +746,12 @@
         "contentUrl": "https://example.org/images/beispielperson.jpg",
         "license": {
           "type": "License",
-          "identifier": "Proprietary",
-          "id": null
+          "identifier": "Proprietary"
         }
       },
       "affiliation": [
         {
+          "id": "https://example.org/organizations/isy",
           "name": {
             "de": "Institut für Interaktive Systeme"
           },
@@ -758,6 +762,7 @@
   ],
   "contributor": [
     {
+      "id": "https://example.org/organizations/isy",
       "name": {
         "de": "Institut für Interaktive Systeme"
       },
@@ -773,14 +778,14 @@
         "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
         "license": {
           "type": "License",
-          "identifier": "Proprietary",
-          "id": null
+          "identifier": "Proprietary"
         }
       }
     }
   ],
   "funder": [
     {
+      "id": "https://example.org/organizations/isy",
       "name": {
         "de": "Institut für Interaktive Systeme"
       },
@@ -796,8 +801,7 @@
         "contentUrl": "https://futurelearnlab.de/hub/pluginfile.php/1/local_ildmeta/provider/2/fhl-intern-logo.png",
         "license": {
           "type": "License",
-          "identifier": "Proprietary",
-          "id": null
+          "identifier": "Proprietary"
         }
       }
     }
@@ -827,8 +831,7 @@
     },
     "license": {
       "type": "License",
-      "identifier": "Proprietary",
-      "id": null
+      "identifier": "Proprietary"
     }
   }
 }

@@ -11,6 +11,30 @@
     "name": {
         "en": "Digital Skills Microdegree"
     },
+    "inLanguage": [
+        "en"
+    ],
+    "educationalLevel": [
+        {
+            "id": "https://w3id.org/kim/educationalLevel/level_6",
+            "type": "Concept",
+            "prefLabel": {
+                "en": "Bachelor level"
+            },
+            "inScheme": "https://w3id.org/kim/educationalLevel/"
+        }
+    ],
+    "educationalAlignment": [
+        {
+            "type": "AlignmentObject",
+            "alignmentType": "educationalSubject",
+            "educationalFramework": "ISCED-F",
+            "targetName": {
+                "en": "Computer use"
+            },
+            "targetUrl": "http://data.europa.eu/esco/isced-f/0611"
+        }
+    ],
     "description": [
         {
             "type": "TextObject",
@@ -20,6 +44,7 @@
         }
     ],
     "provider": {
+        "id": "https://provider.example/organizations/example-university",
         "type": "Organization",
         "name": {
             "en": "Example University"
@@ -41,32 +66,60 @@
             "encodingFormat": "text/plain"
         }
     ],
-    "hasCourse": [
+    "hasPart": [
         {
-            "course": {
-                "id": "https://provider.example/courses/intro-digital-skills",
-                "type": [
-                    "LearningResource",
-                    "Course"
-                ],
-                "name": {
-                    "en": "Introduction to Digital Skills"
-                }
+            "name": {
+                "en": "Core module"
             },
-            "requirementLevel": "mandatory"
+            "numberOfCredits": 5,
+            "hasCourse": [
+                {
+                    "id": "https://provider.example/courses/intro-digital-skills",
+                    "type": [
+                        "LearningResource",
+                        "Course"
+                    ],
+                    "name": {
+                        "en": "Introduction to Digital Skills"
+                    }
+                }
+            ]
         },
         {
-            "course": {
-                "id": "https://provider.example/courses/digital-communication",
-                "type": [
-                    "LearningResource",
-                    "Course"
-                ],
-                "name": {
-                    "en": "Digital Communication"
-                }
+            "name": {
+                "en": "Elective module"
             },
-            "requirementLevel": "elective"
+            "numberOfCredits": 5,
+            "hasCourse": [
+                {
+                    "id": "https://provider.example/courses/digital-communication",
+                    "type": [
+                        "LearningResource",
+                        "Course"
+                    ],
+                    "name": {
+                        "en": "Digital Communication"
+                    }
+                }
+            ]
+        }
+    ],
+    "isPartOf": [
+        {
+            "id": "https://provider.example/programs/technology-microdegree",
+            "type": "EducationalOccupationalProgram",
+            "name": {
+                "en": "Information Technology"
+            }
+        }
+    ],
+    "educationalCredentialAwarded": [
+        {
+            "id": "https://provider.example/credentials/digital-skills-microdegree",
+            "type": "EducationalOccupationalCredential",
+            "name": {
+                "en": "Digital Skills Microdegree"
+            }
         }
     ]
 }
