@@ -10,15 +10,15 @@ customizability to fit individual needs.
 
 ## Specification
 
-The draft profile is compatible with the pinned AMB `20231019` release. See the
-[compatibility notes](compatibility.md) for the shared context, entity identity
-fields, and course role definitions.
+The draft profile is compatible with the pinned AMB `20231019` release.
 
-The v4 draft exposes courses and educational programs through a common,
-paginated JSON:API catalog. The resource types, pagination rules, program model,
-and complete feed example are documented in [CATALOG.md](CATALOG.md). The
-normative German specification is published from
-[draft/index.html](draft/index.html). The 4.0.0 release is available from
+The v4 draft exposes courses, programs, credentials, persons, organizations,
+and locations through a common, paginated JSON:API catalog. The resource types,
+pagination rules, and harvesting behavior are documented normatively in the
+[catalog section of the German specification](draft/index.html#catalog). The
+complete feed example is available in
+[draft/examples/catalog/valid/catalog.json](draft/examples/catalog/valid/catalog.json).
+The 4.0.0 release is available from
 [4.0.0/index.html](4.0.0/index.html); [latest/index.html](latest/index.html)
 points to the newest published version.
 

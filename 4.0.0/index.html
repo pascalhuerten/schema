@@ -89,16 +89,6 @@
           "href": "https://w3id.org/kim/educationalLevel/",
           "publisher": "Kompetenzzentrum Interoperable Metadaten (KIM)"
         },
-        "Lehr-/Lernform": {
-          "title": "LRMI Vokabular der Interaktivitätstypen",
-          "href": "http://purl.org/dcx/lrmi-vocabs/interactivityType/",
-          "publisher": "Dublin Core Metadata Initiative (DCMI)"
-        },
-        "ISO8601-1:2019": {
-          "title": "ISO 8601-1:2019",
-          "href": "https://en.wikipedia.org/wiki/ISO_8601",
-          "publisher": "International Organization for Standardization (ISO)"
-        },
         "RFC3339": {
           "title": "Date and Time on the Internet: Timestamps",
           "href": "https://datatracker.ietf.org/doc/html/rfc3339",
@@ -107,6 +97,11 @@
         "RFC9557": {
           "title": "Date and Time on the Internet: Timestamps with Additional Information",
           "href": "https://www.rfc-editor.org/rfc/rfc9557",
+          "publisher": "Internet Engineering Task Force (IETF)"
+        },
+        "RFC8594": {
+          "title": "The Sunset HTTP Header Field",
+          "href": "https://www.rfc-editor.org/rfc/rfc8594",
           "publisher": "Internet Engineering Task Force (IETF)"
         },
       },
@@ -124,7 +119,7 @@
           href: "https://github.com/MOOChub/schema"
         }]
       }],
-      publishDate: "2026-08-14",
+      publishDate: "2026-08-16",
       specStatus: "base"
     };
   </script>
@@ -154,8 +149,9 @@
       Learning-Outcome-Vokabular</a> sowie MOOChub-spezifische Einschränkungen.
 
     Der Katalogtransport verwendet eine paginierte [[?JSON:API]]-Struktur. Ein
-    Provider kann Kurse und Programme in einem gemeinsamen Feed anbieten,
-    ohne die fachlichen Objekte in ein proprietäres Format zu übersetzen.
+    Provider kann verschiedene unabhängig harvestbare Ressourcentypen in einem
+    gemeinsamen Feed anbieten, ohne die fachlichen Objekte in ein proprietäres
+    Format zu übersetzen.
 
     <div class="copyright" style="display: flex; flex-direction: row; justify-content: space-between;">
       <div>
@@ -189,18 +185,21 @@
     und Learning Outcomes nutzt das Profil ergänzend europäische Vokabulare
     und Semantik.
 
-    Die normativen JSON Schemas liegen im Verzeichnis
-
-    <a href="schemas/">draft/schemas</a>. Die Beispiele im Verzeichnis
-    <a href="examples/">draft/examples</a> sind Bestandteil der Entwicklung und
-    zeigen typische gültige und ungültige Dokumente.
+    Die normativen JSON Schemas sind beispielsweise im
+    <a href="schemas/course.json">Course-Schema</a>,
+    <a href="schemas/program.json">Program-Schema</a> und
+    <a href="schemas/api/catalogFeed.json">Katalog-Schema</a> verlinkt.
+    Beispiele sind Bestandteil der Entwicklung und zeigen typische gültige und
+    ungültige Dokumente.
 
     <h3>Versionsstatus</h3>
 
-    Dieses Dokument beschreibt den MOOChub-v4-Entwurf. Die in den Schemas
-    verwendeten URLs enthalten deshalb den Pfad `draft`. Änderungen an
-    Pflichtfeldern, Wertebereichen oder der JSON-LD-Semantik müssen vor
-    einer Veröffentlichung als neue Version abgestimmt werden.
+    Dieses Dokument beschreibt den veröffentlichten MOOChub-v4-Stand 4.0.0.
+    Die in den Schemas verwendeten URLs enthalten deshalb den Pfad `4.0.0`.
+    Änderungen an Pflichtfeldern, Wertebereichen oder der JSON-LD-Semantik
+    werden als neue Version veröffentlicht. Die Aushandlung paralleler
+    API-Versionen und die Abkündigungsphase sind in
+    <a href="#api-versioning">API-Versionierung</a> beschrieben.
   </section>
 
   <section id="conformance">
@@ -212,42 +211,86 @@
     optionale Angaben und unbekannte Erweiterungen robust behandeln.
   </section>
 
-  <section id="harvesting" class="informative">
-    <h2>Harvesting</h2>
+  <section id="api-versioning">
+    <h2>API-Versionierung</h2>
 
-    Die unabhängig harvestbaren JSON-LD-Typen sind <a><code>Course</code></a>,
-    <a><code>EducationalOccupationalProgram</code></a>,
-    <a><code>EducationalOccupationalCredential</code></a>,
-    <a><code>Person</code></a>, <a><code>Organization</code></a> und
-    <a><code>Location</code></a>. Anbieter MÜSSEN nicht alle Typen unabhängig
-    bereitstellen. Genauso können Harvester auch nur einen Teil der Typen abrufen.
+    <p>API-Versionen MÜSSEN abwärtskompatibel weiterentwickelt werden. Ist eine
+      inkompatible Änderung erforderlich, MÜSSEN die alte und die neue Version
+      für eine Übergangszeit parallel angeboten werden. Die Version bezieht sich
+      auf das API- und Transportformat, nicht auf die fachliche Identität einer
+      JSON-LD-Ressource.</p>
 
-    Jedes unabhängig harvestbare Objekt MUSS eine stabile <code>id</code> und
-    einen passenden <code>type</code> enthalten. Die Kombination aus
-    <code>type</code> und <code>id</code> bildet den Identitätsschlüssel. Ein
-    kompaktes Referenzobjekt darf nur <code>id</code>, <code>type</code> und
-    optional <code>name</code> enthalten; ein vollständiges Objekt kann
-    zusätzliche Eigenschaften liefern.
+    <h3>Versionsaushandlung</h3>
 
-    <code>dateModified</code> ist für alle diese Typen optional. Bei Kursen ist
-    es das etablierte Signal für inkrementelles Harvesting. Anbieter, die es
-    liefern, MÜSSEN den Wert ändern, wenn sich die veröffentlichte
-    Repräsentation des jeweiligen Objekts ändert. Fehlt der Wert, MÜSSEN
-    Harvester das Objekt als möglicherweise geändert behandeln.
+    <p>Clients SOLLTEN bei jeder Anfrage die höchste API-Hauptversion angeben,
+      gegen die sie implementiert wurden. Dazu setzen sie den Parameter
+      <code>moochub-version</code> im <code>Accept</code>-Header. Der Parameter
+      wird zusammen mit dem JSON:API-Medientyp verwendet:
+    </p>
 
-    Ändern sich eingebettete Daten, soll auch <code>dateModified</code> des
-    übergeordneten Objekts aktualisiert werden, wenn das eingebettete Objekt
-    nicht unabhängig harvestbar ist oder kein eigenes <code>dateModified</code>
-    liefert. Ist das eingebettete Objekt unabhängig harvestbar und liefert es
-    einen eigenen Änderungszeitpunkt, sollen die Zeitstempel nur aktualisiert
-    werden, wenn sich das jeweilige Objekt selbst ändert.
+    <pre class="example" title="Anforderung einer bestimmten API-Version">
+GET /api/catalog HTTP/1.1
+Host: provider.example
+Accept: application/vnd.api+json; moochub-version=4
+</pre>
 
-    Erhält ein Harvester zunächst eine kompakte Referenz und später eine volle
-    Repräsentation mit derselben Kombination aus <code>type</code> und
-    <code>id</code>, werden die Informationen zusammengeführt. Eine kompakte
-    Referenz darf bereits gespeicherte Detaildaten nicht löschen. Wenn mehrere
-    vollständige Repräsentationen vorliegen, soll diejenige mit dem neuesten
-    <code>dateModified</code> bevorzugt werden.
+    <p>Der Provider MUSS die tatsächlich ausgelieferte Version im
+      <code>Content-Type</code>-Header der Antwort mit demselben Parameter
+      bestätigen. Fehlt der Versionsparameter in der Anfrage, darf der Provider
+      die neueste unterstützte Version des Endpunkts verwenden. Ein Provider
+      MUSS eine angeforderte Version entweder bedienen oder mit
+      <code>406 Not Acceptable</code> ablehnen; er darf eine nicht unterstützte
+      Version nicht stillschweigend als eine andere Version ausliefern. Die
+      Antwort SOLLTE <code>Vary: Accept</code> enthalten.
+    </p>
+
+    <pre class="example" title="Bestätigung der ausgelieferten Version">
+HTTP/1.1 200 OK
+Content-Type: application/vnd.api+json; moochub-version=4
+Vary: Accept
+</pre>
+
+    <h3 id="sunset-phase">Sunset-Phase</h3>
+
+    <p>Während einer Sunset-Phase MÜSSEN Provider die bisherige und die neue
+      API-Version parallel akzeptieren, sofern beide Versionen für den
+      jeweiligen Endpunkt angekündigt sind. Jede Antwort MUSS erkennen lassen,
+      welche Version tatsächlich ausgeliefert wurde. Clients MÜSSEN weiterhin
+      ihre unterstützte Version anfordern und dürfen aus der Existenz einer
+      neuen Version nicht auf einen Formatwechsel innerhalb ihrer Antwort
+      schließen.</p>
+
+    <p>Für eine veraltete oder zur Abkündigung vorgesehene Version MUSS der
+      Provider den HTTP-Header <code>Sunset</code> nach [[?RFC8594]] mitsenden.
+      Sein Wert ist ein HTTP-Datum und bezeichnet den Zeitpunkt, ab dem die
+      betreffende Version nicht mehr unterstützt wird:</p>
+
+    <pre class="example" title="Antwort während der v3-zu-v4-Sunset-Phase">
+HTTP/1.1 200 OK
+Content-Type: application/vnd.api+json; moochub-version=3.8
+Sunset: Tue, 15 Aug 2027 00:00:00 GMT
+Vary: Accept
+</pre>
+
+    <p>Der Sunset-Zeitpunkt MUSS vor Beginn der Abkündigung kommuniziert werden.
+      Clients MÜSSEN das Vorhandensein und den Wert von <code>Sunset</code>
+      überwachen und ihre Migration vor diesem Zeitpunkt planen. Nach Ablauf
+      des Zeitpunkts darf der Provider die alte Version ablehnen; eine solche
+      Ablehnung SOLLTE mit <code>410 Gone</code> oder, wenn die Version am
+      Endpunkt nicht mehr verfügbar ist, mit <code>406 Not Acceptable</code>
+      erfolgen. Die konkrete Abschaltung MUSS den betroffenen Teilnehmern
+      vorher angekündigt werden.</p>
+
+    <h3>Client-Verhalten</h3>
+
+    <p>Ein Client, der sowohl v3 als auch v4 unterstützt, MUSS für jede Anfrage
+      genau die gewünschte Version angeben und die bestätigte Version aus
+      <code>Content-Type</code> prüfen. Ein Client, der nur v3 unterstützt,
+      fordert <code>moochub-version=3</code> an und verarbeitet eine
+      <code>Sunset</code>-Angabe als Migrationssignal. Nach erfolgreicher
+      Migration fordert er <code>moochub-version=4</code> an und prüft erneut,
+      dass der Provider diese Version bestätigt.
+    </p>
   </section>
 
   <section id="format">
@@ -1090,7 +1133,8 @@
             <td>nein</td>
             <td><code>array[string]</code></td>
             <td>Liste der Sprachen, in denen das Programm angeboten wird als BCP 47 Sprachcode, z. B.
-              <code>["de", "en"]</code></td>
+              <code>["de", "en"]</code>
+            </td>
           </tr>
           <tr>
             <td><code>educationalProgramMode</code></td>
@@ -3347,7 +3391,7 @@
           <tr>
             <td><code>id</code></td>
             <td>ja</td>
-            <td><code>string (URI)</code></code>td>
+            <td><code>string (URI)</code></td>
             <td>URI, die das Concept eindeutig identifiziert.</td>
           </tr>
           <tr>
@@ -3395,7 +3439,7 @@
       </dl>
 
       <section>
-        <h4>Concepts als Skills</h4>
+        <h4 id="skillconcept">Skill Concept</h4>
 
         <p>Ein Skill wird in MOOChub als <a><code>Concept</code></a> beschrieben. Es gibt dafür keinen zusätzlichen
           eigenständigen Datentyp.</p>
@@ -3405,59 +3449,16 @@
           Kompetenzmodells übernehmen. Die folgenden Modelle werden von MOOChub für Skills besonders empfohlen:
         </p>
         <ul>
-          <li><strong>ESCO:</strong> <code>id</code> ist die URI des Skills, zum Beispiel
+          <li><strong>[[!ESCO]]:</strong> <code>id</code> ist die URI des Skills, zum Beispiel
             <code>http://data.europa.eu/esco/skill/...</code>; <code>inScheme</code> ist
             <code>http://data.europa.eu/esco/concept-scheme/skills</code>.
           </li>
-          <li><strong>DigComp:</strong> Kompetenzkonzepte sollen mit ihrer originalen <code>id</code>,
+          <li><strong>[[!DigComp]]:</strong> Kompetenzkonzepte sollen mit ihrer originalen <code>id</code>,
             <code>inScheme</code>, Bezeichnung und Definition aus dem veröffentlichten DigComp-Datensatz
             übernommen werden. DigComp enthält neben Kompetenzkonzepten auch Proficiency-Level-Konzepte;
             deren Verwendung wird im Abschnitt <a><code>ProficiencyLevel</code></a> beschrieben.
           </li>
         </ul>
-
-        <table class="def">
-          <thead>
-            <tr>
-              <th><strong>Eigenschaft</strong></th>
-              <th><strong>Pflichtfeld</strong></th>
-              <th><strong>Typ</strong></th>
-              <th><strong>Hinweis</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>type</code></td>
-              <td>ja</td>
-              <td><code>"Concept"</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>id</code></td>
-              <td>ja</td>
-              <td><code>string (URI)</code></td>
-              <td>URI, die den Skill eindeutig identifiziert.</td>
-            </tr>
-            <tr>
-              <td><code>inScheme</code></td>
-              <td>nein</td>
-              <td><code>string (URI)</code></td>
-              <td>URI des Vokabulars, in dem der Skill enthalten ist.</td>
-            </tr>
-            <tr>
-              <td><code>prefLabel</code></td>
-              <td>ja</td>
-              <td><a><code>LocalizedString</code></a></td>
-              <td>Name des Skills.</td>
-            </tr>
-            <tr>
-              <td><code>definition</code></td>
-              <td>nein</td>
-              <td><a><code>LocalizedString</code></a></td>
-              <td>Definition des Skills.</td>
-            </tr>
-          </tbody>
-        </table>
 
         <pre class="example json" title="Beispiel für ein Concept als Skill aus der ESCO-Klassifikation">
 {
@@ -3481,6 +3482,39 @@
         </dl>
       </section>
 
+      <section data-dfn-for="ProficiencyLevel">
+        <h4><dfn>ProficiencyLevel</dfn></h4>
+        <p><code>proficiencyLevel</code> beschreibt das Beherrschungsniveau einer
+          <a><code>Competency</code></a>. Der Wert ist ein oder mehrere
+          <a><code>Concept</code></a>-Objekte. <code>ProficiencyLevel</code> ist
+          kein eigener Datentyp und bringt keine zusätzliche Validierung mit.
+          Es gelten ausschließlich die Regeln für <a><code>Concept</code></a>.
+        </p>
+        <p>Die Verwendung des DigComp-Vokabulars wird empfohlen. Provider sollten
+          die originale <code>id</code>, die URI des Vokabulars in
+          <code>inScheme</code> und, sofern vorhanden, das originale
+          <code>prefLabel</code> übernehmen. Ein Beispiel für ein DigComp-3.0-
+          Konzept:
+        </p>
+        <pre class="example json" title="DigComp-ProficiencyLevel als Concept">
+{
+  "type": "Concept",
+  "id": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/DigComp%203.0%20Data%20Supplement%2024%20Nov%202025.jsonld#ProficiencyLevel/Intermediate_3",
+  "inScheme": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/DIGCOMP/DIGCOMP3.0/DigComp%203.0%20Data%20Supplement%2024%20Nov%202025.jsonld",
+  "prefLabel": {
+    "en": "Intermediate"
+  }
+}
+        </pre>
+
+        <dl>
+          <dt>Typ</dt>
+          <dd><a>Concept</a></dd>
+          <dt>Validierung</dt>
+          <dd><a href="schemas/concept.json">JSON Schema: concept.json</a></dd>
+        </dl>
+      </section>
+
       <section data-dfn-for="EducationalLevel">
         <h4><dfn>EducationalLevel</dfn></h4>
 
@@ -3490,49 +3524,6 @@
         <p>Ein <code>EducationalLevel</code> ist ein <a><code>Concept</code></a> zur Beschreibung einer Bildungsstufe.
         </p>
         <p>Die Property `id` MUSS einer URI aus den [[!Bildungsstufen]] entsprechen.</p>
-
-        <table class="def">
-          <thead>
-            <tr>
-              <th><strong>Eigenschaft</strong></th>
-              <th><strong>Pflichtfeld</strong></th>
-              <th><strong>Typ</strong></th>
-              <th><strong>Hinweis</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>type</code></td>
-              <td>ja</td>
-              <td><code>"Concept"</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>id</code></td>
-              <td>ja</td>
-              <td><code>string (URI)</code></td>
-              <td>URI, die die [[!Bildungsstufen]] eindeutig identifiziert."</td>
-            </tr>
-            <tr>
-              <td><code>prefLabel</code></td>
-              <td>ja</td>
-              <td><a><code>LocalizedString</code></a></td>
-              <td>Name der Bildungsstufe</td>
-            </tr>
-            <tr>
-              <td><code>definition</code></td>
-              <td>nein</td>
-              <td><a><code>LocalizedString</code></a></td>
-              <td>Definition der Bildungsstufe.</td>
-            </tr>
-            <tr>
-              <td><code>inScheme</code></td>
-              <td>ja</td>
-              <td><code>string (URI)</code></td>
-              <td>URI des Vokabulars, in dem die Bildungsstufe definiert ist.</td>
-            </tr>
-          </tbody>
-        </table>
 
         <pre class="example json" title="Beispiel für eine Bildungsstufe">
 {
@@ -3565,7 +3556,8 @@
 
       <section data-dfn-for="AudienceType">
         <h4><dfn>AudienceType</dfn></h4>
-        <p>Ein <code>AudienceType</code> ist ein Verweis auf eine Zielgruppenrolle aus dem LRMI-Vokabular in Form eines
+        <p>Ein <code>AudienceType</code> ist ein Verweis auf eine Zielgruppenrolle aus dem [[!LRMI]]-Vokabular in Form
+          eines
           <code>Concept</code>-Objekts.
         </p>
         <p><code>id</code> MUSS einem der folgenden LRMI-Vokabular-URIs entsprechen:</p>
@@ -3581,49 +3573,6 @@
         </ul>
         <p><code>inScheme</code> MUSS auf <code>http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole</code>
           verweisen.</p>
-
-        <table class="def">
-          <thead>
-            <tr>
-              <th><strong>Eigenschaft</strong></th>
-              <th><strong>Pflichtfeld</strong></th>
-              <th><strong>Typ</strong></th>
-              <th><strong>Hinweis</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>type</code></td>
-              <td>ja</td>
-              <td><code>"Concept"</code></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><code>id</code></td>
-              <td>ja</td>
-              <td><code>string (URL)</code></td>
-              <td>URI der Zielgruppenrolle aus dem LRMI-Vokabular.</td>
-            </tr>
-            <tr>
-              <td><code>prefLabel</code></td>
-              <td>ja</td>
-              <td><a><code>LocalizedString</code></a></td>
-              <td>Bezeichnung der Zielgruppenrolle in verschiedenen Sprachen.</td>
-            </tr>
-            <tr>
-              <td><code>inScheme</code></td>
-              <td>ja</td>
-              <td><code>string (URL)</code></td>
-              <td>Muss auf das LRMI-Vokabular verweisen: http://purl.org/dcx/lrmi-vocabs/educationalAudienceRole.</td>
-            </tr>
-            <tr>
-              <td><code>definition</code></td>
-              <td>nein</td>
-              <td><a><code>LocalizedString</code></a></td>
-              <td>Definition der Zielgruppenrolle in verschiedenen Sprachen (optional).</td>
-            </tr>
-          </tbody>
-        </table>
 
         <pre class="example json" title="Beispiel für ein AudienceType">
 {
@@ -3669,7 +3618,8 @@
     "type": "Concept",
     "id": "http://data.europa.eu/snb/credential/e34929035b",
     "prefLabel": {
-      "de": "Generisch"
+      "de": "Generisch",
+      "en": "Generic"
     },
     "inScheme": "http://data.europa.eu/snb/credential/25831c2"
   }
@@ -3688,7 +3638,7 @@
       <section data-dfn-for="InteractivityType">
         <h4><dfn>InteractivityType</dfn></h4>
         <p>Ein <code>InteractivityType</code> ist ein <a><code>Concept</code></a> zur Beschreibung der vorherrschenden
-          Lehr-/Lernform einer Bildungsressource.</p>
+          Lehr-/Lernform einer Bildungsressource anhand des [[!LRMI]]-Vokabulars.</p>
         <p>Die Property `id` MUSS einem der folgenden LRMI-Vokabular-URIs entsprechen:</p>
 
         <ul>
@@ -3704,7 +3654,8 @@
   "prefLabel": {
     "de": "aktiv",
     "en": "active"
-  }
+  },
+  "inScheme": "http://purl.org/dcx/lrmi-vocabs/interactivityType/"
 }
         </pre>
 
@@ -3738,7 +3689,8 @@
   "prefLabel": {
     "de": "Zugang ohne Login",
     "en": "Access without login"
-  }
+  },
+  "inScheme": "https://w3id.org/kim/conditionsOfAccess/"
 }
           </pre>
 
@@ -3755,6 +3707,13 @@
     <section data-dfn-for="Competency">
       <h3><dfn>Competency</dfn></h3>
       <p><code>Competency</code> beschreibt eine Kompetenz oder ein Lernergebnis.</p>
+
+      <p>Die Eigenschaft <code>name</code> KANN eine freie Kompetenzbezeichnung enthalten.</p>
+      <p>Es SOLLTE wo möglich <code>relatedSkill</code> verwendet werden, um die Kompetenz durch die Referenz eines oder
+        mehrerer Skillkonzepten aus einem bekannten Kompetenzvokabular zu spezifizieren. Siehe <a
+          href="#skillconcept">Skill Concept</a>.</p>
+      <p>Zusätzlich KANN <code>proficiencyLevel</code> angegeben werden, um das Beherrschungsniveau der Kompetenz zu
+        spezifizieren. Siehe <a href="#proficiencylevel">ProficiencyLevel</a>.</p>
 
       <table class="def">
         <thead>
@@ -3828,66 +3787,6 @@
   ]
 }
         </pre>
-
-      <section data-dfn-for="ProficiencyLevel">
-        <h4><dfn>ProficiencyLevel</dfn></h4>
-        <p><code>proficiencyLevel</code> beschreibt das Beherrschungsniveau einer einzelnen
-          <a><code>Competency</code></a>. Die Werte sind offene <a><code>Concept</code></a>-Referenzen.
-          Provider DÜRFEN Konzepte aus jedem stabilen, veröffentlichten oder provider-kontrollierten
-          Kompetenzframework verwenden.
-        </p>
-        <p>Jedes Konzept SOLLTE <code>inScheme</code>, eine stabile <code>id</code> und, sofern verfügbar,
-          <code>prefLabel</code> enthalten. Die <code>id</code> ist die primäre Identität; ein Label wie
-          „Intermediate“ hat ohne Kenntnis des Frameworks keine ausreichende Bedeutung.
-        </p>
-        <ul>
-          <li><strong>DigComp:</strong> <code>id</code> und <code>inScheme</code> sollen direkt aus dem
-            veröffentlichten DigComp-JSON-LD übernommen werden. Für DigComp 3.0 ist ein Levelkonzept
-            beispielsweise durch den Fragmentteil <code>#ProficiencyLevel/Intermediate_3</code>
-            identifiziert; die Definition und die Werte aus dem Dokument dürfen nicht durch freie Labels
-            ersetzt werden.</li>
-        </ul>
-        <p>Die DigComp-Empfehlung ist keine geschlossene Werteliste. Andere Proficiency-Level-Frameworks dürfen
-          angegeben werden, sofern ihre Konzepte stabile URIs besitzen. Clients müssen unbekannte Frameworks
-          erhalten und anzeigen können.</p>
-        <p>Für DigComp 3.0 werden die Proficiency-Level-Konzepte aus dem veröffentlichten JSON-LD-Dokument
-          referenziert. Die achtstufigen Werte sind beispielsweise <code>Basic_1</code> bis
-          <code>Highly%20advanced_8</code>; für das vierstufige Modell werden die Gruppen über
-          <code>four_levels_name</code> gebildet. „Intermediate“ ist dort kein einzelner Knoten, sondern
-          umfasst die Konzepte <code>Intermediate_3</code> und <code>Intermediate_4</code>. Ein Client,
-          der nur das vierstufige Modell kennt, MUSS diese beiden achtstufigen Werte daher derselben
-          vierstufigen Gruppe zuordnen und darf keinen künstlichen Einzelwert erzeugen.
-        </p>
-        <p>Wenn ein externes Skill-Konzept bereits eine bestimmte Niveaustufe in seiner Identität oder
-          Definition enthält, SOLLTE kein widersprüchliches zusätzliches <code>proficiencyLevel</code>
-          angegeben werden.</p>
-        <table class="def">
-          <thead>
-            <tr>
-              <th><strong>Framework</strong></th>
-              <th><strong>Beispiel</strong></th>
-              <th><strong>Client-Verarbeitung</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>DigComp 3.0, achtstufig</td>
-              <td><code>...#ProficiencyLevel/Intermediate_3</code></td>
-              <td>Als DigComp Level 3 (Intermediate) anzeigen.</td>
-            </tr>
-            <tr>
-              <td>DigComp 3.0, vierstufig</td>
-              <td><code>Intermediate_3</code> und <code>Intermediate_4</code></td>
-              <td>Beide der Gruppe „Intermediate“ zuordnen; nicht als zwei unabhängige Niveaus anzeigen.</td>
-            </tr>
-            <tr>
-              <td>Unbekanntes Framework</td>
-              <td>Concept mit fremder <code>inScheme</code>-URI</td>
-              <td>Anzeigen und erhalten, aber nicht ohne Mapping mit bekannten Leveln vergleichen.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
 
       <dl>
         <dt>Referenzen</dt>
@@ -4106,10 +4005,20 @@
   <section id="catalog">
     <h2>JSON:API-Katalog</h2>
 
-    Der Katalog ist ein paginierter JSON:API-Feed für die Ressourcentypen
-    `courses` und `programs`. Die Transportstruktur ist in
-    <a href="schemas/api/catalogFeed.json">api/catalogFeed.json</a> definiert; eine
-    Zusammenfassung steht in <a href="../CATALOG.md">CATALOG.md</a>.
+    Der Katalog ist ein paginierter JSON:API-Feed für unabhängig harvestbare
+    Ressourcen wie `courses`, `programs`, `credentials`, `persons`,
+    `organizations` und `locations`. Die Transportstruktur ist in
+    <a href="schemas/api/catalogFeed.json">api/catalogFeed.json</a> definiert.
+
+    <p>Der Katalog MUSS den Medientyp
+      <code>application/vnd.api+json</code> verwenden und eine JSON:API-1.1-
+      Antwort liefern. Die Ressourcentypen dürfen im selben Feed gemischt
+      werden. Anbieter SOLLTEN einen kanonischen Katalog-Endpunkt anbieten und
+      <code>filter[type]</code> unterstützen, damit Harvester bei Bedarf einen
+      oder mehrere homogene Teilbestände abrufen können. Zusätzliche
+      typspezifische Endpunkte sind zulässig, müssen aber denselben
+      Identitätsraum verwenden.
+    </p>
 
     <section id="catalog-property-documentation">
       <h3>Katalogeigenschaften</h3>
@@ -4128,12 +4037,16 @@
       </section>
       <section data-dfn-for="data">
         <h4><dfn>data</dfn></h4>
-        Die Liste der als JSON:API-Ressourcen übertragenen Kurse und Programme.
+        Die Liste der als JSON:API-Ressourcen übertragenen unabhängig
+        harvestbaren Objekte. Unterstützte Ressourcentypen sind
+        <code>courses</code>, <code>programs</code>, <code>credentials</code>,
+        <code>persons</code>, <code>organizations</code> und
+        <code>locations</code>.
         <dl>
           <dt>Pflichtfeld</dt>
           <dd>ja</dd>
           <dt>Typ</dt>
-          <dd><code>array[<a><code>Course</code></a>|<a><code>EducationalOccupationalProgram</code></a>]</code></dd>
+          <dd><code>array[CatalogResource]</code></dd>
           <dt>Validierung</dt>
           <dd><a href="schemas/api/catalogFeed.json">JSON Schema</a></dd>
         </dl>
@@ -4143,9 +4056,9 @@
     <pre class="example json" title="Katalogantwort mit einer Kursressource">
 {
   "links": {
-    "self": "https://provider.example/api/v4/catalog?page[number]=1",
-    "first": "https://provider.example/api/v4/catalog?page[number]=1",
-    "last": "https://provider.example/api/v4/catalog?page[number]=1",
+    "self": "https://provider.example/api/catalog?page[number]=1",
+    "first": "https://provider.example/api/catalog?page[number]=1",
+    "last": "https://provider.example/api/catalog?page[number]=1",
     "next": null,
     "prev": null
   },
@@ -4160,8 +4073,64 @@
 </pre>
 
     Der Katalog verwendet eine provider-lokale JSON:API-ID in `data[].id`.
-    Die fachliche URI des Kurses oder Programms steht in
+    Die fachliche URI des Objekts steht in
     `data[].attributes.id`.
+
+    <section id="catalog-pagination">
+      <h3>Pagination und Filter</h3>
+      <p>Die kanonischen Query-Parameter sind:</p>
+      <ul>
+        <li><code>page[number]</code>: einbasierte Seitennummer; Standardwert
+          ist <code>1</code>.</li>
+        <li><code>page[size]</code>: angeforderte Seitengröße. Anbieter dürfen
+          eine dokumentierte Höchstgröße anwenden und müssen die tatsächlich
+          verwendete Seite über die Links ausweisen.</li>
+        <li><code>filter[type]</code>: optional, kommaseparierte Liste aus
+          <code>courses</code>, <code>programs</code>, <code>credentials</code>,
+          <code>persons</code>, <code>organizations</code> und
+          <code>locations</code>.
+        </li>
+      </ul>
+      <p><code>links.self</code> ist Pflicht. Anbieter SOLLTEN
+        <code>first</code>, <code>last</code>, <code>next</code> und
+        <code>prev</code> liefern. Am jeweiligen Ende des Ergebnisses sind
+        <code>next</code> beziehungsweise <code>prev</code> <code>null</code>.
+        Die Reihenfolge MUSS während eines vollständigen Harvesting-Laufs stabil
+        bleiben. <code>meta.total</code> kann die Gesamtzahl nach Anwendung des
+        Filters angeben.
+      </p>
+      <p>Eine gültige Anfrage, auch für eine leere Seite, wird mit
+        <code>200 OK</code> beantwortet. Ungültige Pagination- oder Filterwerte
+        MÜSSEN mit einem JSON:API-Fehlerdokument und <code>400 Bad Request</code>
+        beantwortet werden. Nicht vorhandene Ressourcen SOLLTEN
+        <code>404 Not Found</code> liefern; für bewusst zurückgezogene
+        Ressourcen kann <code>410 Gone</code> verwendet werden.
+      </p>
+    </section>
+
+    <section id="catalog-identifiers">
+      <h3>Ressourcen-IDs und JSON-LD</h3>
+      <p><code>data[].id</code> ist eine nichtleere, provider-lokale
+        JSON:API-ID. Die fachliche JSON-LD-Ressource in
+        <code>data[].attributes</code> besitzt zusätzlich eine stabile URI in
+        <code>id</code>. Beide Identitäten dienen unterschiedlichen Ebenen und
+        müssen nicht denselben Wert haben.
+      </p>
+      <p>Jedes unabhängig harvestbare Objekt MUSS eine stabile
+        <code>attributes.id</code> und einen passenden fachlichen
+        <code>attributes.type</code> besitzen. Die Kombination aus
+        <code>attributes.type</code> und <code>attributes.id</code> bildet den
+        fachlichen Identitätsschlüssel. Die JSON Schemas verlangen keine
+        <code>@context</code>-Eigenschaft. Ein eigenständig veröffentlichtes
+        JSON-LD-Dokument SOLLTE jedoch einen kompatiblen MOOChub-Kontext am
+        Dokumentanfang enthalten.
+      </p>
+      <p>Ein kompaktes Referenzobjekt darf nur <code>id</code>,
+        <code>type</code> und optional <code>name</code> enthalten. Es bezeichnet
+        dieselbe Ressource wie eine vollständige Darstellung und darf beim
+        Zusammenführen bereits gespeicherte Eigenschaften nicht löschen.
+      </p>
+    </section>
   </section>
 
   <section id="schemas">
@@ -4173,10 +4142,10 @@
     <a href="schemas/api/catalogFeed.json">schemas/api/catalogFeed.json</a>.
     Wiederverwendbare Teilmodelle liegen im selben Schema-Verzeichnis.
 
-    Gültige Beispiele befinden sich unter
-    <a href="examples/course/valid">examples/course/valid</a>,
-    <a href="examples/program/valid">examples/program/valid</a> und
-    <a href="examples/catalog/valid">examples/catalog/valid</a>.
+    Gültige Beispiele sind beispielsweise
+    <a href="examples/course/valid/course.json">für Kurse</a>,
+    <a href="examples/program/valid/microdegree.json">für Programme</a> und
+    <a href="examples/catalog/valid/catalog.json">für Kataloge</a>.
   </section>
 
   <section id="references" class="informative">
@@ -4184,8 +4153,8 @@
 
     <ul>
       <li><a href="../README.md">MOOChub-README</a></li>
-      <li><a href="../changelog.md">Änderungshistorie</a></li>
-      <li><a href="../compatibility.md">Kompatibilitätsnotizen</a></li>
+      <li><a href="changelog.md">Änderungshistorie</a></li>
+      <li><a href="migration-guide.md">Migrationsleitfaden</a></li>
       <li><a href="context.jsonld">JSON-LD-Kontext</a></li>
     </ul>
   </section>

@@ -16,8 +16,10 @@
   "catalog/invalid/nonStringResourceId.json": [
     "const:/data/0/attributes/type",
     "const:/data/0/type",
+    "enum:/data/0/attributes/type",
     "oneOf:/data/0",
     "required:/data/0/attributes",
+    "type:/data/0/attributes/name",
     "type:/data/0/attributes/type",
     "type:/data/0/id"
   ],
@@ -26,9 +28,11 @@
     "anyOf:/data/0/attributes/hasPart/0",
     "const:/data/0/attributes/type",
     "const:/data/0/type",
+    "enum:/data/0/attributes/type",
     "oneOf:/data/0",
     "required:/data/0/attributes",
     "required:/data/0/attributes/hasPart/0",
+    "type:/data/0/attributes/name",
     "type:/data/0/attributes/type"
   ],
   "program/invalid/incompleteCourseReference.json": [
