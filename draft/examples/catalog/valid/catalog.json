@@ -25,10 +25,7 @@
         "name": {
           "en": "Introduction to Digital Skills"
         },
-        "type": [
-          "LearningResource",
-          "Course"
-        ],
+        "type": ["LearningResource", "Course"],
         "publisher": {
           "id": "https://provider.example/organizations/example-university",
           "type": "Organization",
@@ -80,10 +77,7 @@
             "en": "Example University"
           }
         },
-        "educationalProgramMode": [
-          "online",
-          "asynchronous"
-        ],
+        "educationalProgramMode": ["online", "asynchronous"],
         "timeToComplete": "P3M",
         "numberOfCredits": 10,
         "hasPart": [
@@ -95,10 +89,7 @@
             "hasCourse": [
               {
                 "id": "https://provider.example/courses/intro-digital-skills",
-                "type": [
-                  "LearningResource",
-                  "Course"
-                ],
+                "type": ["LearningResource", "Course"],
                 "name": {
                   "en": "Introduction to Digital Skills"
                 }

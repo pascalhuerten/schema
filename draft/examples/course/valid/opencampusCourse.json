@@ -1,0 +1,150 @@
+{
+  "@context": [
+    "https://w3id.org/moochub/draft/context.jsonld",
+    {
+      "@language": "de"
+    }
+  ],
+  "type": ["LearningResource", "Course"],
+  "id": "urn:uuid:ece708a9-2592-501c-8401-e88b59f803b1",
+  "url": "https://edu.opencampus.sh/course/624?source=moochub&provider=opencampus-sh&feed_version=3.0.1",
+  "courseCode": "624",
+  "name": {
+    "de": "Social Media Sessions"
+  },
+  "description": [
+    {
+      "type": "TextObject",
+      "inLanguage": "de",
+      "text": "\u003Cp\u003EHier erfährst du, wie Social Media in der Praxis verstanden, geplant und angewendet wird.\u003C/p\u003E\u003Ch3\u003ELernziele:\u003C/h3\u003E\u003Cul\u003E\u003Cli\u003EGrundlagen, Methoden und Strategien von Social Media Marketing\u003C/li\u003E\u003Cli\u003EBest Practices von Akteuren aus der Praxis im Bereich Social Media\u003C/li\u003E\u003Cli\u003EVerschiedene Anwendungsbereiche und Tools für Social Media\u003C/li\u003E\u003C/ul\u003E\u003Ch3\u003EFür wen ist der Kurs geeignet?\u003C/h3\u003E\u003Cp\u003EDu interessierst dich für das Thema Social Media und möchtest gerne wissen, wie Unternehmen, Institutionen und Selbstständige auf verschiedenen Kanälen agieren? Du kannst dir vorstellen später im Bereich Online-/Social-Media-Marketing tätig zu werden? Vielleicht bist du auch sogar schon im Social-Media-Bereich für ein Unternehmen oder ein eigenes Projekt unterwegs und möchtest dich mit anderen darüber austauschen? In allen Fällen bist du hier richtig!\u003C/p\u003E\u003Ch3\u003EWas erwartet dich?\u003C/h3\u003E\u003Cp\u003EUnternehmen und Referen:tinnen verschiedenster Branchen geben dir ein ganzes Wochenende verschiedene Einblicke und bieten dir so die Möglichkeit, in ihre Social-Media-Praxis einzutauchen.\nWann ist der richtige Zeitpunkt für ein Posting? Wie erreiche ich meine Zielgruppe und wozu muss ich diese überhaupt genau definieren? Was mache ich, wenn ein Shitstorm über meinen Post hereinbricht? Welche Werkzeuge bieten mir eine bestmögliche Auswertung? Welche sprachliche Form ist angebracht? Was mache ich, wenn es nicht so läuft wie erwünscht? Und wie bekomme ich eigentlich maximale Reichweite?\u003Cbr /\u003E\nDiese und viele weitere Fragen werden dir im Rahmen der Social Media Sessions beantwortet. So lernst du einfache, aber wirkungsvolle Mechanismen für Aktivitäten in sozialen Netzwerken zu nutzen.\n&nbsp;\u003Cbr /\u003E\n&nbsp;  \u003C/p\u003E",
+      "encodingFormat": "text/html"
+    }
+  ],
+  "inLanguage": ["de"],
+  "keywords": ["DLC-Original"],
+  "hasCourseInstance": [
+    {
+      "id": "urn:uuid:a0db07ec-bd85-4cdb-ad36-4d3b0c35413a",
+      "type": "CourseInstance",
+      "courseMode": ["onsite"],
+      "subEvent": [
+        {
+          "type": "Event",
+          "startDate": "2026-06-12T13:00:00+00:00",
+          "endDate": "2026-06-12T16:00:00+00:00"
+        },
+        {
+          "type": "Event",
+          "startDate": "2026-06-13T09:00:00+00:00",
+          "endDate": "2026-06-13T16:00:00+00:00"
+        },
+        {
+          "type": "Event",
+          "startDate": "2026-06-14T09:00:00+00:00",
+          "endDate": "2026-06-14T12:00:00+00:00"
+        }
+      ],
+      "applicationStartDate": "2026-03-01T00:00:00Z",
+      "applicationDeadline": "2026-04-10T00:00:00Z",
+      "location": [
+        {
+          "id": "urn:uuid:f988cf9e-d10e-4847-8c0f-d87e88ff4f2a",
+          "type": "Place",
+          "name": {
+            "de": "Eventraum"
+          },
+          "description": [
+            {
+              "type": "TextObject",
+              "inLanguage": "de",
+              "text": "Starterkitchen by opencampus.sh",
+              "encodingFormat": "text/plain"
+            }
+          ],
+          "address": {
+            "type": "PostalAddress",
+            "addressLocality": "Kiel",
+            "streetAddress": "Kuhnkestr. 6"
+          }
+        }
+      ]
+    }
+  ],
+  "teaches": [
+    {
+      "id": "urn:uuid:9626e693-44a1-48d9-b2b3-0866058354a6",
+      "type": "Competency",
+      "name": {
+        "de": "Grundlagen, Methoden und Strategien von Social Media Marketing"
+      }
+    },
+    {
+      "id": "urn:uuid:75cfc6d9-6c29-4e7d-a405-09dc5dc39a2b",
+      "type": "Competency",
+      "name": {
+        "de": "Best Practices von Akteuren aus der Praxis im Bereich Social Media"
+      }
+    },
+    {
+      "id": "urn:uuid:7049f6f9-44a6-440f-985d-1511aa822e44",
+      "type": "Competency",
+      "name": {
+        "de": "Verschiedene Anwendungsbereiche und Tools für Social Media"
+      }
+    }
+  ],
+  "publisher": {
+    "id": "https://edu.opencampus.sh",
+    "type": "Organization",
+    "name": {
+      "de": "opencampus.sh"
+    },
+    "sameAs": ["https://edu.opencampus.sh"]
+  },
+  "creator": [
+    {
+      "id": "https://edu.opencampus.sh",
+      "type": "Organization",
+      "name": {
+        "de": "opencampus.sh"
+      },
+      "sameAs": ["https://edu.opencampus.sh"]
+    }
+  ],
+  "funder": [
+    {
+      "id": "urn:uuid:5b1dfd8b-bb57-4dba-8e16-cada1cd54375",
+      "type": "Organization",
+      "name": {
+        "de": "Europäische Union & Landesregierung Schleswig-Holstein"
+      },
+      "image": {
+        "type": "ImageObject",
+        "contentUrl": "https://storage.googleapis.com/eduhub-production/organizations/org-834/public/logo/Fo%CC%88rderlogoband-DLC_EU_SH.png",
+        "description": {
+          "de": "Förderlogo DLC-EU-SH"
+        },
+        "license": {
+          "type": "License",
+          "identifier": "proprietary"
+        }
+      }
+    }
+  ],
+  "image": {
+    "type": "ImageObject",
+    "contentUrl": "https://storage.googleapis.com/eduhub-production/courses/course-624/public/cover-image/Social%20Media%20Session.png",
+    "description": {
+      "de": "© Jan Konitzki / opencampus.sh"
+    },
+    "license": {
+      "type": "License",
+      "identifier": "proprietary"
+    }
+  },
+  "license": {
+    "type": "License",
+    "identifier": "CC-BY-NC-4.0",
+    "id": "https://creativecommons.org/licenses/by-nc/4.0/legalcode.en"
+  }
+}

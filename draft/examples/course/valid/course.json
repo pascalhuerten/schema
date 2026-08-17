@@ -5,12 +5,23 @@
       "@language": "de"
     }
   ],
+  "type": ["LearningResource", "Course"],
   "id": "urn:uuid:c96a2376-bdf2-4307-a21f-19a4ff141b5f",
   "url": "https://futurelearnlab.de/detailpage.php?id=18",
   "name": {
     "de": "Digital Trainer (Gesamtkurs)"
   },
-  "type": ["LearningResource", "Course"],
+  "abstract": {
+    "de": "Digitalisierung von Arbeits- und Geschäftsprozessen, Stärkung der digitalen Kompetenz und Methodik, Verbesserung der Selbstvermarktung, Erkennen neuer Handlungsoptionen."
+  },
+  "description": [
+    {
+      "type": "TextObject",
+      "inLanguage": "de",
+      "text": "<div><p>Der Kurs verfolgt im Zuge der fortschreitenden Digitalisierung von Arbeits- und Geschäftsprozessen das Ziel, deine digitale Kompetenz und Methodik zu stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder zu entwickeln. Zugleich steht eine\r\n    Verbesserung der Selbstvermarktung und ein Erkennen neuer Handlungsoptionen im Vordergrund.</p>\r\n</div>",
+      "encodingFormat": "text/html"
+    }
+  ],
   "courseCode": "DIGITAL-TRAINER",
   "timeRequired": "PT42H",
   "numberOfCredits": 3.5,
@@ -221,17 +232,6 @@
       "courseMode": ["online", "asynchronous"],
       "startDate": "2025-01-13T00:00:00Z",
       "endDate": "2025-02-28T23:59:59Z"
-    }
-  ],
-  "abstract": {
-    "de": "Digitalisierung von Arbeits- und Geschäftsprozessen, Stärkung der digitalen Kompetenz und Methodik, Verbesserung der Selbstvermarktung, Erkennen neuer Handlungsoptionen."
-  },
-  "description": [
-    {
-      "type": "TextObject",
-      "inLanguage": "de",
-      "text": "<div><p>Der Kurs verfolgt im Zuge der fortschreitenden Digitalisierung von Arbeits- und Geschäftsprozessen das Ziel, deine digitale Kompetenz und Methodik zu stärken und ein vertieftes Bewusstsein für neue digitale Lernfelder zu entwickeln. Zugleich steht eine\r\n    Verbesserung der Selbstvermarktung und ein Erkennen neuer Handlungsoptionen im Vordergrund.</p>\r\n</div>",
-      "encodingFormat": "text/html"
     }
   ],
   "dateCreated": "2019-07-03T13:13:13Z",
@@ -675,11 +675,11 @@
   },
   "publisher": {
     "id": "https://example.org/organizations/isy",
+    "type": "Organization",
     "name": {
       "de": "Institut für Interaktive Systeme"
     },
     "sameAs": ["https://www.th-luebeck.de"],
-    "type": "Organization",
     "image": {
       "description": {
         "de": "Logo der Technischen Hochschule Lübeck"
