@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>MOOChub v4 Metadatenprofil</title>
+  <title>MOOChub Metadatenprofil (v4)</title>
   <script src="https://speced.github.io/respec/builds/respec-dini.js" async class="remove"></script>
   <script class="remove">
     var respecConfig = {
@@ -104,6 +104,16 @@
           "href": "https://www.rfc-editor.org/rfc/rfc8594",
           "publisher": "Internet Engineering Task Force (IETF)"
         },
+        "MOOChub": {
+          "title": "MOOChub",
+          "href": "https://moochub.org/about/",
+          "publisher": "Technische Universität Graz"
+        },
+        "AMB": {
+          "title": "Allgemeines Metadatenprofil für Bildungsressourcen (AMB)",
+          "href": "https://w3id.org/kim/amb/20231019/schemas/",
+          "publisher": "Kompetenzzentrum Interoperable Metadaten (KIM)"
+        }
       },
       logos: [],
       otherLinks: [{
@@ -131,16 +141,15 @@
 
     <h2><dfn>Zusammenfassung</dfn></h2>
 
-    MOOChub v4 ist ein unter der
+    Das MOOChub Metadatenprofil ist ein unter der
     <a rel="license" href="https://opensource.org/license/mit/">MIT-Lizenz</a>
     veröffentlichtes, bildungsbereichübergreifendes Metadatenprofil für die
     interoperable Beschreibung von Lernangeboten, Kursen, Bildungsprogrammen
     und zugehörigen Lernressourcen. Das Profil verwendet [[?JSON-LD 1.1]] und
-    [[?JSON Schema Draft 2020-12]]. Es ist mit dem
-    <a href="https://w3id.org/kim/amb/20231019/schemas/">Allgemeinen
-      Metadatenprofil für Lern- und Lehrressourcen (AMB)</a> kompatibel und
-    erweitert dieses um detailliertere Angaben mit Fokus auf Lernangebote und
-    Kurse sowie um ein Profil für Bildungsprogramme.
+    [[?JSON Schema Draft 2020-12]]. Es ist mit dem [[?AMB]]
+    (Allgemeines Metadatenprofil für Bildungsressourcen) kompatibel und
+    erweitert dieses um detailliertere Angaben mit Fokus auf Kurse sowie um
+    Profile für Bildungsprogramme und erwerbbare Bildungsnachweise.
 
     Die fachlichen Begriffe stammen vorwiegend aus [[?schema.org]] und dem
     AMB-Profil, ergänzt um [[?SKOS]]-Konzepte, europäische Vokabulare für
@@ -168,26 +177,33 @@
   <section id="introduction" class="informative">
     <h2>Einleitung</h2>
 
-    MOOChub verbindet Bildungsanbieter und stellt über offene Schnittstellen
-    und gemeinsame Standards maschinenlesbare Informationen für Lernangebote,
-    Kurse und Bildungsprogramme für Suchdienste, Portale und andere Clients
-    bereit. Grundlage ist das
-    <a href="https://w3id.org/kim/amb/20231019/schemas/">Allgemeine
-      Metadatenprofil für Lern- und Lehrressourcen (AMB)</a>. Das MOOChub-Schema
-    ist darauf ausgerichtet, mit AMB kompatibel zu bleiben und zugleich
-    detailliertere Informationen für Lernangebote und Kurse bereitzustellen.
-    Zusätzlich beschreibt es Bildungsprogramme und ihre Kurszusammensetzung.
+    [[?MOOChub]] ist der Zusammenschluss
+    verschiedener MOOC-Portale, Betreiber von Online-Lernplattformen,
+    Hochschulen und hochschulnahen Verbänden. Ziel ist es, Synergien in der
+    Online-Lehre zu nutzen und gemeinsame Standards zu entwickeln. Der
+    Schwerpunkt liegt zunächst auf dem deutschsprachigen Hochschulraum; der
+    Austausch mit internationalen Partnern soll Bildung über Hochschul- und
+    Landesgrenzen hinweg zugänglich machen.
+
+    MOOChub bietet Lernenden eine zentrale Anlaufstelle für MOOCs und weitere
+    digitale Bildungsangebote. Das vorliegende Profil beschreibt die
+    maschinenlesbaren Metadaten, mit denen beteiligte Anbieter Informationen
+    über Lernangebote, Kurse und Bildungsprogramme über offene Schnittstellen
+    austauschen können. Das MOOChub-Profil ist darauf ausgerichtet, mit AMB
+    kompatibel zu bleiben und zugleich detailliertere Informationen für
+    Lernangebote und Kurse bereitzustellen. Zusätzlich beschreibt es
+    Bildungsprogramme und erwerbbare Bildungsnachweise.
 
     Das Profil ist auf einen kleinen, verlässlich austauschbaren Kern
     ausgerichtet: Die Pflichtangaben ermöglichen das Auffinden und Einordnen
     eines Kurses oder Programms, während optionale Angaben detaillierte Suche,
-    Darstellung und Einschreibung unterstützen. Für Credential-Kategorien
-    und Learning Outcomes nutzt das Profil ergänzend europäische Vokabulare
-    und Semantik.
+    Darstellung und die Weiterleitung zu den Angeboten unterstützen. Für
+    Nachweis-Kategorien und Lernergebnisse nutzt das Profil ergänzend
+    europäische Vokabulare und Semantik.
 
     Die normativen JSON Schemas sind beispielsweise im
-    <a href="schemas/course.json">Course-Schema</a>,
-    <a href="schemas/program.json">Program-Schema</a> und
+    <a href="schemas/course.json">Kurs-Schema</a>,
+    <a href="schemas/program.json">Programm-Schema</a> und
     <a href="schemas/api/catalogFeed.json">Katalog-Schema</a> verlinkt.
     Beispiele sind Bestandteil der Entwicklung und zeigen typische gültige und
     ungültige Dokumente.
