@@ -42,7 +42,7 @@
     },
     "sameAs": {
       "type": "array",
-      "description": "HTTPS-URLs that are asserted to identify the same person, such as verified social profiles, a homepage, ORCID, or Wikidata.",
+      "description": "URLs that are asserted to identify the same person, such as verified social profiles, a homepage, ORCID, or Wikidata.",
       "items": {
         "$ref": "https://w3id.org/moochub/4.0.0/schemas/url.json"
       },

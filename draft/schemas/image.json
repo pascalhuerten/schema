@@ -10,7 +10,7 @@
     },
     "contentUrl": {
       "$ref": "https://w3id.org/moochub/draft/schemas/url.json",
-      "description": "An HTTPS-URL pointing at the actual image. Third parties may use this URI to embed or display the course cover."
+      "description": "An URL pointing at the actual image. Third parties may use this URI to embed or display the course cover."
     },
     "license": {
       "$ref": "https://w3id.org/moochub/draft/schemas/license.json"

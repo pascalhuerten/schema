@@ -20,7 +20,7 @@
     },
     "sameAs": {
       "type": "array",
-      "description": "'HTTPS-URLs that are asserted to identify the same organization, such as its homepage, ROR, or Wikidata.",
+      "description": "'URLs that are asserted to identify the same organization, such as its homepage, ROR, or Wikidata.",
       "items": {
         "$ref": "https://w3id.org/moochub/draft/schemas/url.json"
       },

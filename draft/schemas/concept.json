@@ -21,9 +21,8 @@
       "description": "A definition of the concept in one or more languages."
     },
     "inScheme": {
-      "type": "string",
-      "format": "uri",
-      "description": "The URI of the concept scheme that defines this concept."
+      "$ref": "https://w3id.org/moochub/draft/schemas/url.json",
+      "description": "The URL of the concept scheme that defines this concept."
     }
   },
   "required": ["id", "type"]

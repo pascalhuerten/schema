@@ -17,8 +17,7 @@
           "const": "Hochschulfächersystematik"
         },
         "targetUrl": {
-          "type": "string",
-          "format": "uri",
+          "$ref": "https://w3id.org/moochub/draft/schemas/url.json",
           "pattern": "^https://w3id.org/kim/hochschulfaechersystematik/.*$"
         }
       },

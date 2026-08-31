@@ -55,7 +55,7 @@
       "items": {
         "$ref": "https://w3id.org/moochub/4.0.0/schemas/url.json"
       },
-      "description": "A list of HTTPS-URLs of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+      "description": "A list of URLs of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
     },
     "dateModified": {
       "type": "string",
